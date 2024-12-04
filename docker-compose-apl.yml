@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        APL_ROOT_CERT: "https://apllinuxdepot.jhuapl.edu/linux/APL-root-cert/JHUAPL-MS-Root-CA-05-21-2038-B64-text.cer"
+        APL_DOM1_CERT: "https://apllinuxdepot.jhuapl.edu/linux/certs/JHUAPL-MS-DOM1-CA-05-21-2028.pem"
+    container_name: ember_web_frontend
+    ports:
+      - 8080:8080
+    restart: unless-stopped

@@ -8,7 +8,7 @@
           flat
           size="lg"
           label="EMBER"
-          icon-right="img:src/assets/ember-logo.png"
+          icon-right="img:ember-logo.png"
         />
 
         <q-space />
