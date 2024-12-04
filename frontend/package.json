@@ -1,8 +1,8 @@
 {
   "name": "frontend",
   "version": "0.0.1",
-  "description": "EMBER Web Application Frontend",
-  "productName": "EMBER",
+  "description": "EMBER Archive Web Application Frontend",
+  "productName": "EMBER Archive",
   "author": "Nicole Stock",
   "private": true,
   "scripts": {

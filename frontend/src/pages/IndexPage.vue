@@ -3,10 +3,13 @@
 
     <div class="q-ma-lg">
       <div class="text-h1 text-primary">
-        EMBER
+        EMBER Archive
       </div>
       <div class="text-h2">
-        Ecosystem for Multi-model Brain-behavior Experimentation and Research
+        Ecosystem for Multi-modol Brain-behavior Experimentation and Research
+      </div>
+      <div>
+        EMBER is data archive for multi-modal neurophysiological and behavioral data.
       </div>
     </div>
 </q-page>
