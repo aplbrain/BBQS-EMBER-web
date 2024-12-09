@@ -11,3 +11,34 @@
 .text-h3 {
   font-size: 2rem;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .text-h1 {
+    font-size: 3rem;
+  }
+
+  .text-h2 {
+    font-size: 2rem;
+  }
+
+  .text-h3 {
+    font-size: 1rem;
+  }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 768px) {
+  .text-h1 {
+    font-size: 3.5rem;
+  }
+
+  .text-h2 {
+    font-size: 2.5rem;
+  }
+
+  .text-h3 {
+    font-size: 1.5rem;
+  }
+}

@@ -28,3 +28,8 @@
 
 <script setup lang="ts"></script>
 
+<style>
+.q-icon > img {
+  width: auto;
+}
+</style>

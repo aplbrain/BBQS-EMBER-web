@@ -1,7 +1,10 @@
 <template>
   <q-page class="row items-center justify-evenly">
 
-    <div class="q-ma-lg">
+    <div class="col-md-2 col col-6">
+      <q-img src="ember-logo.png" />
+    </div>
+    <div class="q-pa-lg col-sm-9 col-10">
       <div class="text-h1 text-primary">
         EMBER Archive
       </div>
