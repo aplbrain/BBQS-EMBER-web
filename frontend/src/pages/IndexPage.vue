@@ -9,9 +9,9 @@
         EMBER Archive
       </div>
       <div class="text-h2">
-        Ecosystem for Multi-modol Brain-behavior Experimentation and Research
+        Ecosystem for Multi-modal Brain-behavior Experimentation and Research
       </div>
-      <div>
+      <div class="q-mt-lg">
         EMBER is data archive for multi-modal neurophysiological and behavioral data.
       </div>
     </div>
