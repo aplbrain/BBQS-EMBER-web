@@ -41,14 +41,31 @@
       <router-view />
     </q-page-container>
 
-    <q-footer class="bg-primary q-pa-sm"> TBD </q-footer>
+    <q-footer class="bg-primary q-px-md q-py-lg">
+      <div class="row justify-between">
+        <div>
+          <a href="https://github.com/aplbrain" target="_blank">
+            <q-icon name="img:outside-logos/github-mark-white.svg" size="sm"/>
+          </a>
+        </div>
+        <div>
+          <div>&copy; 2024 JHU/APL. All rights reserved.</div>
+        </div>
+      </div>
+    </q-footer>
   </q-layout>
 </template>
 
 <script setup lang="ts">
 import { Tab } from 'src/models/mainLayout';
 
-const tabs: Tab[] = [{ name: 'About', route: '/about' }];
+const tabs: Tab[] = [
+  { name: 'Data', route: '/data' },
+  { name: 'Getting Started', route: '/getting-started' },
+  { name: 'Tools', route: '/tools' },
+  { name: 'Metadata', route: '/metadata' },
+  { name: 'About', route: '/about' }
+];
 </script>
 
 <style>

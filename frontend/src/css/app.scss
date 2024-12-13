@@ -1,5 +1,9 @@
 // app global css in SCSS form
 
+a.link {
+  color: $primary;
+}
+
 .text-h1 {
   font-size: 4rem;
 }
