@@ -3,7 +3,6 @@ import { OrganizationTeam } from 'src/models/about';
 export const team: OrganizationTeam[] = [
   {
     name: 'Johns Hopkins University Applied Physics Laboratory',
-    icon: 'tbd',
     members: [
       {
         name: 'Brock Wester (PI)',
@@ -45,7 +44,6 @@ export const team: OrganizationTeam[] = [
   },
   {
     name: 'University of California, Los Angeles',
-    icon: 'tbd',
     members: [
       {
         name: 'Nanthia Suthana (Co-I)',
@@ -57,14 +55,28 @@ export const team: OrganizationTeam[] = [
       },
     ],
   },
+  // TODO: In spring 2025, exact timeline TBD
+  // {
+  //   name: 'Duke University',
+  //   members: [
+  //     {
+  //       name: 'Nanthia Suthana (Co-I)',
+  //       image: 'team/nanthia_suthana.png',
+  //     },
+  //   ],
+  // },
   {
     name: 'University of Southern California',
-    icon: 'tbd',
     members: [
       {
         name: 'Arthur Toga (Co-I)',
         image: 'team/arthur_toga.png'
       },
+    ],
+  },
+  {
+    name: 'University of Pennsylvannia',
+    members: [
       {
         name: 'Dominique Duncan (Co-I)',
         image: 'team/dominique_duncan.png'
@@ -73,7 +85,6 @@ export const team: OrganizationTeam[] = [
   },
   {
     name: 'Dartmouth College',
-    icon: 'tbd',
     members: [
       {
         name: 'Yaroslav Halchenko (Co-I)',
@@ -87,7 +98,6 @@ export const team: OrganizationTeam[] = [
   },
   {
     name: 'Massachusetts Institue of Technology',
-    icon: 'tbd',
     members: [
       {
         name: 'Satrajit Ghosh (C)',

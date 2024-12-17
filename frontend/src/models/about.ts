@@ -1,7 +1,7 @@
 
 export interface OrganizationTeam {
   name: string;
-  icon: string;
+  icon?: string;
   members: TeamMember[];
 }
 
