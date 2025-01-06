@@ -5,6 +5,7 @@
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <p>We are a team of research scientists and engineers who...</p>
+          <!-- TODO -->
 
           <p>
             The development of EMBER is funded through the Brain Research

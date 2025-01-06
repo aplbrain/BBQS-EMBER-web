@@ -16,6 +16,10 @@ a.link {
   font-size: 2rem;
 }
 
+.text-h4 {
+  font-size: 1.3rem;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .text-h1 {
@@ -27,6 +31,10 @@ a.link {
   }
 
   .text-h3 {
+    font-size: 1.5rem;
+  }
+
+  .text-h4 {
     font-size: 1rem;
   }
 }
@@ -44,5 +52,9 @@ a.link {
 
   .text-h3 {
     font-size: 1.5rem;
+  }
+
+  .text-h4 {
+    font-size: 1rem;
   }
 }

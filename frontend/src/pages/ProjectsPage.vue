@@ -2,7 +2,10 @@
   <q-page class="column items-center">
     <PageTitle title="Projects" />
     <div class="q-ma-xl">
-      Coming Soon!
+      <p>Coming Soon!</p>
+
+      <p>Check out our <a class="link" href="/getting-started">Getting Started</a> page for ... </p>
+      <!-- TODO -->
     </div>
   </q-page>
 </template>

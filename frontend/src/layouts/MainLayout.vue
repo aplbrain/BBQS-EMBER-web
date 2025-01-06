@@ -60,7 +60,7 @@
 import { Tab } from 'src/models/mainLayout';
 
 const tabs: Tab[] = [
-  { name: 'Data', route: '/data' },
+  { name: 'Projects', route: '/projects' },
   { name: 'Getting Started', route: '/getting-started' },
   { name: 'Tools', route: '/tools' },
   { name: 'Metadata', route: '/metadata' },
