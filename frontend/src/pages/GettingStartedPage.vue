@@ -15,12 +15,16 @@
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <div class="text-h2 scrollable" ref="complianceSection">Compliance</div>
+
+          <p></p>
         </q-card-section>
       </q-card>
 
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <div class="text-h2 scrollable" ref="dataUploadSection">Data Upload</div>
+
+          <p></p>
         </q-card-section>
 
         <q-card-section>
@@ -49,12 +53,14 @@
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <div class="text-h2 scrollable" ref="dataAccessSection">Data Access</div>
+          <p></p>
         </q-card-section>
       </q-card>
 
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <div class="text-h2 scrollable" ref="accessRequestSection">Access Request</div>
+          <p></p>
         </q-card-section>
       </q-card>
 
@@ -82,27 +88,24 @@ const dataAccessSection = ref<HTMLElement | null>(null);
 const accessRequestSection = ref<HTMLElement | null>(null);
 
 onMounted(() => {
-  if (route.hash) {
-    console.log(route.hash);
-    switch (route.hash) {
-      case '#compliance':
-        console.log('scrolling to ...');
-        console.log(complianceSection);
-        scrollTo(complianceSection);
-        break;
-      case '#data-upload':
-        console.log('scrolling to ...');
-        scrollTo(dataUploadSection);
-        break;
-      case '#data-access':
-        console.log('scrolling to ...');
-        scrollTo(dataAccessSection);
-        break;
-      case '#access-request':
-        console.log('scrolling to ...');
-        scrollTo(accessRequestSection);
-        break;
+  // setTimeout is used to fix a bug where scrolling doesn't work immediately on page load
+  setTimeout(() => {
+    if (route.hash) {
+      switch (route.hash) {
+        case '#compliance':
+          scrollTo(complianceSection);
+          break;
+        case '#data-upload':
+          scrollTo(dataUploadSection);
+          break;
+        case '#data-access':
+          scrollTo(dataAccessSection);
+          break;
+        case '#access-request':
+          scrollTo(accessRequestSection);
+          break;
+      }
     }
-  }
+  });
 });
 </script>
