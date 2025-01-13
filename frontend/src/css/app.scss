@@ -1,9 +1,15 @@
 // app global css in SCSS form
 
+/**
+ * General Text
+ */
 a.link {
   color: $primary;
 }
 
+/**
+ * Heading Text
+ */
 .text-h1 {
   font-size: 4rem;
 }
@@ -57,4 +63,13 @@ a.link {
   .text-h4 {
     font-size: 1rem;
   }
+}
+
+
+/**
+ * Scrollable Component
+ *  - top margin ensures the component is below the toolbar on scroll
+ */
+ .scrollable {
+  scroll-margin-top: 80px;
 }
