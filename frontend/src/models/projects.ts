@@ -1,4 +1,5 @@
 import { QTableColumn } from 'quasar';
+import { getDateString } from 'src/utils/date';
 
 export interface ProjectMetadata {
   funding: Funding;
@@ -48,29 +49,34 @@ export const ProjectTableColumns: QTableColumn[] = [
     label: 'Grant Number',
     field: row => row.funding.awardIdentifier,
     required: true,
+    sortable: true,
   },
   {
     name: 'awardTitle',
     label: 'Grant Title',
     field: row => row.funding.awardTitle,
     required: true,
+    sortable: true,
   },
   {
     name: 'principalInvestigator',
     label: 'Principal Investigator',
     field: row => row.contributors.filter((c: Contributor) => c.principalInvestigator).map((c: Contributor) => c.name).join(','),
     required: true,
+    sortable: true,
   },
   {
     name: 'startDate',
     label: 'Project Start Date',
-    field: row => row.funding.startDate.toISOString(),
+    field: row => getDateString(row.funding.startDate),
     required: true,
+    sortable: true,
   },
   {
     name: 'currentName',
-    label: 'Model Orgnaism(s)',
+    label: 'Model Organism(s)',
     field: row => row.species.map((s: Species) => s.currentName).join(','),
     required: true,
+    sortable: true,
   },
 ]
