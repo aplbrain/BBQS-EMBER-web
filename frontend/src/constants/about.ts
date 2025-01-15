@@ -75,7 +75,7 @@ export const team: OrganizationTeam[] = [
     ],
   },
   {
-    name: 'University of Pennsylvannia',
+    name: 'University of Pennsylvania',
     members: [
       {
         name: 'Dominique Duncan (Co-I)',
