@@ -45,7 +45,7 @@
       <div class="row justify-between">
         <div>
           <a href="https://github.com/aplbrain" target="_blank">
-            <q-icon name="img:outside-logos/github-mark-white.svg" size="sm"/>
+            <q-icon name="img:outside-logos/github-mark-white.svg" size="sm" />
           </a>
         </div>
         <div>
@@ -64,7 +64,7 @@ const tabs: Tab[] = [
   { name: 'Getting Started', route: '/getting-started' },
   { name: 'Tools', route: '/tools' },
   { name: 'Metadata', route: '/metadata' },
-  { name: 'About', route: '/about' }
+  { name: 'About', route: '/about' },
 ];
 </script>
 

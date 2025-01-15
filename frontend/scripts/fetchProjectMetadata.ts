@@ -37,8 +37,9 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
       const endDate = new Date(project.project_end_date);
       const yearsBetween = endDate.getFullYear() - startDate.getFullYear();
 
-      const contributors: Contributor[] = project.principal_investigators
-        .map((pi: any) => { return {name: pi.full_name, email: pi.email || undefined}})
+      const contributors: Contributor[] = project.principal_investigators.map((pi: any) => {
+        return { name: pi.full_name, email: pi.email || undefined };
+      });
 
       // Map the API response to the TypeScript object
       const projectData: ProjectMetadata = {
@@ -50,10 +51,14 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
           startDate,
           periodOfPerformance: yearsBetween,
           awardLink: project.project_detail_url,
-          programOfficers: project.program_officers.map((po: any) => { return { name: po.full_name }}),
-          principalInvestigators: contributors
+          programOfficers: project.program_officers.map((po: any) => {
+            return { name: po.full_name };
+          }),
+          principalInvestigators: contributors,
         },
-        contributors: contributors.map((c: Person) => { return {...c, principalInvestigator: true}}),
+        contributors: contributors.map((c: Person) => {
+          return { ...c, principalInvestigator: true };
+        }),
         species: [],
         sensors: [],
         dataModalities: [],
@@ -108,11 +113,12 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
   const content = `${JSON.stringify(projects, null, 2)}`;
 
   // Write to a file
-  fs.writeFile('projectMetadata.json', content, (err) => {
-      if (err) {
-          console.error('Error writing to file:', err);
-          return;
-      }
-      console.log('File has been written successfully.');
+  const today = new Date().toISOString();
+  fs.writeFile(`scripts/out/projectMetadata_${today}.json`, content, (err) => {
+    if (err) {
+      console.error('Error writing to file:', err);
+      return;
+    }
+    console.log('File has been written successfully.');
   });
 })();

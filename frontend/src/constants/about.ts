@@ -6,7 +6,7 @@ export const team: OrganizationTeam[] = [
     members: [
       {
         name: 'Brock Wester (PI)',
-        image: 'team/brock_wester.png'
+        image: 'team/brock_wester.png',
       },
       {
         name: 'Han Yi (Co-I)',
@@ -70,7 +70,7 @@ export const team: OrganizationTeam[] = [
     members: [
       {
         name: 'Arthur Toga (Co-I)',
-        image: 'team/arthur_toga.png'
+        image: 'team/arthur_toga.png',
       },
     ],
   },
@@ -79,7 +79,7 @@ export const team: OrganizationTeam[] = [
     members: [
       {
         name: 'Dominique Duncan (Co-I)',
-        image: 'team/dominique_duncan.png'
+        image: 'team/dominique_duncan.png',
       },
     ],
   },
@@ -88,11 +88,11 @@ export const team: OrganizationTeam[] = [
     members: [
       {
         name: 'Yaroslav Halchenko (Co-I)',
-        image: 'team/yaroslav_halchenko.png'
+        image: 'team/yaroslav_halchenko.png',
       },
       {
         name: 'Austin Macdonald',
-        image: 'team/austin_macdonald.png'
+        image: 'team/austin_macdonald.png',
       },
     ],
   },
@@ -101,7 +101,7 @@ export const team: OrganizationTeam[] = [
     members: [
       {
         name: 'Satrajit Ghosh (C)',
-        image: 'team/satrajit_ghosh.png'
+        image: 'team/satrajit_ghosh.png',
       },
     ],
   },
