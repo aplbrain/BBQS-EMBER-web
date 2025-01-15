@@ -1,5 +1,6 @@
 # BBQS-EMBER-web
 
+This repository contains the code for the front-end website for the NIH-funded BBQS EMBER Data Archive, allowing users to view information about the program, search projects, and submit data.
 
 ## Prerequisities
 
@@ -32,4 +33,4 @@
 
 ## Contributing
 
-TODO
+Contibutions are welcome through pull requests- please notify the BBQS EMBER team for review.
