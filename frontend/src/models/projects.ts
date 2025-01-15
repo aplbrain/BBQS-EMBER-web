@@ -20,7 +20,8 @@ export interface Funding {
   periodOfPerformance: number; // (years)
   startDate: Date;
   awardLink: string; // Link to NIH RePORTER project details
-  programOfficer: Person;
+  programOfficers: Person[];
+  principalInvestigators: Person[];
 }
 
 export interface Person {
@@ -35,7 +36,7 @@ export interface Contributor extends Person {
 }
 
 export interface Species {
-  taxonomyId: string;
+  taxonomyId: number;
   currentName: string;
   genbankCommonName: string;
   ncbiBlastName: string;
@@ -47,6 +48,7 @@ export const ProjectTableColumns: QTableColumn[] = [
   {
     name: 'awardIdentifier',
     label: 'Grant Number',
+    align: 'left',
     field: row => row.funding.awardIdentifier,
     required: true,
     sortable: true,
@@ -54,6 +56,7 @@ export const ProjectTableColumns: QTableColumn[] = [
   {
     name: 'awardTitle',
     label: 'Grant Title',
+    align: 'left',
     field: row => row.funding.awardTitle,
     required: true,
     sortable: true,
@@ -61,21 +64,25 @@ export const ProjectTableColumns: QTableColumn[] = [
   {
     name: 'principalInvestigator',
     label: 'Principal Investigator',
-    field: row => row.contributors.filter((c: Contributor) => c.principalInvestigator).map((c: Contributor) => c.name).join(','),
+    align: 'left',
+    field: row => row.contributors.filter((c: Contributor) => c.principalInvestigator).map((c: Contributor) => c.name).join(', '),
     required: true,
     sortable: true,
   },
   {
     name: 'startDate',
     label: 'Project Start Date',
+    align: 'left',
     field: row => getDateString(row.funding.startDate),
     required: true,
     sortable: true,
+    sort: (a, b, rowA, rowB) => rowA.funding.startDate - rowB.funding.startDate,
   },
   {
     name: 'currentName',
     label: 'Model Organism(s)',
-    field: row => row.species.map((s: Species) => s.currentName).join(','),
+    align: 'left',
+    field: row => row.species.map((s: Species) => s.currentName).join(', '),
     required: true,
     sortable: true,
   },
