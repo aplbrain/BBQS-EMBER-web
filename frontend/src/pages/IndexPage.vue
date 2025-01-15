@@ -36,7 +36,7 @@
             EMBER is the
             <LinkText :link="links.brain_initiative" />
             data archive for multi-modal neurophysiological and behavioral data, supporting the
-            <LinkText :link="links.bbqs_full" />. EMBER development, which was started in October
+            <LinkText :link="links.bbqs_full" />. EMBER development, which was started in September
             2024 and is in active progress, is supported by NIH Grant
             <LinkText :link="links.ember_grant" />
             and the Amazon Web Services (AWS)

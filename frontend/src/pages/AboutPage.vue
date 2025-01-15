@@ -8,7 +8,7 @@
           <!-- TODO -->
 
           <p>
-            In October 2024, our team at the
+            In September 2024, our team at the
             <LinkText :link="links.jhuapl" />
             , University of California, Los Angeles, University of Southern California, University
             of Pennsylvania, Dartmouth College, and Massachusetts Institute of Technology were
