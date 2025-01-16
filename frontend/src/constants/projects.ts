@@ -8,7 +8,7 @@ export const initialProjectList: ProjectMetadata[] = [
         'Synchronized neuronal and peripheral biomarker recordings in freely moving humans',
       awardIdentifier: 'R61MH135106',
       activityCode: 'R61',
-      awardeeOrganization: 'UNIVERSITY OF CALIFORNIA LOS ANGELES',
+      awardeeOrganization: 'University Of California Los Angeles',
       startDate: new Date('2024-02-21T12:02:00.000Z'),
       periodOfPerformance: 3,
       awardLink: 'https://reporter.nih.gov/project-details/10792386',
@@ -19,13 +19,13 @@ export const initialProjectList: ProjectMetadata[] = [
       ],
       principalInvestigators: [
         {
-          name: 'NANTHIA A SUTHANA',
+          name: 'Nanthia A Suthana',
         },
       ],
     },
     contributors: [
       {
-        name: 'NANTHIA A SUTHANA',
+        name: 'Nanthia A Suthana',
         principalInvestigator: true,
       },
     ],
@@ -49,13 +49,13 @@ export const initialProjectList: ProjectMetadata[] = [
       awardTitle: 'A modeling framework and arena for measuring contextual influences of behavior',
       awardIdentifier: 'R34DA059510',
       activityCode: 'R34',
-      awardeeOrganization: 'GEORGIA INSTITUTE OF TECHNOLOGY',
+      awardeeOrganization: 'Georgia Institute Of Technology',
       startDate: new Date('2024-08-01T12:08:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786801',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -98,13 +98,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'Behavioral quantification through active learning and multidimensional physiological monitoring',
       awardIdentifier: 'R34DA059509',
       activityCode: 'R34',
-      awardeeOrganization: 'CARNEGIE-MELLON UNIVERSITY',
+      awardeeOrganization: 'Carnegie-Mellon University',
       startDate: new Date('2024-08-01T12:08:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786800',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -161,13 +161,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'Computational attribution and fusion of vocalizations, social behavior, and neural recordings in a naturalistic environment',
       awardIdentifier: 'R34DA059513',
       activityCode: 'R34',
-      awardeeOrganization: 'NEW YORK UNIVERSITY',
+      awardeeOrganization: 'New York University',
       startDate: new Date('2024-02-01T12:02:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786899',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -217,13 +217,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'Development of a "smart aviary" to probe neural dynamics of complex social behaviors in a gregarious songbird',
       awardIdentifier: 'R34DA059507',
       activityCode: 'R34',
-      awardeeOrganization: 'UNIVERSITY OF PENNSYLVANIA',
+      awardeeOrganization: 'University Of Pennsylvania',
       startDate: new Date('2024-04-15T12:04:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786687',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -234,10 +234,10 @@ export const initialProjectList: ProjectMetadata[] = [
           name: 'Vijay  Balasubramanian',
         },
         {
-          name: 'KOSTAS  DANIILIDIS',
+          name: 'Kostas  Daniilidis',
         },
         {
-          name: 'MARC F SCHMIDT',
+          name: 'Marc F Schmidt',
         },
       ],
     },
@@ -251,11 +251,11 @@ export const initialProjectList: ProjectMetadata[] = [
         principalInvestigator: true,
       },
       {
-        name: 'KOSTAS  DANIILIDIS',
+        name: 'Kostas  Daniilidis',
         principalInvestigator: true,
       },
       {
-        name: 'MARC F SCHMIDT',
+        name: 'Marc F Schmidt',
         principalInvestigator: true,
       },
     ],
@@ -279,21 +279,21 @@ export const initialProjectList: ProjectMetadata[] = [
       awardTitle: 'Harnessing biological rhythms for a resilient social motif generator',
       awardIdentifier: 'R34DA059718',
       activityCode: 'R34',
-      awardeeOrganization: 'UNIVERSITY OF FLORIDA',
+      awardeeOrganization: 'University Of Florida',
       startDate: new Date('2024-05-01T12:05:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10797723',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
         {
-          name: 'Nancy  Padilla Coreano',
+          name: 'Nancy Padilla Coreano',
         },
         {
-          name: 'Shreya  Saxena',
+          name: 'Shreya Saxena',
         },
         {
           name: 'Daniel W Wesson',
@@ -302,11 +302,11 @@ export const initialProjectList: ProjectMetadata[] = [
     },
     contributors: [
       {
-        name: 'Nancy  Padilla Coreano',
+        name: 'Nancy Padilla Coreano',
         principalInvestigator: true,
       },
       {
-        name: 'Shreya  Saxena',
+        name: 'Shreya Saxena',
         principalInvestigator: true,
       },
       {
@@ -334,13 +334,13 @@ export const initialProjectList: ProjectMetadata[] = [
       awardTitle: 'High-resolution 3D tracking of social behaviors for deep phenotypic analysis',
       awardIdentifier: 'R34DA059506',
       activityCode: 'R34',
-      awardeeOrganization: 'DUKE UNIVERSITY',
+      awardeeOrganization: 'Duke University',
       startDate: new Date('2024-09-15T12:09:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786685',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -391,13 +391,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'High-throughput, high-resolution 3D measurement of ethologically relevant rodent behavior in a dynamic environment',
       awardIdentifier: 'R34DA059512',
       activityCode: 'R34',
-      awardeeOrganization: 'DUKE UNIVERSITY',
+      awardeeOrganization: 'Duke University',
       startDate: new Date('2024-02-15T12:02:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786883',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -446,21 +446,21 @@ export const initialProjectList: ProjectMetadata[] = [
       awardTitle: 'Interpersonal behavioral synchrony in virtual and in-person dyadic conversation',
       awardIdentifier: 'R34DA059716',
       activityCode: 'R34',
-      awardeeOrganization: 'ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI',
+      awardeeOrganization: 'Icahn School Of Medicine At Mount Sinai',
       startDate: new Date('2024-08-15T12:08:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10797870',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
         {
-          name: 'CHERYL MARY CORCORAN',
+          name: 'Cheryl Mary Corcoran',
         },
         {
-          name: 'JACK  GRINBAND',
+          name: 'Jack  Grinband',
         },
         {
           name: 'Muhammad Adeel Parvaz',
@@ -469,11 +469,11 @@ export const initialProjectList: ProjectMetadata[] = [
     },
     contributors: [
       {
-        name: 'CHERYL MARY CORCORAN',
+        name: 'Cheryl Mary Corcoran',
         principalInvestigator: true,
       },
       {
-        name: 'JACK  GRINBAND',
+        name: 'Jack  Grinband',
         principalInvestigator: true,
       },
       {
@@ -502,13 +502,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'Multimodal behavioral analysis of oromanual food-handling in freely moving animals',
       awardIdentifier: 'R34DA059723',
       activityCode: 'R34',
-      awardeeOrganization: 'NORTHWESTERN UNIVERSITY AT CHICAGO',
+      awardeeOrganization: 'Northwestern University At Chicago',
       startDate: new Date('2024-02-01T12:02:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10795435',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -544,13 +544,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'Towards High-Resolution Neuro-Behavioral Quantification of Sheep in the Field to Study Complex Social Behaviors',
       awardIdentifier: 'R34DA059514',
       activityCode: 'R34',
-      awardeeOrganization: 'RICE UNIVERSITY',
+      awardeeOrganization: 'Rice University',
       startDate: new Date('2024-08-01T12:08:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786956',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -586,13 +586,13 @@ export const initialProjectList: ProjectMetadata[] = [
         'Transformative Optical Imaging of Brain & Behavior in Navigating Genetic Species',
       awardIdentifier: 'R34DA059500',
       activityCode: 'R34',
-      awardeeOrganization: 'NEW YORK UNIVERSITY SCHOOL OF MEDICINE',
+      awardeeOrganization: 'New York University School Of Medicine',
       startDate: new Date('2024-03-15T12:03:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10786461',
       programOfficers: [
         {
-          name: 'HOLLY MARIE Moore',
+          name: 'Holly Marie Moore',
         },
       ],
       principalInvestigators: [
@@ -665,7 +665,7 @@ export const initialProjectList: ProjectMetadata[] = [
         'Capturing Autobiographical memory formation in People moving Through real-world spaces Using synchronized wearables and intracranial Recordings of EEG',
       awardIdentifier: 'R61MH135109',
       activityCode: 'R61',
-      awardeeOrganization: 'UNIVERSITY OF UTAH',
+      awardeeOrganization: 'University Of Utah',
       startDate: new Date('2024-03-15T12:03:00.000Z'),
       periodOfPerformance: 3,
       awardLink: 'https://reporter.nih.gov/project-details/10792324',
@@ -707,7 +707,7 @@ export const initialProjectList: ProjectMetadata[] = [
         'Integrated movement tracking for pediatric OPM-MEG studies of intellectual disability',
       awardIdentifier: 'R61MH135114',
       activityCode: 'R61',
-      awardeeOrganization: "SEATTLE CHILDREN'S HOSPITAL",
+      awardeeOrganization: "Seattle Children's Hospital",
       startDate: new Date('2024-07-08T12:07:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10792146',
@@ -756,7 +756,7 @@ export const initialProjectList: ProjectMetadata[] = [
         'Developing the Context-Aware Multimodal Ecological Research and Assessment (CAMERA) Platform for Continuous Measurement and Prediction of Anxiety and Memory State',
       awardIdentifier: 'R61MH135405',
       activityCode: 'R61',
-      awardeeOrganization: 'COLUMBIA UNIVERSITY HEALTH SCIENCES',
+      awardeeOrganization: 'Columbia University Health Sciences',
       startDate: new Date('2024-01-01T12:01:00.000Z'),
       periodOfPerformance: 2,
       awardLink: 'https://reporter.nih.gov/project-details/10801782',
