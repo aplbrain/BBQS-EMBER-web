@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="full-screen row justify-evenly">
-      <div class="row items-center justify-evenly">
+      <div class="row items-center justify-evenly col-12">
         <div class="col-md-2 col col-6">
           <q-img src="ember-logo.png" />
         </div>

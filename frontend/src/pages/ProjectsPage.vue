@@ -37,7 +37,15 @@
         :columns="ProjectTableColumns"
         :rows-per-page-options="[0]"
         class="col-11"
-      />
+      >
+        <template v-slot:body-cell-awardIdentifier="props">
+          <q-td>
+            <a :href="props.row.funding.awardLink" target="_blank" class="link">
+              {{ props.value }}
+            </a>
+          </q-td>
+        </template>
+      </q-table>
     </div>
   </q-page>
 </template>

@@ -1,7 +1,7 @@
 import { ProjectMetadata } from 'src/models/projects';
 
 // Semi auto-generated from fetchProjectMetadata.ts script
-export const initialProjectList: ProjectMetadata[] = [
+const initialProjectList: ProjectMetadata[] = [
   {
     funding: {
       awardTitle:
@@ -856,6 +856,21 @@ export const initialProjectList: ProjectMetadata[] = [
     dataGenerationSort: [],
   },
 ];
+
+// Default sorting logic
+initialProjectList.sort((a: ProjectMetadata, b: ProjectMetadata) => {
+  // Sort by (desc.) activity code (R61, R34)
+  if (a.funding.activityCode > b.funding.activityCode) return -1;
+  if (a.funding.activityCode < b.funding.activityCode) return 1;
+
+  // Sort by (asc.) award identifier (RXX...)
+  if (a.funding.awardIdentifier < b.funding.awardIdentifier) return -1;
+  if (a.funding.awardIdentifier > b.funding.awardIdentifier) return 1;
+
+  return 0;
+});
+
+export { initialProjectList};
 
 // [
 //   {
