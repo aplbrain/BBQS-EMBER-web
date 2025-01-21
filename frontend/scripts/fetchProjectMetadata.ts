@@ -38,7 +38,11 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
       const yearsBetween = endDate.getFullYear() - startDate.getFullYear();
 
       const contributors: Contributor[] = project.principal_investigators.map((pi: any) => {
-        return { name: pi.full_name, email: pi.email || undefined };
+        if (pi.is_contact_pi) {
+          return { name: pi.full_name, email: pi.email || undefined, roles: ['pi', 'contact_pi'] };
+        } else {
+          return { name: pi.full_name, email: pi.email || undefined, roles: ['pi'] };
+        }
       });
 
       // Map the API response to the TypeScript object
@@ -54,11 +58,9 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
           programOfficers: project.program_officers.map((po: any) => {
             return { name: po.full_name };
           }),
-          principalInvestigators: contributors,
+          principalInvestigators: contributors.map((c: Contributor) => c as Person),
         },
-        contributors: contributors.map((c: Person) => {
-          return { ...c, principalInvestigator: true };
-        }),
+        contributors: contributors,
         species: [],
         sensors: [],
         dataModalities: [],

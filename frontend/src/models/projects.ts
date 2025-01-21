@@ -30,8 +30,14 @@ export interface Person {
   // TODO -- identifier for person (i.e., ORCID)
 }
 
+export enum ContributorRole {
+  principalInvestigator = 'pi',
+  contactPrincipalInvestigator = 'contact_pi',
+  // Author , ...
+}
 export interface Contributor extends Person {
   principalInvestigator: boolean;
+  roles: ContributorRole[];
 }
 
 export interface Species {

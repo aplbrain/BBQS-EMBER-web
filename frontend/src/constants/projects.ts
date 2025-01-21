@@ -1,4 +1,4 @@
-import { ProjectMetadata } from 'src/models/projects';
+import { ContributorRole, ProjectMetadata } from 'src/models/projects';
 
 // Semi auto-generated from fetchProjectMetadata.ts script
 const initialProjectList: ProjectMetadata[] = [
@@ -14,7 +14,7 @@ const initialProjectList: ProjectMetadata[] = [
       awardLink: 'https://reporter.nih.gov/project-details/10792386',
       programOfficers: [
         {
-          name: 'Elizabeth  Ankudowich',
+          name: 'Elizabeth Ankudowich',
         },
       ],
       principalInvestigators: [
@@ -27,6 +27,7 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Nanthia A Suthana',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -60,7 +61,7 @@ const initialProjectList: ProjectMetadata[] = [
       ],
       principalInvestigators: [
         {
-          name: 'Eva  Dyer',
+          name: 'Eva Dyer',
         },
         {
           name: 'Patrick T McGrath',
@@ -69,12 +70,14 @@ const initialProjectList: ProjectMetadata[] = [
     },
     contributors: [
       {
-        name: 'Eva  Dyer',
+        name: 'Eva Dyer',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Patrick T McGrath',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -109,35 +112,39 @@ const initialProjectList: ProjectMetadata[] = [
       ],
       principalInvestigators: [
         {
-          name: 'Pulkit  Grover',
+          name: 'Pulkit Grover',
         },
         {
-          name: 'Zheng  Kuang',
+          name: 'Zheng Kuang',
         },
         {
           name: 'Jonathan E. Rubin',
         },
         {
-          name: 'Eric  Yttri',
+          name: 'Eric Yttri',
         },
       ],
     },
     contributors: [
       {
-        name: 'Pulkit  Grover',
+        name: 'Pulkit Grover',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
-        name: 'Zheng  Kuang',
+        name: 'Zheng Kuang',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Jonathan E. Rubin',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
-        name: 'Eric  Yttri',
+        name: 'Eric Yttri',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -186,14 +193,17 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Dan Harvey Sanes',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
         name: 'David Michael Schneider',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Alexander Henry Williams',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -228,13 +238,13 @@ const initialProjectList: ProjectMetadata[] = [
       ],
       principalInvestigators: [
         {
-          name: 'Firooz  Aflatouni',
+          name: 'Firooz Aflatouni',
         },
         {
-          name: 'Vijay  Balasubramanian',
+          name: 'Vijay Balasubramanian',
         },
         {
-          name: 'Kostas  Daniilidis',
+          name: 'Kostas Daniilidis',
         },
         {
           name: 'Marc F Schmidt',
@@ -243,20 +253,24 @@ const initialProjectList: ProjectMetadata[] = [
     },
     contributors: [
       {
-        name: 'Firooz  Aflatouni',
+        name: 'Firooz Aflatouni',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
-        name: 'Vijay  Balasubramanian',
+        name: 'Vijay Balasubramanian',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
-        name: 'Kostas  Daniilidis',
+        name: 'Kostas Daniilidis',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Marc F Schmidt',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -304,14 +318,17 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Nancy Padilla Coreano',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
         name: 'Shreya Saxena',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Daniel W Wesson',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -356,10 +373,12 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Timothy William Dunn',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
         name: 'Bence P Olveczky',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -416,14 +435,17 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Timothy William Dunn',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
         name: 'Gregory Darin Field',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Michael R Tadross',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -460,7 +482,7 @@ const initialProjectList: ProjectMetadata[] = [
           name: 'Cheryl Mary Corcoran',
         },
         {
-          name: 'Jack  Grinband',
+          name: 'Jack Grinband',
         },
         {
           name: 'Muhammad Adeel Parvaz',
@@ -471,14 +493,17 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Cheryl Mary Corcoran',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
-        name: 'Jack  Grinband',
+        name: 'Jack Grinband',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Muhammad Adeel Parvaz',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -521,6 +546,7 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Gordon M Shepherd',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -555,14 +581,15 @@ const initialProjectList: ProjectMetadata[] = [
       ],
       principalInvestigators: [
         {
-          name: 'Caleb  Kemere',
+          name: 'Caleb Kemere',
         },
       ],
     },
     contributors: [
       {
-        name: 'Caleb  Kemere',
+        name: 'Caleb Kemere',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -597,35 +624,39 @@ const initialProjectList: ProjectMetadata[] = [
       ],
       principalInvestigators: [
         {
-          name: 'Katherine  Nagel',
+          name: 'Katherine Nagel',
         },
         {
-          name: 'David  Schoppik',
+          name: 'David Schoppik',
         },
         {
           name: 'Nathan Christopher Shaner',
         },
         {
-          name: 'Jane  Wang',
+          name: 'Jane Wang',
         },
       ],
     },
     contributors: [
       {
-        name: 'Katherine  Nagel',
+        name: 'Katherine Nagel',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
-        name: 'David  Schoppik',
+        name: 'David Schoppik',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
         name: 'Nathan Christopher Shaner',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
-        name: 'Jane  Wang',
+        name: 'Jane Wang',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -671,7 +702,7 @@ const initialProjectList: ProjectMetadata[] = [
       awardLink: 'https://reporter.nih.gov/project-details/10792324',
       programOfficers: [
         {
-          name: 'Elizabeth  Ankudowich',
+          name: 'Elizabeth Ankudowich',
         },
       ],
       principalInvestigators: [
@@ -684,6 +715,7 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Cory Shields Inman',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -713,7 +745,7 @@ const initialProjectList: ProjectMetadata[] = [
       awardLink: 'https://reporter.nih.gov/project-details/10792146',
       programOfficers: [
         {
-          name: 'Elizabeth  Ankudowich',
+          name: 'Elizabeth Ankudowich',
         },
       ],
       principalInvestigators: [
@@ -729,10 +761,12 @@ const initialProjectList: ProjectMetadata[] = [
       {
         name: 'Timothy P Roberts',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'John P Welsh',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -762,15 +796,15 @@ const initialProjectList: ProjectMetadata[] = [
       awardLink: 'https://reporter.nih.gov/project-details/10801782',
       programOfficers: [
         {
-          name: 'Elizabeth  Ankudowich',
+          name: 'Elizabeth Ankudowich',
         },
       ],
       principalInvestigators: [
         {
-          name: 'Joshua  Jacobs',
+          name: 'Joshua Jacobs',
         },
         {
-          name: 'Jorge  Ortiz',
+          name: 'Jorge Ortiz',
         },
         {
           name: 'Alik S. Widge',
@@ -782,20 +816,24 @@ const initialProjectList: ProjectMetadata[] = [
     },
     contributors: [
       {
-        name: 'Joshua  Jacobs',
+        name: 'Joshua Jacobs',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
       {
-        name: 'Jorge  Ortiz',
+        name: 'Jorge Ortiz',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Alik S. Widge',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
       {
         name: 'Brett E Youngerman',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator],
       },
     ],
     species: [
@@ -825,19 +863,20 @@ const initialProjectList: ProjectMetadata[] = [
       awardLink: 'https://reporter.nih.gov/project-details/11017073',
       programOfficers: [
         {
-          name: 'Elizabeth  Ankudowich',
+          name: 'Elizabeth Ankudowich',
         },
       ],
       principalInvestigators: [
         {
-          name: 'Maryam  Shanechi',
+          name: 'Maryam Shanechi',
         },
       ],
     },
     contributors: [
       {
-        name: 'Maryam  Shanechi',
+        name: 'Maryam Shanechi',
         principalInvestigator: true,
+        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
       },
     ],
     species: [
@@ -884,7 +923,7 @@ export { initialProjectList};
 //       awardLink: 'https://reporter.nih.gov/project-details/10792386',
 //       programOfficers: [
 //         {
-//           name: 'Elizabeth  Ankudowich',
+//           name: 'Elizabeth Ankudowich',
 //         }
 //       ],
 //       principalInvestigators: [
