@@ -36,7 +36,6 @@ export enum ContributorRole {
   // Author , ...
 }
 export interface Contributor extends Person {
-  principalInvestigator: boolean;
   roles: ContributorRole[];
 }
 
@@ -68,13 +67,9 @@ export const ProjectTableColumns: QTableColumn[] = [
   },
   {
     name: 'principalInvestigator',
-    label: 'Principal Investigator',
+    label: 'Principal Investigator(s)',
     align: 'left',
-    field: (row) =>
-      row.contributors
-        .filter((c: Contributor) => c.principalInvestigator)
-        .map((c: Contributor) => c.name)
-        .join(', '),
+    field: (row) => row.contributors,
     required: true,
     sortable: true,
   },

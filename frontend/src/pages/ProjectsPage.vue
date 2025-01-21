@@ -45,6 +45,19 @@
             </a>
           </q-td>
         </template>
+        <template v-slot:body-cell-principalInvestigator="props">
+          <q-td>
+            <span
+              v-for="(pi, idx) in props.value.filter((c: Contributor) => c.roles.includes(ContributorRole.principalInvestigator))"
+              :key="pi"
+            >
+              <span v-if="idx != 0">, </span>
+              <span :class="pi.roles.includes(ContributorRole.contactPrincipalInvestigator) ? 'text-bold' : ''">
+                {{ pi.name }}
+              </span>
+            </span>
+          </q-td>
+        </template>
       </q-table>
     </div>
   </q-page>
@@ -55,7 +68,7 @@ import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 import { links } from 'src/constants/links';
 import { initialProjectList } from 'src/constants/projects';
-import { ProjectTableColumns } from 'src/models/projects';
+import { Contributor, ContributorRole, ProjectTableColumns } from 'src/models/projects';
 import { getMonthYear } from 'src/utils/date';
 
 const projectCounts: Record<string, number> = {
