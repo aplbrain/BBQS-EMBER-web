@@ -33,31 +33,33 @@
         <q-card-section>
           <div class="text-h2 q-mb-lg text-center scrollable" ref="sectionRefEl">EMBER Archive</div>
           <p>
-            EMBER is the
+            EMBER (Ecosystem for Multi-modal Brain-behavior Experimentation and Research) is the
             <LinkText :link="links.brain_initiative" />
             data archive for multi-modal neurophysiological and behavioral data, supporting the
-            <LinkText :link="links.bbqs_full" />. EMBER development, which was started in September
-            2024 and is in active progress, is supported by NIH Grant
+            <LinkText :link="links.bbqs_full" />. EMBER, which was started in September 2024 and is
+            currently under development, is supported by NIH Grant
             <LinkText :link="links.ember_grant" />
             and the Amazon Web Services (AWS)
             <LinkText :link="links.open_data" />
-            program, led by the
+            program, is led by the
             <LinkText :link="links.jhuapl" />
-            . EMBER's core mission is to support the publicly funded BBQS research by providing an
-            easy-to-use data storage and access solution for each research team. We are further
-            committed to maturing EMBER as a resource to serve cloud-based analytics for primary and
-            secondary research needs, in close collaboration with the BBQS Data Coordination and
-            Artificial Intelligence Center (DCAIC). To learn more, visit the About page.
+            , and will operate in close collaboration with the BBQS Data Coordination and Artificial
+            Intelligence Center (DCAIC). EMBER's core mission is to support the NIH funded BBQS
+            research teams by providing an easy-to-use data storage and access solution. Our team
+            and our partners are committed to maturing EMBER as a resource to support the BBQS
+            mission, including enabling cloud-based analytics for primary and secondary research
+            needs. To learn more, visit the
+            <RouterLink to="/about" class="link">About</RouterLink>
+            page.
           </p>
 
           <p>
-            If you are part of a research team whose work is funded by the BBQS program, you may
-            wish to upload your data to EMBER as acquired through the grant and required by NIH. In
-            order to find out how, visit the
+            For BBQS project teams,
+            please visit the
             <RouterLink to="/getting-started#data-upload" class="link">Data Upload</RouterLink>
             section of the
             <RouterLink to="/getting-started" class="link">Getting Started</RouterLink>
-            page.
+            page for additional information about submitting your data.
           </p>
 
           <p>
@@ -65,8 +67,8 @@
             <span class="text-bold"
               >does not yet support storage of Personally Identifiable Information (PII) or
               Protected Health Information (PHI)</span
-            >, which is a feature that will be developed in the coming years. You, the data
-            uploader, is responsible for ensuring compliance with guidelines from any and all
+            >, but support for this capability is under development. BBQS project teams will be
+            responsible for ensuring compliance with guidelines from any and all
             entities that may govern the use of your data, including the Institutional Review Board
             (IRB) of your institution. To learn more about how this may affect your workflow, visit
             the
@@ -85,6 +87,7 @@
             handle the data, coordinate with the research team to be granted access to the
             corresponding portion of the EMBER data archive. If you do not have such approval in
             place, contact the EMBER team.
+            <!-- TODO: EMBER Archive email -->
           </p>
 
           <p>
