@@ -69,7 +69,23 @@ export const ProjectTableColumns: QTableColumn[] = [
     name: 'principalInvestigator',
     label: 'Principal Investigator(s)',
     align: 'left',
-    field: (row) => row.contributors,
+    field: (row) => row.contributors
+    .sort((a: Contributor, b: Contributor) => {
+      if (a.roles.includes(ContributorRole.contactPrincipalInvestigator)) return -1;
+      if (b.roles.includes(ContributorRole.contactPrincipalInvestigator)) return 1;
+
+      return 0;
+    })
+    ,
+    required: true,
+    sortable: true,
+    format: (val) => val.map((c: Contributor) => c.name).join(', ')
+  },
+  {
+    name: 'contactPrincipalInvestigator',
+    label: 'Contact PI',
+    align: 'left',
+    field: (row) => row.contributors.filter((c: Contributor) => c.roles.includes(ContributorRole.contactPrincipalInvestigator)),
     required: true,
     sortable: true,
   },

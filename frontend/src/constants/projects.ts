@@ -26,7 +26,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Nanthia A Suthana',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'nanthia@ucla.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -74,7 +78,11 @@ const initialProjectList: ProjectMetadata[] = [
       },
       {
         name: 'Patrick T McGrath',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'patrick.mcgrath@biology.gatech.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -137,7 +145,11 @@ const initialProjectList: ProjectMetadata[] = [
       },
       {
         name: 'Eric Yttri',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'eyttri@andrew.cmu.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -185,7 +197,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Dan Harvey Sanes',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'dhs1@nyu.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'David Michael Schneider',
@@ -256,7 +272,11 @@ const initialProjectList: ProjectMetadata[] = [
       },
       {
         name: 'Marc F Schmidt',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'MARCSCHM@SAS.UPENN.EDU',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -303,7 +323,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Nancy Padilla Coreano',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'npadillacoreano@ufl.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'Shreya Saxena',
@@ -355,7 +379,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Timothy William Dunn',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'timothy.dunn@duke.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'Bence P Olveczky',
@@ -415,7 +443,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Timothy William Dunn',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'timothy.dunn@duke.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'Gregory Darin Field',
@@ -470,7 +502,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Cheryl Mary Corcoran',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'cheryl.corcoran@mssm.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'Jack Grinband',
@@ -520,7 +556,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Gordon M Shepherd',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'g-shepherd@northwestern.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -562,7 +602,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Caleb Kemere',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'caleb.kemere@rice.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -617,7 +661,11 @@ const initialProjectList: ProjectMetadata[] = [
       },
       {
         name: 'David Schoppik',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'david.schoppik@nyulangone.org',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'Nathan Christopher Shaner',
@@ -683,7 +731,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Cory Shields Inman',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'cory.inman@psych.utah.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -732,7 +784,11 @@ const initialProjectList: ProjectMetadata[] = [
       },
       {
         name: 'John P Welsh',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'jwelshp@gmail.com',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -783,7 +839,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Joshua Jacobs',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'joshua.jacobs@columbia.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
       {
         name: 'Jorge Ortiz',
@@ -837,7 +897,11 @@ const initialProjectList: ProjectMetadata[] = [
     contributors: [
       {
         name: 'Maryam Shanechi',
-        roles: [ContributorRole.principalInvestigator, ContributorRole.contactPrincipalInvestigator],
+        email: 'shanechi@usc.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
       },
     ],
     species: [
@@ -870,49 +934,4 @@ initialProjectList.sort((a: ProjectMetadata, b: ProjectMetadata) => {
   return 0;
 });
 
-export { initialProjectList};
-
-// [
-//   {
-//     funding: {
-//       awardTitle: 'Synchronized neuronal and peripheral biomarker recordings in freely moving humans',
-//       awardIdentifier: 'R61MH135106',
-//       activityCode: 'R61',
-//       awardeeOrganization: 'University of California Los Angeles',
-//       periodOfPerformance: 3,
-//       startDate: new Date('2024-02-21T12:02:00Z'),
-//       awardLink: 'https://reporter.nih.gov/project-details/10792386',
-//       programOfficers: [
-//         {
-//           name: 'Elizabeth Ankudowich',
-//         }
-//       ],
-//       principalInvestigators: [
-//         {
-//           name: 'Nanthia A. Suthana',
-//           email: '',
-//         }
-//       ],
-//     },
-//     contributors: [
-//       {
-//         name: 'Nanthia A. Suthana',
-//         email: '',
-// //       }
-//     ],
-//     species: [
-//       {
-//         taxonomyId: 9606,
-//         currentName: 'Homo sapiens',
-//         genbankCommonName: 'human',
-//         ncbiBlastName: 'primates',
-//         rank: 'species',
-//         commonName: '',
-//       },
-//     ],
-//     sensors: [],
-//     dataModalities: [],
-//     approaches: [],
-//     dataGenerationSort: [],
-//   },
-// ];
+export { initialProjectList };

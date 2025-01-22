@@ -1,4 +1,4 @@
-# BBQS-EMBER-web
+# Ember Archive web application
 
 This repository contains the code for the front-end website for the NIH-funded BBQS EMBER Data Archive, allowing users to view information about the program, search projects, and submit data.
 
@@ -8,7 +8,6 @@ This repository contains the code for the front-end website for the NIH-funded B
 - Yarn 
 
 ## Install
-
 
 ### Frontend
 
@@ -29,6 +28,10 @@ This repository contains the code for the front-end website for the NIH-funded B
     ```
 
 1. The frontend should now be running at [http://localhost:9000](). The application will reload as you make edits.
+
+
+## Deployment
+
 
 
 ## Contributing

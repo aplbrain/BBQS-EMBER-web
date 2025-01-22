@@ -45,16 +45,14 @@
             </a>
           </q-td>
         </template>
-        <template v-slot:body-cell-principalInvestigator="props">
+        <template v-slot:body-cell-contactPrincipalInvestigator="props">
           <q-td>
-            <span
-              v-for="(pi, idx) in props.value.filter((c: Contributor) => c.roles.includes(ContributorRole.principalInvestigator))"
-              :key="pi"
-            >
-              <span v-if="idx != 0">, </span>
-              <span :class="pi.roles.includes(ContributorRole.contactPrincipalInvestigator) ? 'text-bold' : ''">
+            <span v-for="(pi, idx) in props.value" :key="pi">
+              <a v-if="'email' in pi && pi.email" :href="`mailto:${pi.email}`" target="_blank" class="link">
                 {{ pi.name }}
-              </span>
+              </a>
+              <span v-else>{{ pi.name }}</span>
+              <span v-if="idx != 0">, </span>
             </span>
           </q-td>
         </template>
@@ -68,7 +66,7 @@ import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 import { links } from 'src/constants/links';
 import { initialProjectList } from 'src/constants/projects';
-import { Contributor, ContributorRole, ProjectTableColumns } from 'src/models/projects';
+import { ProjectTableColumns } from 'src/models/projects';
 import { getMonthYear } from 'src/utils/date';
 
 const projectCounts: Record<string, number> = {
