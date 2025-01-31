@@ -16,7 +16,7 @@
             />
             ), and will have a centralized Metadata system to enable searching across various data
             collections from the
-            <LinkText :link="links.bbqs_acronym" />. Program.
+            <LinkText :link="links.bbqs_acronym" />.
           </p>
         </q-card-section>
       </q-card>
