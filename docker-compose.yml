@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: ember_web_frontend
+    ports:
+      - 8080:8080
+    restart: unless-stopped
