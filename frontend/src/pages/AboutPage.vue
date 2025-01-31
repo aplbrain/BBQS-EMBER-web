@@ -36,6 +36,8 @@
             <LinkText text="BossDB" uri="https://bossdb.org/" />
             ; IARPA
             <LinkText text="MICrONS" uri="https://directorsblog.nih.gov/tag/microns/" />
+            ; DARPA
+            <LinkText text="Revolutionizing Prosthetics Program" uri="https://www.jhuapl.edu/work/projects-and-missions/revolutionizing-prosthetics" />
             ; NIH
             <LinkText
               text="CONNECTS"
