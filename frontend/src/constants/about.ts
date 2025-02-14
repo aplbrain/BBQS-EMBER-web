@@ -97,7 +97,7 @@ export const team: OrganizationTeam[] = [
     ],
   },
   {
-    name: 'Massachusetts Institue of Technology',
+    name: 'Massachusetts Institute of Technology',
     members: [
       {
         name: 'Satrajit Ghosh (C)',
