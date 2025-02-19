@@ -17,9 +17,13 @@
             :key="tab.name"
             :label="tab.name"
             :to="tab.route"
+            :href="tab.external ? tab.route : undefined"
+            :target="tab.external ? '_blank' : undefined"
             flat
             class="full-height"
-          />
+          >
+            <q-icon v-if="tab.external" class="q-ml-sm" size="xs" name="launch" />
+          </q-btn>
         </q-tabs>
         <q-btn-dropdown v-if="$q.screen.lt.sm" auto-close stretch flat label="Menu">
           <q-list>
@@ -66,6 +70,7 @@ import { Tab } from 'src/models/mainLayout';
 
 const tabs: Tab[] = [
   { name: 'Projects', route: '/projects' },
+  { name: 'Data', route: 'https://dandi.emberarchive.org/', external: true },
   { name: 'Getting Started', route: '/getting-started' },
   { name: 'Tools', route: '/tools' },
   { name: 'Metadata', route: '/metadata' },
