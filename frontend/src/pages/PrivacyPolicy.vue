@@ -3,7 +3,7 @@
     <div class="q-py-lg text-bold">EMBER Website Privacy Policy</div>
     <div class="row justify-center">
       <div class="col-7">
-        <p><span class="text-bold">Effective Date:</span> 2/17/2025</p>
+        <p><span class="text-bold">Effective Date:</span> 2/24/2025</p>
 
         <p>
           The Johns Hopkins University Applied Physics Laboratory, LLC (JHU/APL) ("
@@ -212,6 +212,20 @@
           The Sites are not intended for nor directed to children under 13, and we will not
           knowingly collect personal information from anyone under the age of 13. We request that
           children under 13 do not provide information to us through the Sites.
+        </p>
+
+        <p class="text-bold">Information for Users from Outside the United States</p>
+
+        <p>
+          The personal information that we collect through or in connection with the Services may be
+          transferred to and processed outside the country of your residence, for the purposes
+          described above. We also may subcontract the processing of your user access and activity
+          information to, or otherwise share your user access and activity information with,
+          affiliates or third parties in the United States. The data-protection laws in these
+          countries may be different from, and less stringent than, those in your country of
+          residence. By agreeing to this Privacy Policy in the course of using the Sites or by
+          providing any personal information to us, you expressly consent to such transfer and
+          processing.
         </p>
 
         <p class="text-bold">Changes to This Privacy Policy</p>
