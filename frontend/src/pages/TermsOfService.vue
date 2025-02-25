@@ -171,10 +171,10 @@
                 Services, you may be required to create an Account by providing certain information.
                 We may ask you to complete a registration form and create a username and password,
                 or we may permit you to login through a third-party application (your username and
-                password for us or for any third-party application, your "
-                <span class="text-underline">Login Credentials</span>"). Upon creating an Account,
-                we may generate a unique identification code (your "
-                <span class="text-underline">User ID</span>") associated with your Account. You are
+                password for us or for any third-party application, your
+                "<span class="text-underline">Login Credentials</span>"). Upon creating an Account,
+                we may generate a unique identification code (your
+                "<span class="text-underline">User ID</span>") associated with your Account. You are
                 responsible for protecting your Login Credentials from unauthorized use, and you are
                 responsible for all activity that occurs on your Account (including without
                 limitation any financial obligations). You agree to notify us immediately if you
