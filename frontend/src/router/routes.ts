@@ -26,6 +26,14 @@ const routes: RouteRecordRaw[] = [
         path: 'about',
         component: () => import('pages/AboutPage.vue'),
       },
+      {
+        path: 'privacy',
+        component: () => import('pages/PrivacyPolicy.vue'),
+      },
+      {
+        path: 'tos',
+        component: () => import('pages/TermsOfService.vue'),
+      },
     ],
   },
   // Always leave this as last one,
