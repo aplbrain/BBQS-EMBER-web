@@ -40,6 +40,10 @@ export const team: OrganizationTeam[] = [
         name: 'Neha Thomas',
         image: 'team/neha_thomas.png',
       },
+      {
+        name: 'Lauren Diaz',
+        image: 'team/lauren_diaz.jpg',
+      }
     ],
   },
   {
@@ -65,15 +69,6 @@ export const team: OrganizationTeam[] = [
   //     },
   //   ],
   // },
-  {
-    name: 'University of Southern California',
-    members: [
-      {
-        name: 'Arthur Toga (Co-I)',
-        image: 'team/arthur_toga.png',
-      },
-    ],
-  },
   {
     name: 'University of Pennsylvania',
     members: [

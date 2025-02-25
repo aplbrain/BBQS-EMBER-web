@@ -10,7 +10,7 @@
           <p>
             In September 2024, our team at the
             <LinkText :link="links.jhuapl" />
-            , University of California, Los Angeles, University of Southern California, University
+            , University of California, Los Angeles, University
             of Pennsylvania, Dartmouth College, and Massachusetts Institute of Technology were
             funded by the NIH Grant
             <LinkText :link="links.ember_grant" />
