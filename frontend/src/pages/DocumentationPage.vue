@@ -14,7 +14,7 @@
               uri="https://www.anaconda.com/docs/main"
               />
               to get Python and standard data science/machine learning packages, and a desktop application</li>
-            <li>After installing, launch the Anaconda Navigator.</li>
+            <li>After installing, launch the Anaconda Navigator</li>
             <li>Navigate to the "Environments" tab on the left pane</li>
             <li>Create a new environment with your desired name</li>
 
