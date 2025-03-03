@@ -10,7 +10,10 @@
           <div class="text-h5">I'm new to Python, CLI, and/or DANDI</div>
           <p>If you're new to Python, follow these instructions to get Python and a virtual Anaconda environment installed:</p>
           <ol>
-            <li><a href="https://docs.anaconda.com/anaconda/install/">Install Anaconda</a> to get Python and standard data science/machine learning packages, and a desktop application.</li>
+            <li><LinkText text="Install Anaconda"
+              uri="https://www.anaconda.com/docs/main"
+              />
+              to get Python and standard data science/machine learning packages, and a desktop application.</li>
             <li>After installing, launch the Anaconda Navigator.</li>
             <li>Navigate to the "Environments" tab on the left pane.</li>
             <li>Create a new environment with your desired name.</li>
@@ -19,23 +22,52 @@
 
           <div class="text-h6">How do I upload data?</div>
           <ol>
-            <li>Create a GitHub account <a href="https://github.com/">here</a>, ideally with an .edu account for quicker approval.</li>
-            <li>Register with <a href="https://dandi.emberarchive.org/">EMBER-DANDI</a> using the "Log In With GitHub" button in the top right corner.</li>
+            <li>Create a GitHub account 
+            <LinkText
+              text="here"
+              uri="https://github.com/"
+            />
+            , ideally with an .edu account for quicker approval.</li>
+            <li>Register with 
+            <LinkText text="EMBER-DANDI"
+            uri = "https://dandi.emberarchive.org/"
+            />
+            using the "Log In With GitHub" button in the top right corner.</li>
             <li>Wait for confirmation of review. In the meantime, convert your data to approved standards.</li>
             <li>Upon approval, log in with the "Log In With GitHub" button.</li>
           </ol>
 
           <div class="text-h6">Convert files to appropriate standards</div>
           <ol>
-            <li><a href="https://nwb-guide.readthedocs.io/en/stable/installation.html">Install NWB GUIDE</a>, which converts common neuroscience data formats into Neurodata Without Borders standards.</li>
+            <li>
+            <LinkText text="Install NWB GUIDE"
+           uri="https://nwb-guide.readthedocs.io/en/stable/installation.html"
+            />
+            , which converts common neuroscience data formats into Neurodata Without Borders standards.</li>
             <li>Complete key tutorials for NWB GUIDE:
               <ul>
-                <li><a href="https://nwb-guide.readthedocs.io/en/stable/tutorials/dataset.html">Generate a dataset</a></li>
-                <li>Convert a <a href="https://nwb-guide.readthedocs.io/en/stable/tutorials/single_session.html">single session of data</a></li>
-                <li>And <a href="https://nwb-guide.readthedocs.io/en/stable/tutorials/multiple_sessions.html">multi-session data</a></li>
+                <li>
+                 <LinkText text="Generate a dataset"
+                uri="https://nwb-guide.readthedocs.io/en/stable/tutorials/dataset.html"
+                />
+                </li>
+                <li>Convert 
+                <LinkText text="a single session of data"
+                uri="https://nwb-guide.readthedocs.io/en/stable/tutorials/single_session.html"
+                />
+               </li>
+                <li>Convert 
+                <LinkText text="a multi-session of data"
+                uri="https://nwb-guide.readthedocs.io/en/stable/tutorials/multiple_sessions.html"
+                />
+                </li>
               </ul>
             </li>
-            <li>Ensure your data is supported by checking the <a href="https://nwb-guide.readthedocs.io/en/stable/format_support.html">ecosystem compatibility</a>.</li>
+            <li>Ensure your data is supported by checking the 
+            <LinkText text="ecosystem compatibility"
+            uri="https://nwb-guide.readthedocs.io/en/stable/format_support.html"
+            />
+            </li>
           </ol>
 
           <div class="text-h6">Create an EMBER-DANDIset</div>
@@ -87,7 +119,12 @@ dandi organize "source_folder"
 dandi validate .
 dandi upload -i ember
 </pre>
-          <p>For downloading data, use the standard procedures from the DANDI documentation <a href="https://docs.dandiarchive.org/12_download/">here</a>.</p>
+          <p>For downloading data, use the standard procedures from the DANDI documentation 
+          <LinkText
+              text="here"
+              uri="https://docs.dandiarchive.org/12_download/"
+            />
+          .</p>
         </q-card-section>
       </q-card>
     </div>
@@ -95,6 +132,7 @@ dandi upload -i ember
 </template>
 
 <script setup lang="ts">
+import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 </script>
 
