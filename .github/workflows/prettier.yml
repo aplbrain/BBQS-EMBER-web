@@ -1,0 +1,25 @@
+name: Frontend CI
+
+on: [pull_request]
+
+jobs:
+  format-check:
+    name: Run Prettier formatting check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      
+      - name: Run dependencies
+        run: npm run format-check

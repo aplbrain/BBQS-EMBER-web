@@ -1,3 +1,8 @@
+/**
+ * about.ts
+ *
+ * Contains organizations, team members, and image paths to populate the About page.
+ */
 import { OrganizationTeam } from 'src/models/about';
 
 export const team: OrganizationTeam[] = [
@@ -43,7 +48,7 @@ export const team: OrganizationTeam[] = [
       {
         name: 'Lauren Diaz',
         image: 'team/lauren_diaz.jpg',
-      }
+      },
     ],
   },
   {

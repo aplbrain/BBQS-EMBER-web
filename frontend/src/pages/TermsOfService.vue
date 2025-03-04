@@ -171,9 +171,10 @@
                 Services, you may be required to create an Account by providing certain information.
                 We may ask you to complete a registration form and create a username and password,
                 or we may permit you to login through a third-party application (your username and
-                password for us or for any third-party application, your
-                "<span class="text-underline">Login Credentials</span>"). Upon creating an Account,
-                we may generate a unique identification code (your
+                password for us or for any third-party application, your "<span
+                  class="text-underline"
+                  >Login Credentials</span
+                >"). Upon creating an Account, we may generate a unique identification code (your
                 "<span class="text-underline">User ID</span>") associated with your Account. You are
                 responsible for protecting your Login Credentials from unauthorized use, and you are
                 responsible for all activity that occurs on your Account (including without
@@ -1040,7 +1041,7 @@
 
         <p class="text-bold">
           For Additional Information. If you have any questions about these Terms, please contact us
-          at <LinkText href="mailto:emberarchive@jhuapl.org" text="emberarchive@jhuapl.org"/>.
+          at <LinkText href="mailto:emberarchive@jhuapl.org" text="emberarchive@jhuapl.org" />.
         </p>
 
         <p>Last Updated: February 17, 2025</p>
@@ -1051,5 +1052,4 @@
 
 <script setup lang="ts">
 import LinkText from 'src/components/LinkText.vue';
-
 </script>
