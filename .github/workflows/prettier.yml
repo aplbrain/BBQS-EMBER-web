@@ -22,4 +22,4 @@ jobs:
           cmd: install
       
       - name: Run dependencies
-        run: npm run format-check
+        run: yarn run format-check
