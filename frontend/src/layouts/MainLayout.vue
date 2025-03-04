@@ -54,9 +54,9 @@
         </div>
         <div class="text-body2 text-right">
           <div>
-            <a class="text-white text-decoration-none" href='/privacy'>Privacy Policy</a> |
-            <a class="text-white text-decoration-none" href='/tos'>Terms of Service</a> |
-            <a class="text-white text-decoration-none" href='https://www.jhuapl.edu/'>APL Home</a>
+            <a class="text-white text-decoration-none" href="/privacy">Privacy Policy</a> |
+            <a class="text-white text-decoration-none" href="/tos">Terms of Service</a> |
+            <a class="text-white text-decoration-none" href="https://www.jhuapl.edu/">APL Home</a>
           </div>
           <div>&copy; 2024 JHU/APL. All rights reserved.</div>
         </div>

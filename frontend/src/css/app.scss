@@ -8,7 +8,7 @@ a.link {
 }
 
 body {
- font-size: 1em;
+  font-size: 1em;
 }
 
 .text-decoration-none {
@@ -57,7 +57,6 @@ body {
   }
 }
 
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) and (max-width: 768px) {
   .text-h1 {
@@ -77,11 +76,10 @@ body {
   }
 }
 
-
 /**
  * Scrollable Component
  *  - top margin ensures the component is below the toolbar on scroll
  */
- .scrollable {
+.scrollable {
   scroll-margin-top: 80px;
 }

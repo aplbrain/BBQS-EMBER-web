@@ -54,8 +54,7 @@
           </p>
 
           <p>
-            For BBQS project teams,
-            please visit the
+            For BBQS project teams, please visit the
             <RouterLink to="/getting-started#data-upload" class="link">Data Upload</RouterLink>
             section of the
             <RouterLink to="/getting-started" class="link">Getting Started</RouterLink>
@@ -68,10 +67,9 @@
               >does not yet support storage of Personally Identifiable Information (PII) or
               Protected Health Information (PHI)</span
             >, but support for this capability is under development. BBQS project teams will be
-            responsible for ensuring compliance with guidelines from any and all
-            entities that may govern the use of your data, including the Institutional Review Board
-            (IRB) of your institution. To learn more about how this may affect your workflow, visit
-            the
+            responsible for ensuring compliance with guidelines from any and all entities that may
+            govern the use of your data, including the Institutional Review Board (IRB) of your
+            institution. To learn more about how this may affect your workflow, visit the
             <RouterLink to="/getting-started#compliance" class="link">Compliance</RouterLink>
             section of the
             <RouterLink to="/getting-started" class="link">Getting Started</RouterLink>

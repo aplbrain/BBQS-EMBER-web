@@ -6,15 +6,17 @@
         <p><span class="text-bold">Effective Date:</span> 2/24/2025</p>
 
         <p>
-          The Johns Hopkins University Applied Physics Laboratory, LLC (JHU/APL)
-          ("<span class="text-bold">we</span>", "<span class="text-bold">our</span>", or
-          "<span class="text-bold">us</span>") respects the privacy of our users. This Privacy Policy
-          describes how we collect, use, and share information in connection with the EMBER website,
+          The Johns Hopkins University Applied Physics Laboratory, LLC (JHU/APL) ("<span
+            class="text-bold"
+            >we</span
+          >", "<span class="text-bold">our</span>", or "<span class="text-bold">us</span>") respects
+          the privacy of our users. This Privacy Policy describes how we collect, use, and share
+          information in connection with the EMBER website,
           <LinkText href="https://emberarchive.org" text="https://emberarchive.org" />
-          ("<span class="text-bold">Website</span>"), our social media pages that link to this Privacy
-          Policy, and all publicly accessible servers, APIs, cloud services, and websites operated
-          by the EMBER project (collectively, the "<span class="text-bold">Sites</span>"). It also
-          explains your rights and choices with respect to such information.
+          ("<span class="text-bold">Website</span>"), our social media pages that link to this
+          Privacy Policy, and all publicly accessible servers, APIs, cloud services, and websites
+          operated by the EMBER project (collectively, the "<span class="text-bold">Sites</span>").
+          It also explains your rights and choices with respect to such information.
         </p>
 
         <p>

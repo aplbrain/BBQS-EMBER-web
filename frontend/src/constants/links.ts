@@ -1,3 +1,8 @@
+/**
+ * links.ts
+ *
+ * Contains commonly re-used links throughout the website.
+ */
 import { Link } from 'src/models/common';
 
 export const links: Record<string, Link> = {
@@ -32,6 +37,6 @@ export const links: Record<string, Link> = {
   open_data: {
     text: 'Open Data',
     uri: 'https://aws.amazon.com/opendata',
-    // uri: 'https://registry.opendata.aws/ember', TODO: When site is published
+    // uri: 'https://registry.opendata.aws/ember', TODO: When/If site is published
   },
 };

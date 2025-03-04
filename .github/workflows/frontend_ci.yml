@@ -1,0 +1,46 @@
+name: Frontend CI
+
+on: [pull_request]
+
+defaults:
+  run:
+    working-directory: ./frontend
+
+jobs:
+  link-check:
+    name: Run ESLint check
+    runs-on: ubuntu-latest
+
+    steps:      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Run dependencies
+        run: yarn run lint
+
+  format-check:
+    name: Run Prettier check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Run dependencies
+        run: yarn run format-check

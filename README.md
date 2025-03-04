@@ -4,7 +4,7 @@ This repository contains the code for the front-end website for the NIH-funded B
 
 ## Prerequisities
 
-- Node.js
+- [Node.js](https://nodejs.org/en) v20
 - Yarn 
 
 ## Install

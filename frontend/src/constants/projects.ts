@@ -1,3 +1,9 @@
+/**
+ * projects.ts
+ *
+ * Contains the list of BBQS projects and metadata for each project.
+ * TODO: Convert this file of data into a real database.
+ */
 import { ContributorRole, ProjectMetadata } from 'src/models/projects';
 
 // Semi auto-generated from fetchProjectMetadata.ts script
