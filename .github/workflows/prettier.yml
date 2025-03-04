@@ -2,13 +2,14 @@ name: Frontend CI
 
 on: [pull_request]
 
+defaults:
+  run:
+    working-directory: ./frontend
+
 jobs:
   setup:
     name: Checkout the code and install dependencies
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
 
     steps:
       - name: Checkout code
