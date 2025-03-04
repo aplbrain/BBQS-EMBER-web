@@ -10,7 +10,6 @@ jobs:
   link-check:
     name: Run ESLint linting check
     runs-on: ubuntu-latest
-    needs: setup
 
     steps:      
       - name: Checkout code
@@ -31,7 +30,6 @@ jobs:
   format-check:
     name: Run Prettier formatting check
     runs-on: ubuntu-latest
-    needs: setup
 
     steps:
       - name: Checkout code
