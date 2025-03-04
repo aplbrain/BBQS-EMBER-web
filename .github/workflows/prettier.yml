@@ -8,14 +8,12 @@ defaults:
 
 jobs:
   link-check:
-    name: Run ESLint linting check
+    name: Run ESLint check
     runs-on: ubuntu-latest
 
     steps:      
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,14 +27,12 @@ jobs:
         run: yarn run lint
 
   format-check:
-    name: Run Prettier formatting check
+    name: Run Prettier check
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
