@@ -3,8 +3,8 @@ name: Frontend CI
 on: [pull_request]
 
 jobs:
-  format-check:
-    name: Run Prettier formatting check
+  setup:
+    name: Checkout the code and install dependencies
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,6 +21,27 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-      
+
+  link-check:
+    name: Run ESLint linting check
+    runs-on: ubuntu-latest
+    needs: setup
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:      
+      - name: Run dependencies
+        run: yarn run lint
+
+  format-check:
+    name: Run Prettier formatting check
+    runs-on: ubuntu-latest
+    needs: setup
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
       - name: Run dependencies
         run: yarn run format-check
