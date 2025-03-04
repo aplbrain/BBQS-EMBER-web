@@ -7,13 +7,17 @@
           <p>
             The EMBER Archive supports free storage and sharing of public data, prioritizing data
             generated as a part of the
-            <LinkText :link="links.bbqs_full" />. Users can create an account to begin instantiating a project and uploading data. Users can also request access to data. As the program progresses, project data will be released freely and publicly following appropriate protocols.
+            <LinkText :link="links.bbqs_full" />. Users can create an account to begin instantiating
+            a project and uploading data. Users can also request access to data. As the program
+            progresses, project data will be released freely and publicly following appropriate
+            protocols.
           </p>
           <p>
             <span class="text-bold">
               Currently, PHI/PII data cannot be submitted to the EMBER Archive.
             </span>
-            As the BBQS program progresses, EMBER will be adding functionality to support PHI/PII data storage.
+            As the BBQS program progresses, EMBER will be adding functionality to support PHI/PII
+            data storage.
           </p>
         </q-card-section>
       </q-card>
@@ -27,7 +31,8 @@
               <q-item-section>
                 <q-item-label overline>Phase I</q-item-label>
                 <q-item-label>
-                  Users will be required to verify human data have been de-identified and are approved for release and reuse. PHI/PII data will not be accepted.
+                  Users will be required to verify human data have been de-identified and are
+                  approved for release and reuse. PHI/PII data will not be accepted.
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -36,7 +41,8 @@
               <q-item-section>
                 <q-item-label overline>Phase II</q-item-label>
                 <q-item-label>
-                  Data access controls and data use agreements will be implemented, as needed, in accordance with IRB requirements.
+                  Data access controls and data use agreements will be implemented, as needed, in
+                  accordance with IRB requirements.
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -45,7 +51,8 @@
               <q-item-section>
                 <q-item-label overline>Phase III</q-item-label>
                 <q-item-label>
-                  Additional support for the storage and access control for PHI and PII data will be added.
+                  Additional support for the storage and access control for PHI and PII data will be
+                  added.
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -62,7 +69,8 @@
               <q-item-section>
                 <q-item-label overline>Metadata</q-item-label>
                 <q-item-label>
-                  Users can create an EMBER Project, specifying required and optional data for EMBERsets.
+                  Users can create an EMBER Project, specifying required and optional data for
+                  EMBERsets.
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -71,7 +79,9 @@
               <q-item-section>
                 <q-item-label overline>Animal Electrophysiology and Behavioral Data</q-item-label>
                 <q-item-label>
-                  Users can upload animal electrophysiology and behavioral data, specified in NWB and BIDS formats, along with supporting data files. This leverages our EMBER-DANDI instance.
+                  Users can upload animal electrophysiology and behavioral data, specified in NWB
+                  and BIDS formats, along with supporting data files. This leverages our EMBER-DANDI
+                  instance.
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -80,7 +90,9 @@
               <q-item-section>
                 <q-item-label overline>De-identified Human Data</q-item-label>
                 <q-item-label>
-                  Appropriately de-identified human data, such as electrophysiology, can be uploaded by users once assuring the appropriate IRB processes are followed and consent documented. Please contact us for more information!
+                  Appropriately de-identified human data, such as electrophysiology, can be uploaded
+                  by users once assuring the appropriate IRB processes are followed and consent
+                  documented. Please contact us for more information!
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -89,11 +101,11 @@
               <q-item-section>
                 <q-item-label overline>Future Phases</q-item-label>
                 <q-item-label>
-                  Future phases will allow upload of human data requiring access controls or data use agreements, as well as secure upload of PHI/PII information.
+                  Future phases will allow upload of human data requiring access controls or data
+                  use agreements, as well as secure upload of PHI/PII information.
                 </q-item-label>
               </q-item-section>
             </q-item>
-
           </q-list>
         </q-card-section>
 
@@ -125,7 +137,8 @@
           <div class="text-h2 scrollable" ref="dataAccessSection">Data Access & Requests</div>
 
           <p class="q-px-md q-py-sm">
-            Users can create an account to request data access. As data are released publicly in support of the BBQS program, they will be listed on the
+            Users can create an account to request data access. As data are released publicly in
+            support of the BBQS program, they will be listed on the
             <RouterLink to="/projects" class="link">Projects</RouterLink>
             page.
           </p>

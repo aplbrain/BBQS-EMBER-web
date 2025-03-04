@@ -10,9 +10,8 @@
           <p>
             In September 2024, our team at the
             <LinkText :link="links.jhuapl" />
-            , University of California, Los Angeles, University
-            of Pennsylvania, Dartmouth College, and Massachusetts Institute of Technology were
-            funded by the NIH Grant
+            , University of California, Los Angeles, University of Pennsylvania, Dartmouth College,
+            and Massachusetts Institute of Technology were funded by the NIH Grant
             <LinkText :link="links.ember_grant" />
             to build the data archive for hosting the data generated through the NIH
             <LinkText :link="links.brain_initiative" />'s <LinkText :link="links.bbqs_full" />.
@@ -37,7 +36,10 @@
             ; IARPA
             <LinkText text="MICrONS" uri="https://directorsblog.nih.gov/tag/microns/" />
             ; DARPA
-            <LinkText text="Revolutionizing Prosthetics Program" uri="https://www.jhuapl.edu/work/projects-and-missions/revolutionizing-prosthetics" />
+            <LinkText
+              text="Revolutionizing Prosthetics Program"
+              uri="https://www.jhuapl.edu/work/projects-and-missions/revolutionizing-prosthetics"
+            />
             ; NIH
             <LinkText
               text="CONNECTS"
