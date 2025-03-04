@@ -71,6 +71,7 @@ import { Tab } from 'src/models/mainLayout';
 const tabs: Tab[] = [
   { name: 'Projects', route: '/projects' },
   { name: 'Data', route: 'https://dandi.emberarchive.org/', external: true },
+  { name: 'Documentation', route: '/documentation' },
   { name: 'Getting Started', route: '/getting-started' },
   { name: 'Tools', route: '/tools' },
   { name: 'Metadata', route: '/metadata' },
