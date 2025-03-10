@@ -117,6 +117,7 @@
               />
               , a desktop application that converts common neuroscience data formats into data standards (Neurodata Without Borders) to enable uploading to EMBER-DANDI
             </li>
+            
             <li>
               Complete key tutorials for NWB GUIDE:
               <ul>
@@ -126,6 +127,7 @@
                     uri="https://nwb-guide.readthedocs.io/en/stable/tutorials/dataset.html"
                   />
                 </li>
+                
                 <li>
                   Convert
                   <LinkText
@@ -133,6 +135,7 @@
                     uri="https://nwb-guide.readthedocs.io/en/stable/tutorials/single_session.html"
                   />
                 </li>
+                
                 <li>
                   Convert
                   <LinkText
@@ -141,10 +144,12 @@
                   />
                 </li>
               </ul>
+            
             </li>
-            <li>Repeat with your own your data</li>
+            <li>Repeat steps with your own your data</li>
+            
             <li>
-              Ensure your data is supported by checking the
+              All data formats are not currently supported! Ensure your data is supported by checking the
               <LinkText
                 text="ecosystem compatibility"
                 uri="https://nwb-guide.readthedocs.io/en/stable/format_support.html"
