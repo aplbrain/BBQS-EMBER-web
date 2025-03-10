@@ -25,10 +25,12 @@
           <p style="padding-left: 20px;">
             <strong><span class="dark-red-text">My files are in a mix of standards or I do not use standards:</span></strong> Please contact the EMBER team at <LinkText text="emberarchive@jhuapl.edu" uri="mailto:emberarchive@jhuapl.edu/" /> to facilitate data ingestion into the EMBER Data Archive. We are also happy to add you to our Slack workspace.
           </p>
+    
+    <div class="page-break"></div> <!-- Visual page break -->
 
-    <div class="text-h5"> <strong> <span class="dark-red-text">Before Getting Started: How to Download Data </span> </strong></div>
+    <div class="text-h5"> <strong> <span class="dark-red-text">Downloading Data: </span> </strong></div>
         <p> 
-          Before beginning, please review how to download data:
+          Before getting started, please review how to download data:
         </p>
         <div class="text-h6">How do I download existing data?</div>
         <p>To download the whole dataset:</p>
@@ -51,8 +53,10 @@
           alt="Files Tab"
           style="width: 1200px; height: auto"
         />
+    
+    <div class="page-break"></div> <!-- Visual page break -->
 
-          <div class="text-h5"> <strong> <span class="dark-red-text"> Getting Started: I'm new to Python, CLI, and/or DANDI </span> </strong></div>
+          <div class="text-h5"> <strong> <span class="dark-red-text"> 1. I'm new to Python, CLI, and/or DANDI: </span> </strong></div>
           <p>
             If you're new to Python, follow these instructions to get Python and a virtual Anaconda
             environment installed:
@@ -191,8 +195,9 @@ dandi upload -i ember
 </pre>
             </li>
         </ol>
+    <div class="page-break"></div> <!-- Visual page break -->
 
-          <div class="text-h5"><strong> <span class="dark-red-text"> Getting Started: I've used DANDI or CLI tools before </span> </strong></div>
+          <div class="text-h5"><strong> <span class="dark-red-text"> 2. I've used DANDI or CLI tools before: </span> </strong></div>
           <p>For experienced users, the steps for uploading data are as follows:</p>
           <pre class="commands">
 dandi download https://dandi.emberarchive.org/dandiset/&lt;dataset_id&gt;/draft
@@ -227,11 +232,15 @@ import PageTitle from 'src/components/PageTitle.vue';
 .commands {
   margin-left: 40px; /* Indent the command block */
 }
-a {
-  color: #8B0000; /* Dark red color */
-  text-decoration: underline; /* Ensures it looks clickable */
-}
+
 .dark-red-text {
   color: #8B0000; /* Dark red color */
 }
+
+.page-break {
+  margin-top: 50px; /* Adds vertical space */
+  border-top: 2px solid #ccc; /* Adds a horizontal line */
+  padding-top: 20px; /* Adds padding above the next content for separation */
+}
+
 </style>
