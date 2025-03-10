@@ -35,8 +35,10 @@
         <div class="text-h6">How do I download existing data?</div>
         <p>To download the whole dataset:</p>
         <ol style="margin-top: 0;">
+          <li> Make sure you have the DANDI CLI tool installed </li>
           <li>Click the "Download" tab on the right-hand panel</li>
-          <li>Copy the command into your python terminal</li>
+          <li>Copy the command into your python terminal and hit enter</li>
+
         </ol>
         <img src="/documentation-images/download_dandiset.png" alt="Download Dandiset" />
 
@@ -69,7 +71,6 @@
             <li>After installing, launch the Anaconda Navigator</li>
             <li>Navigate to the "Environments" tab on the left pane</li>
             <li>Create a new environment with your desired name</li>
-
             <img
               src="/documentation-images/anaconda_navigator.png"
               alt="Anaconda Navigator"
@@ -80,6 +81,12 @@
               Click on the newly created environment, press the "Play" icon and select "Open
               Terminal"
             </li>
+
+            <li>
+              In the python terminal in your ember-dandi specific environment, install the DANDI Client: <pre> pip install -U dandi</pre>
+            </li>
+
+
           </ol>
 
           <div class="text-h6">How do I upload data?</div>
@@ -108,8 +115,7 @@
                 text="Install NWB GUIDE"
                 uri="https://nwb-guide.readthedocs.io/en/stable/installation.html"
               />
-              , which converts common neuroscience data formats into Neurodata Without Borders
-              standards
+              , a desktop application that converts common neuroscience data formats into data standards (Neurodata Without Borders) to enable uploading to EMBER-DANDI
             </li>
             <li>
               Complete key tutorials for NWB GUIDE:
