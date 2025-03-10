@@ -6,13 +6,53 @@
         <q-card-section>
           <div class="text-h2">Uploading to and Downloading Data from the EMBER-DANDI Archive</div>
           <p>
-            These instructions describe how to upload to and download data from the EMBER-DANDI
-            Archive. The instructions are divided into two main sections: one set of instructions
-            for novice users, and one set for experienced users of DANDI. Navigate to a section
-            depending on your experience with each tool.
+            EMBER is the BRAIN Initiative data archive for multi-modal neurophysiological and behavioral data. It serves as a platform for storing, sharing, and accessing multi-modal neurophysiological and behavioral data. These instructions will guide you on how to use the EMBER-DANDI Archive to upload and download data. The workflow varies based on the data file structures and object types involved. 
+          </p>          
+          <p>
+          Please follow the instructions for the option that best fits your needs:
+          </p>
+          <p style="padding-left: 20px; margin-bottom: 0;">
+            <strong><span class="dark-red-text">My files are all in NWB and BIDS:</span></strong> There is one set of instructions for novice users, and one set for experienced users of DANDI. Navigate to a section depending on your experience with each tool:
+            <ol style="padding-left: 50px; margin-top: 0;margin-bottom: 0;">
+            <li>I'm new to Python, CLI, and/or DANDI</li>
+            <ul>
+            <li> Set up Python and your environment, install DANDI CLI </li>
+            <li> How do I upload data? </li>
+            </ul>
+            <li> I've used DANDI or CLI tools before</li>
+          </ol>
+          </p>
+          <p style="padding-left: 20px;">
+            <strong><span class="dark-red-text">My files are in a mix of standards or I do not use standards:</span></strong> Please contact the EMBER team at <LinkText text="emberarchive@jhuapl.edu" uri="mailto:emberarchive@jhuapl.edu/" /> to facilitate data ingestion into the EMBER Data Archive. We are also happy to add you to our Slack workspace.
           </p>
 
-          <div class="text-h5">I'm new to Python, CLI, and/or DANDI</div>
+    <div class="text-h5"> <strong> <span class="dark-red-text">Before Getting Started: How to Download Data </span> </strong></div>
+        <p> 
+          Before beginning, please review how to download data:
+        </p>
+        <div class="text-h6">How do I download existing data?</div>
+        <p>To download the whole dataset:</p>
+        <ol style="margin-top: 0;">
+          <li>Click the "Download" tab on the right-hand panel</li>
+          <li>Copy the command into your python terminal</li>
+        </ol>
+        <img src="/documentation-images/download_dandiset.png" alt="Download Dandiset" />
+
+        <div class="text-h6">How do I download a specific file?</div>
+        <p>To download specific files:</p>
+        <ol style="margin-top: 0;">
+          <li>Navigate to the URL of the dataset of interest</li>
+          <li>Click on the "Files" tab on the right-hand panel</li>
+          <li>Navigate to the folder containing the desired file</li>
+          <li>Click the downward pointing arrow icon to download the file</li>
+        </ol> <!-- This is where the closing tag for the ol should be -->
+        <img
+          src="/documentation-images/files_tab.png"
+          alt="Files Tab"
+          style="width: 1200px; height: auto"
+        />
+
+          <div class="text-h5"> <strong> <span class="dark-red-text"> Getting Started: I'm new to Python, CLI, and/or DANDI </span> </strong></div>
           <p>
             If you're new to Python, follow these instructions to get Python and a virtual Anaconda
             environment installed:
@@ -39,7 +79,7 @@
           </ol>
 
           <div class="text-h6">How do I upload data?</div>
-          <ol>
+          <ol style="margin-top: 0;">
             <li>
               Create a GitHub account
               <LinkText text="here" uri="https://github.com/" />
@@ -58,7 +98,7 @@
           </ol>
 
           <div class="text-h6">Convert files to appropriate standards</div>
-          <ol>
+          <ol style="margin-top: 0;">
             <li>
               <LinkText
                 text="Install NWB GUIDE"
@@ -108,7 +148,7 @@
           </ol>
 
           <div class="text-h6">Create an EMBER-DANDIset</div>
-          <ol>
+          <ol style="margin-top: 0;">
             <li>Log in to EMBER-DANDI with your approved GitHub account</li>
             <li>Select the "New Dandiset" button in the top right corner</li>
             <li>Fill out basic metadata and hit "Register Dandiset"</li>
@@ -119,8 +159,10 @@
             />
           </ol>
 
+
           <div class="text-h6">Upload the converted files</div>
-          <ol>
+          
+          <ol style="margin-top: 0;">
             <li>
               In the python terminal in your ember-dandi specific environment, run: `pip install -U
               dandi`
@@ -148,28 +190,9 @@ dandi upload -i ember
 <img src="/documentation-images/API_key.png" alt="API Key" style="width: 500px; height: auto;">
 </pre>
             </li>
-          </ol>
-          <div class="text-h6">How do I download existing data?</div>
-          <p>To download the whole dataset:</p>
-          <ol>
-            <li>Click the "Download" tab on the right-hand panel</li>
-            <li>Copy the command into your python terminal</li>
-          </ol>
-          <img src="/documentation-images/download_dandiset.png" alt="Download Dandiset" />
-          <p>To download specific files:</p>
-          <ol>
-            <li>Navigate to the URL of the dataset of interest</li>
-            <li>Click on the "Files" tab on the right-hand panel</li>
-            <img
-              src="/documentation-images/files_tab.png"
-              alt="Files Tab"
-              style="width: 1200px; height: auto"
-            />
-            <li>Navigate to the folder containing the desired file</li>
-            <li>Click the downward pointing arrow icon to download the file</li>
-          </ol>
+        </ol>
 
-          <div class="text-h5">I've used DANDI or CLI tools before!</div>
+          <div class="text-h5"><strong> <span class="dark-red-text"> Getting Started: I've used DANDI or CLI tools before </span> </strong></div>
           <p>For experienced users, the steps for uploading data are as follows:</p>
           <pre class="commands">
 dandi download https://dandi.emberarchive.org/dandiset/&lt;dataset_id&gt;/draft
@@ -182,9 +205,10 @@ dandi upload -i ember
           >
           <p>
             For downloading data, use the standard procedures from the DANDI documentation
-            <LinkText text="here" uri="https://docs.dandiarchive.org/12_download/" />
+            <LinkText text="here" uri="https://docs.dandiarchive.org/12_download/"/>
             .
           </p>
+
         </q-card-section>
       </q-card>
     </div>
@@ -202,5 +226,12 @@ import PageTitle from 'src/components/PageTitle.vue';
 }
 .commands {
   margin-left: 40px; /* Indent the command block */
+}
+a {
+  color: #8B0000; /* Dark red color */
+  text-decoration: underline; /* Ensures it looks clickable */
+}
+.dark-red-text {
+  color: #8B0000; /* Dark red color */
 }
 </style>
