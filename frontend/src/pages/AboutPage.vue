@@ -4,9 +4,6 @@
     <div class="q-mx-xl">
       <q-card flat class="q-mt-lg">
         <q-card-section>
-          <!-- <p>We are a team of research scientists and engineers who...</p> -->
-          <!-- TODO -->
-
           <p>
             In September 2024, our team at the
             <LinkText :link="links.jhuapl" />
