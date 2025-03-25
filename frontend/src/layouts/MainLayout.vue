@@ -19,7 +19,11 @@
               :to="tab.external ? undefined : tab.route"
               :href="tab.external ? tab.route : undefined"
               :target="tab.external ? '_blank' : undefined"
-              @mouseenter="() => {if (tab.dropdown) tab.dropdown.show = true}"
+              @mouseenter="
+                () => {
+                  if (tab.dropdown) tab.dropdown.show = true;
+                }
+              "
               flat
               class="full-height"
             >
@@ -31,7 +35,11 @@
                 auto-close
                 anchor="bottom middle"
                 self="top middle"
-                @mouseleave="() => {if (tab.dropdown) tab.dropdown.show = false}"
+                @mouseleave="
+                  () => {
+                    if (tab.dropdown) tab.dropdown.show = false;
+                  }
+                "
               >
                 <q-list>
                   <q-item
@@ -57,7 +65,11 @@
               :key="tab.name"
               :to="tab.external ? undefined : tab.route"
               :href="tab.external ? tab.route : undefined"
-              @mouseenter="() => {if (tab.dropdown) tab.dropdown.show = true}"
+              @mouseenter="
+                () => {
+                  if (tab.dropdown) tab.dropdown.show = true;
+                }
+              "
               clickable
               class="toolbar-link items-center"
             >
@@ -70,7 +82,11 @@
                 auto-close
                 anchor="center left"
                 self="center right"
-                @mouseleave="() => {if (tab.dropdown) tab.dropdown.show = false}"
+                @mouseleave="
+                  () => {
+                    if (tab.dropdown) tab.dropdown.show = false;
+                  }
+                "
               >
                 <q-list>
                   <q-item
