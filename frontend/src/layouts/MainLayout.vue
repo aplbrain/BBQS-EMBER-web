@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-white" :class="$q.screen.gt.xs ? 'q-px-xl' : ''">
+    <q-header elevated class="bg-white" :class="$q.screen.gt.sm ? 'q-px-xl' : ''">
       <q-toolbar class="text-primary row items-stretch">
         <q-btn
           to="/"
@@ -11,30 +11,96 @@
           icon-right="img:ember-logo.png"
         />
         <q-space />
-        <q-tabs v-if="$q.screen.gt.xs" class="row items-stretch">
-          <q-btn
-            v-for="tab in tabs"
-            :key="tab.name"
-            :label="tab.name"
-            :to="tab.route"
-            :href="tab.external ? tab.route : undefined"
-            :target="tab.external ? '_blank' : undefined"
-            flat
-            class="full-height"
-          >
-            <q-icon v-if="tab.external" class="q-ml-sm" size="xs" name="launch" />
-          </q-btn>
+        <!-- Large screens: display tabs acorss the top -->
+        <q-tabs v-if="$q.screen.gt.sm" class="row items-stretch">
+          <div v-for="tab in tabs" :key="tab.name" class="full-height">
+            <q-route-tab
+              :label="tab.name"
+              :to="tab.external ? undefined : tab.route"
+              :href="tab.external ? tab.route : undefined"
+              :target="tab.external ? '_blank' : undefined"
+              @mouseenter="
+                () => {
+                  if (tab.dropdown) tab.dropdown.show = true;
+                }
+              "
+              flat
+              class="full-height"
+            >
+              <q-icon v-if="tab.external" class="q-ml-sm" size="xs" name="launch" />
+              <q-menu
+                v-if="tab.dropdown"
+                v-model="tab.dropdown.show"
+                fit
+                auto-close
+                anchor="bottom middle"
+                self="top middle"
+                @mouseleave="
+                  () => {
+                    if (tab.dropdown) tab.dropdown.show = false;
+                  }
+                "
+              >
+                <q-list>
+                  <q-item
+                    v-for="subtab in tab.dropdown.children"
+                    :key="subtab.name"
+                    :to="subtab.route"
+                    :href="subtab.external ? subtab.route : undefined"
+                    :target="subtab.external ? '_blank' : undefined"
+                    class="text-primary items-center"
+                  >
+                    {{ subtab.name }}
+                  </q-item>
+                </q-list>
+              </q-menu>
+            </q-route-tab>
+          </div>
         </q-tabs>
-        <q-btn-dropdown v-if="$q.screen.lt.sm" auto-close stretch flat label="Menu">
+        <!-- Small Screens: display tabs in a menu dropdown -->
+        <q-btn-dropdown v-if="$q.screen.lt.md" auto-close stretch flat label="Menu">
           <q-list>
             <q-item
               v-for="tab in tabs"
               :key="tab.name"
-              :to="tab.route"
+              :to="tab.external ? undefined : tab.route"
+              :href="tab.external ? tab.route : undefined"
+              @mouseenter="
+                () => {
+                  if (tab.dropdown) tab.dropdown.show = true;
+                }
+              "
               clickable
-              class="toolbar-link"
+              class="toolbar-link items-center"
             >
-              <q-item-section>{{ tab.name }}</q-item-section>
+              {{ tab.name }}
+              <q-icon v-if="tab.external" class="q-ml-sm" size="xs" name="launch" />
+              <q-menu
+                v-if="tab.dropdown"
+                v-model="tab.dropdown.show"
+                fit
+                auto-close
+                anchor="center left"
+                self="center right"
+                @mouseleave="
+                  () => {
+                    if (tab.dropdown) tab.dropdown.show = false;
+                  }
+                "
+              >
+                <q-list>
+                  <q-item
+                    v-for="subtab in tab.dropdown.children"
+                    :key="subtab.name"
+                    :to="subtab.route"
+                    :href="subtab.external ? subtab.route : undefined"
+                    :target="subtab.external ? '_blank' : undefined"
+                    class="text-primary items-center"
+                  >
+                    {{ subtab.name }}
+                  </q-item>
+                </q-list>
+              </q-menu>
             </q-item>
           </q-list>
         </q-btn-dropdown>
@@ -66,21 +132,28 @@
 </template>
 
 <script setup lang="ts">
+import { defaultTabs } from 'src/constants/mainLayout';
 import { Tab } from 'src/models/mainLayout';
+import { ref } from 'vue';
 
-const tabs: Tab[] = [
-  { name: 'Projects', route: '/projects' },
-  { name: 'Data', route: 'https://dandi.emberarchive.org/', external: true },
-  { name: 'Documentation', route: '/documentation' },
-  { name: 'Getting Started', route: '/getting-started' },
-  { name: 'Tools', route: '/tools' },
-  { name: 'Metadata', route: '/metadata' },
-  { name: 'About', route: '/about' },
-];
+const tabs = ref<Tab[]>(defaultTabs);
 </script>
 
-<style>
+<style lang="scss">
 .q-icon > img {
   width: auto;
+}
+
+.q-tab__content {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.bg-primary-opacity-15 {
+  background-color: rgba($primary, 0.15);
+}
+
+.q-list > .q-item {
+  font-size: 0.9rem;
 }
 </style>
