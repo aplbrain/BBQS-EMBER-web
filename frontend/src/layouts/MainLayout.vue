@@ -1,7 +1,11 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-white" :class="$q.screen.gt.sm ? 'q-px-xl' : ''">
-      <q-toolbar class="text-primary row items-stretch">
+    <q-header elevated class="bg-white">
+      <div class="col-12 bg-grey-3 text-black text-body2 text-center">
+        This repository is under review for potential modification in compliance with Administration
+        directives.
+      </div>
+      <q-toolbar class="text-primary row items-stretch" :class="$q.screen.gt.sm ? 'q-px-xl' : ''">
         <q-btn
           to="/"
           class="q-py-md"
