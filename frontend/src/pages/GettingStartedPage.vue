@@ -111,19 +111,13 @@
 
         <!-- <q-card-section>
           <div class="row justify-between">
-            <div class="col-12 col-md-4 column flex-center">
+            <div class="col-12 col-md-6 column flex-center">
               <div class="text-h4">EMBER-DANDI</div>
               <p>...</p>
               <q-btn label="EMBER-DANDI - coming soon"></q-btn>
             </div>
 
-            <div class="col-12 col-md-4 column flex-center">
-              <div class="text-h4">EMBER-DABI</div>
-              <p>...</p>
-              <q-btn label="EMBER-DABI - coming soon"></q-btn>
-            </div>
-
-            <div class="col-12 col-md-4 column flex-center">
+            <div class="col-12 col-md-6 column flex-center">
               <div class="text-h4">EMBER-PHI/PII</div>
               <p>...</p>
               <q-btn label="EMBER-PHI/PII - coming soon"></q-btn>

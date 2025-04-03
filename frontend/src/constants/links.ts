@@ -30,10 +30,6 @@ export const links: Record<string, Link> = {
     text: 'Distributed Archives for Neurophysiology Data Integration (DANDI)',
     uri: 'https://dandiarchive.org/',
   },
-  dabi_full: {
-    text: 'Data Archive for the BRAIN Initiative (DABI)',
-    uri: 'https://dabi.loni.usc.edu/',
-  },
   open_data: {
     text: 'Open Data',
     uri: 'https://aws.amazon.com/opendata',

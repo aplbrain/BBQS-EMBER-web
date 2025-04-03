@@ -43,20 +43,19 @@
               uri="https://braininitiative.nih.gov/research/neuroimaging-technologies-across-scales/brain-initiative-connectivity-across-scales"
             />
             ). Our effort will further crucially leverage existing BRAIN resources for large neural
-            data storage that have already been created and is widely used in the community: namely,
+            data storage that have already been created and are widely used in the community:
+            namely,
             <LinkText :link="links.dandi_full" />
-            and
-            <LinkText :link="links.dabi_full" />
-            , which have been developed and maintained by members of our team. The infrastructure
-            for storage is generously supported by the Amazon Web Services (AWS)
+            , which has been developed and maintained by members of our team. The infrastructure for
+            storage is generously supported by the Amazon Web Services (AWS)
             <LinkText :link="links.open_data" />
             program.
           </p>
 
           <p>
-            Integral to EMBER's success will be acceptance in the community (i.e., you) as the
-            gold-standard engine for discovery. We will nurture bidirectional collaboration with the
-            data generators, analysts, as well as the broader neuroscience research community to
+            Integral to EMBER's success will be acceptance in the community as the gold-standard
+            engine for discovery. We will nurture bidirectional collaboration with the data
+            generators, analysts, as well as the broader neuroscience research community to
             introduce and maintain tools for sharing, querying, and analyzing data. EMBER will
             maximize the BBQS program's potential to reach its ambitious objectives of transforming
             our understanding of the link between brain and behavior.
