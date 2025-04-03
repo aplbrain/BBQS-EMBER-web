@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <PageTitle title="Projects" />
-    <div class="q-ma-xl row">
+    <div class="q-mx-xl row">
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <p>
@@ -35,7 +35,7 @@
       </q-card>
     </div>
 
-    <div class="q-ma-xl row justify-center">
+    <div class="q-mx-xl q-px-md row justify-center">
       <q-table
         :rows="initialProjectList"
         :columns="ProjectTableColumns"

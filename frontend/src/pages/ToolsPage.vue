@@ -1,7 +1,7 @@
 <template>
   <q-page class="column items-center">
     <PageTitle title="Tools" />
-    <div class="q-ma-xl">
+    <div class="q-mx-xl">
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <p>
