@@ -59,4 +59,3 @@ Our repository includes automated testing and formatting checks using GitLab CI/
   ```bash
   yarn run format
   ```
-
