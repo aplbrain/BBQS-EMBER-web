@@ -1,38 +1,10 @@
 # Ember Archive web application
 
-This repository contains the code for the front-end website for the NIH-funded BBQS EMBER Data Archive, allowing users to view information about the program, search projects, and submit data.
-
-## Prerequisities
-
-- [Node.js](https://nodejs.org/en) v20
-- Yarn 
-
-## Install
-
-### Frontend
-
-1. Install dependencies
-
-    ```bash
-    yarn install
-    ```
+This repository contains the web application code for the NIH-funded Brain Behavior Quantification and Synchronization (BBQS) Ecosystem for Multi-modal Brain-behavior Experimentation and Research (EMBER) Data Archive. This web application allows users to view information about the program, search projects, and submit data.
 
 ## Development
 
-### Frontend
-
-1. Start the application in development mode
-
-    ```bash
-    yarn quasar dev
-    ```
-
-1. The frontend should now be running at [http://localhost:9000](). The application will reload as you make edits.
-
-
-## Deployment
-
-
+- Please refer to the [frontend][frontend/] README.md
 
 ## Contributing
 
