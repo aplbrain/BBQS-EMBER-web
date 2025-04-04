@@ -1,43 +1,64 @@
-# EMBER Web App (frontend)
+# EMBER Archive Frontend
 
-A Quasar Project
+A Vue.js 3 / Quasar Project
 
-## Install the dependencies
+## Prerequisities
 
-```bash
-yarn
-# or
-npm install
-```
+- [Node.js](https://nodejs.org/en) v20
+  - We recommend using `nvm` to manage Node.js versions. Follow the instructions [here](https://github.com/nvm-sh/nvm) for Linux or [here](https://github.com/coreybutler/nvm-windows) for Windows.
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+## Install
 
-```bash
-quasar dev
-```
+1. (Recommend) Ensure you have `nvm` installed and enabled
 
-### Lint the files
+   ```bash
+   nvm on
+   nvm use
+   ```
 
-```bash
-yarn lint
-# or
-npm run lint
-```
+   _Note: For Windows users, if you needed to modify any environment variables, make sure you close and restart any terminals before trying to run nvm or npm commands_
 
-### Format the files
+   - nvm use will activate the Node.js version specified in frontend/.nvmrc
+
+1. Install dependencies
 
 ```bash
-yarn format
-# or
-npm run format
+yarn install
 ```
 
-### Build the app for production
+## Development
 
-```bash
-quasar build
-```
+1. Start the application in development mode
 
-### Customize the configuration
+   ```bash
+   yarn quasar dev
+   ```
 
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+1. The frontend should now be running at [http://localhost:9000](). The application will reload as you make edits.
+
+## Testing
+
+### Continuous Integration (CI) for Frontend
+
+This repository uses a **GitHub Actions** workflow to ensure code quality by running **ESLint** and **Prettier** checks.
+
+The workflow is triggered **on every pull request** and runs the following jobs:
+
+#### ESLint Check
+
+- **Job**: `link-check`
+- **Purpose**: Runs [ESLint](https://eslint.org/) to identify and enforce coding style and best practices.
+- **Failure Resolution**:
+    - Run `yarn run lint` locally to see the errors.
+    - Fix the reported linting issues.
+        - This can either be done manually, or with `yarn run lint-fix`
+    - Commit and push the changes.
+
+#### Prettier Check
+
+- **Job**: `format-check`
+- **Purpose**: Runs [Prettier](https://prettier.io/) to check if the code follows the required formatting.
+- **Failure Resolution**:
+    - Run `yarn run format-check` locally to see the errors.
+    - Run `yarn run format` locally to automatically fix formatting issues.
+    - Commit and push the changes.
