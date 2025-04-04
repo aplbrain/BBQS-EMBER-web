@@ -22,9 +22,9 @@ A Vue.js 3 / Quasar Project
 
 1. Install dependencies
 
-```bash
-yarn install
-```
+   ```bash
+   yarn install
+   ```
 
 ## Development
 
@@ -49,16 +49,16 @@ The workflow is triggered **on every pull request** and runs the following jobs:
 - **Job**: `link-check`
 - **Purpose**: Runs [ESLint](https://eslint.org/) to identify and enforce coding style and best practices.
 - **Failure Resolution**:
-    - Run `yarn run lint` locally to see the errors.
-    - Fix the reported linting issues.
-        - This can either be done manually, or with `yarn run lint-fix`
-    - Commit and push the changes.
+  - Run `yarn run lint` locally to see the errors.
+  - Fix the reported linting issues.
+    - This can either be done manually, or with `yarn run lint-fix`
+  - Commit and push the changes.
 
 #### Prettier Check
 
 - **Job**: `format-check`
 - **Purpose**: Runs [Prettier](https://prettier.io/) to check if the code follows the required formatting.
 - **Failure Resolution**:
-    - Run `yarn run format-check` locally to see the errors.
-    - Run `yarn run format` locally to automatically fix formatting issues.
-    - Commit and push the changes.
+  - Run `yarn run format-check` locally to see the errors.
+  - Run `yarn run format` locally to automatically fix formatting issues.
+  - Commit and push the changes.
