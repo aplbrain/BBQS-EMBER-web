@@ -4,7 +4,7 @@ This repository contains the web application code for the NIH-funded Brain Behav
 
 ## Development
 
-- Please refer to the [frontend][frontend/] README.md
+- Please refer to the [frontend](frontend/) README.md
 
 ## Contributing
 
