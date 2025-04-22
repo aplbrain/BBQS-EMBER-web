@@ -1,7 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-white">
-      <div class="col-12 bg-grey-3 text-black text-body2 text-center">
+      <div class="col-12 bg-warning text-black text-body row flex-center q-py-sm">
+        <q-icon name="info" size="sm" class="q-px-xs" />
         This repository is under review for potential modification in compliance with Administration
         directives.
       </div>
