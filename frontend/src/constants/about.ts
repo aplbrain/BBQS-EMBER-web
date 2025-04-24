@@ -3,7 +3,7 @@
  *
  * Contains organizations, team members, and image paths to populate the About page.
  */
-import { OrganizationTeam } from 'src/models/about';
+import type { OrganizationTeam } from 'src/models/about';
 
 export const team: OrganizationTeam[] = [
   {
