@@ -33,7 +33,7 @@ export default defineConfig((/* ctx */) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
       target: {
-        browser: [ 'es2022', 'firefox115', 'chrome115', 'safari14' ],
+        browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',
       },
 
@@ -41,8 +41,8 @@ export default defineConfig((/* ctx */) => {
         strict: true, // (recommended) enables strict settings for TypeScript
         vueShim: true, // required when using ESLint with type-checked rules, will generate a shim file for `*.vue` files
         // extendTsConfig(_tsConfig) {
-          // You can use this hook to extend tsConfig dynamically
-          // For basic use cases, you can still update the usual tsconfig.json file to override some settings
+        // You can use this hook to extend tsConfig dynamically
+        // For basic use cases, you can still update the usual tsconfig.json file to override some settings
         // },
       },
 
@@ -204,7 +204,7 @@ export default defineConfig((/* ctx */) => {
        *
        * @example [ 'my-script.ts', 'sub-folder/my-other-script.js' ]
        */
-      extraScripts: []
+      extraScripts: [],
     },
   };
 });
