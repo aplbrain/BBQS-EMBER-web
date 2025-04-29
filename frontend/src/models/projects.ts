@@ -1,4 +1,4 @@
-import { QTableColumn } from 'quasar';
+import type { QTableColumn } from 'quasar/dist/types/api/qtable.js';
 import { getDateString } from 'src/utils/date';
 
 export interface ProjectMetadata {
@@ -86,7 +86,7 @@ export const ProjectTableColumns: QTableColumn[] = [
     align: 'left',
     field: (row) =>
       row.contributors.filter((c: Contributor) =>
-        c.roles.includes(ContributorRole.contactPrincipalInvestigator)
+        c.roles.includes(ContributorRole.contactPrincipalInvestigator),
       ),
     required: true,
     sortable: true,

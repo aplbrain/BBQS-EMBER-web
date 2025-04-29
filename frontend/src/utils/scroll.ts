@@ -1,4 +1,4 @@
-import { Ref } from 'vue';
+import type { Ref } from 'vue';
 
 function scrollTo(view: Ref<HTMLElement | null>) {
   view.value?.scrollIntoView({ behavior: 'smooth' });

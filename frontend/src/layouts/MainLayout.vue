@@ -138,7 +138,7 @@
 
 <script setup lang="ts">
 import { defaultTabs } from 'src/constants/mainLayout';
-import { Tab } from 'src/models/mainLayout';
+import type { Tab } from 'src/models/mainLayout';
 import { ref } from 'vue';
 
 const tabs = ref<Tab[]>(defaultTabs);

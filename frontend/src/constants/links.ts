@@ -3,7 +3,7 @@
  *
  * Contains commonly re-used links throughout the website.
  */
-import { Link } from 'src/models/common';
+import type { Link } from 'src/models/common';
 
 export const links: Record<string, Link> = {
   brain_initiative: {
