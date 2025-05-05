@@ -21,7 +21,9 @@
                 <li clickable @click="scrollTo(ref(experiencedUserSection))" class="cursor-pointer">
                   I've used DANDI or CLI tools before
                 </li>
-                <li  clickable @click="scrollTo(ref(newUserSection))" class="cursor-pointer">I'm new to Python, CLI, and/or DANDI</li>
+                <li clickable @click="scrollTo(ref(newUserSection))" class="cursor-pointer">
+                  I'm new to Python, CLI, and/or DANDI
+                </li>
                 <ul>
                   <li>Set up Python and your environment, install DANDI CLI</li>
                   <li>How do I upload data?</li>
