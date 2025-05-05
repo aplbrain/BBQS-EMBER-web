@@ -13,36 +13,35 @@
             data file structures and object types involved.
           </p>
           <p>Please follow the instructions for the option that best fits your needs:</p>
-          <div style="padding-left: 20px; margin-bottom: 0">
-            <strong><span class="dark-red-text">My files are all in NWB and BIDS:</span></strong>
+          <div class="q-pl-md">
+            <div class="text-primary text-bold">My files are all in NWB and BIDS:</div>
             There is one set of instructions for novice users, and one set for experienced users of
             DANDI. Navigate to a section depending on your experience with each tool:
-            <ol style="padding-left: 50px; margin-top: 0; margin-bottom: 0">
-              <li>I'm new to Python, CLI, and/or DANDI</li>
-              <ul>
-                <li>Set up Python and your environment, install DANDI CLI</li>
-                <li>How do I upload data?</li>
-              </ul>
-              <li>I've used DANDI or CLI tools before</li>
-            </ol>
+            <div class="q-pl-md">
+              <ol>
+                <li>I've used DANDI or CLI tools before</li>
+                <li>I'm new to Python, CLI, and/or DANDI</li>
+                <ul>
+                  <li>Set up Python and your environment, install DANDI CLI</li>
+                  <li>How do I upload data?</li>
+                </ul>
+              </ol>
+            </div>
           </div>
-          <p style="padding-left: 20px">
-            <strong
-              ><span class="dark-red-text"
-                >My files are in a mix of standards or I do not use standards:</span
-              ></strong
-            >
+          <div class="q-pl-md">
+            <div class="text-primary text-bold">
+              My files are in a mix of standards or I have not used standards:
+            </div>
             Please contact the EMBER team at
             <LinkText text="emberarchive@jhuapl.edu" uri="mailto:emberarchive@jhuapl.edu/" /> to
             facilitate data ingestion into the EMBER Data Archive. We are also happy to add you to
             our Slack workspace.
-          </p>
-
-          <div class="page-break"></div>
-          <!-- Visual page break -->
-
+          </div>
+        </q-card-section>
+        <q-separator class="q-my-lg" />
+        <q-card-section>
           <div class="text-h5">
-            <strong> <span class="dark-red-text">Downloading Data: </span> </strong>
+            <span class="text-primary text-bold">Downloading Data</span>
           </div>
           <p>Before getting started, please review how to download data:</p>
           <div class="text-h6">How do I download existing data?</div>
@@ -52,7 +51,13 @@
             <li>Click the "Download" tab on the right-hand panel</li>
             <li>Copy the command into your python terminal and hit enter</li>
           </ol>
-          <img src="/documentation-images/download_dandiset.png" alt="Download Dandiset" />
+          <div class="row flex-center">
+            <img
+              class="self-center col-4"
+              src="/documentation-images/download_dandiset.png"
+              alt="Download Dandiset"
+            />
+          </div>
 
           <div class="text-h6">How do I download a specific file?</div>
           <p>To download specific files:</p>
@@ -62,50 +67,73 @@
             <li>Navigate to the folder containing the desired file</li>
             <li>Click the downward pointing arrow icon to download the file</li>
           </ol>
-          <!-- This is where the closing tag for the ol should be -->
-          <img
-            src="/documentation-images/files_tab.png"
-            alt="Files Tab"
-            style="width: 1200px; height: auto"
-          />
 
-          <div class="page-break"></div>
-          <!-- Visual page break -->
-
+          <div class="row flex-center">
+            <img
+              src="/documentation-images/files_tab.png"
+              alt="Files Tab"
+              class="self-center col-10"
+            />
+          </div>
+        </q-card-section>
+        <q-separator class="q-my-lg" />
+        <q-card-section>
           <div class="text-h5">
-            <strong>
-              <span class="dark-red-text"> 1. I'm new to Python, CLI, and/or DANDI: </span>
-            </strong>
+            <span class="text-primary text-bold">1. I've used DANDI or CLI tools before: </span>
+          </div>
+          <p>For experienced users, the steps for uploading data are as follows:</p>
+          <q-card flat class="bg-grey-2 q-ml-lg q-py-xs q-px-md">
+            <pre><code>dandi download https://dandi.emberarchive.org/dandiset/&lt;dataset_id&gt;/draft
+cd &lt;dataset_id&gt;
+dandi organize "source_folder" -f dry
+dandi organize "source_folder"
+dandi validate .
+dandi upload -i ember</code></pre>
+          </q-card>
+          <p>
+            For downloading data, use the standard procedures from the DANDI documentation
+            <LinkText text="here" uri="https://docs.dandiarchive.org/12_download/" />
+            .
+          </p>
+        </q-card-section>
+        <q-separator class="q-my-lg" />
+        <q-card-section>
+          <div class="text-h5">
+            <span class="text-primary text-bold">2. I'm new to Python, CLI, and/or DANDI: </span>
           </div>
           <p>
             If you're new to Python, follow these instructions to get Python and a virtual Anaconda
             environment installed:
           </p>
+
+          <div class="text-h6">How do I install Python?</div>
+          There are many ways to install and use Python, so we've highlighted one common way to get
+          you started.
           <ol>
             <li>
-              <LinkText text="Install Anaconda" uri="https://www.anaconda.com/docs/main" /> to get
-              Python and standard data science/machine learning packages, and a desktop application
+              <LinkText
+                text="Install Anaconda"
+                uri="https://www.anaconda.com/docs/getting-started/getting-started"
+              />
+              to get Python and standard data science/machine learning packages, and a desktop
+              application
             </li>
             <li>After installing, launch the Anaconda Navigator</li>
             <li>Navigate to the "Environments" tab on the left pane</li>
             <li>Create a new environment with your desired name</li>
-            <img
-              src="/documentation-images/anaconda_navigator.png"
-              alt="Anaconda Navigator"
-              style="width: 1000px; height: auto"
-            />
-
             <li>
               Click on the newly created environment, press the "Play" icon and select "Open
               Terminal"
             </li>
-
-            <li>
-              In the python terminal in your ember-dandi specific environment, install the DANDI
-              Client:
-              <pre> pip install -U dandi</pre>
-            </li>
           </ol>
+
+          <div class="text-h6">
+            How do I install the
+            <LinkText text="DANDI CLient" uri="https://pypi.org/project/dandi/" />?
+          </div>
+          <q-card flat class="bg-grey-2 q-ml-lg q-py-xs q-px-md">
+            <pre><code>pip install -U dandi</code></pre>
+          </q-card>
 
           <div class="text-h6">How do I upload data?</div>
           <ol style="margin-top: 0">
@@ -174,11 +202,6 @@
                 uri="https://nwb-guide.readthedocs.io/en/stable/format_support.html"
               />
             </li>
-            <img
-              src="/documentation-images/ecosystem.png"
-              alt="Ecosystem"
-              style="width: 850px; height: auto"
-            />
           </ol>
 
           <div class="text-h6">Create an EMBER-DANDIset</div>
@@ -186,11 +209,13 @@
             <li>Log in to EMBER-DANDI with your approved GitHub account</li>
             <li>Select the "New Dandiset" button in the top right corner</li>
             <li>Fill out basic metadata and hit "Register Dandiset"</li>
-            <img
-              src="/documentation-images/register_new_dandiset.png"
-              alt="New Dandiset"
-              style="width: 1200px; height: auto"
-            />
+            <div class="row flex-center">
+              <img
+                src="/documentation-images/register_new_dandiset.png"
+                alt="New Dandiset"
+                class="self-center col-8"
+              />
+            </div>
           </ol>
 
           <div class="text-h6">Upload the converted files</div>
@@ -205,48 +230,29 @@
               files: `dandi validate --ignore DANDI.NO_DANDISET_FOUND "source_folder"`
             </li>
             <li>Navigate to your dataset in the EMBER-DANDI archive and note the ID number</li>
-            <img
-              src="/documentation-images/test_number_data.png"
-              alt="Test Number Data"
-              style="width: 900px; height: auto"
-            />
+            <div class="row flex-center">
+              <img
+                src="/documentation-images/test_number_data.png"
+                alt="Test Number Data"
+                class="self-center col-8"
+              />
+            </div>
             <li>
               Upload your validated .nwb files using the following commands, replacing
               `&lt;dataset_id&gt;` and `source_folder` with your specific information:
-              <pre>
-dandi download https://dandi.emberarchive.org/dandiset/&lt;dataset_id&gt;/draft
+              <q-card flat class="bg-grey-2 q-ml-lg q-py-xs q-px-md">
+                <pre><code>dandi download https://dandi.emberarchive.org/dandiset/&lt;dataset_id&gt;/draft
 cd &lt;dataset_id&gt;
 dandi organize "source_folder" -f dry
 dandi organize "source_folder"
 dandi validate .
-dandi upload -i ember
-<img src="/documentation-images/API_key.png" alt="API Key" style="width: 500px; height: auto;">
-</pre>
+dandi upload -i ember</code></pre>
+              </q-card>
             </li>
           </ol>
-          <div class="page-break"></div>
-          <!-- Visual page break -->
-
-          <div class="text-h5">
-            <strong>
-              <span class="dark-red-text"> 2. I've used DANDI or CLI tools before: </span>
-            </strong>
+          <div class="row flex-center">
+            <img src="/documentation-images/API_key.png" alt="API Key" class="self-center col-4" />
           </div>
-          <p>For experienced users, the steps for uploading data are as follows:</p>
-          <pre class="commands">
-dandi download https://dandi.emberarchive.org/dandiset/&lt;dataset_id&gt;/draft
-cd &lt;dataset_id&gt;
-dandi organize "source_folder" -f dry
-dandi organize "source_folder"
-dandi validate .
-dandi upload -i ember
-</pre
-          >
-          <p>
-            For downloading data, use the standard procedures from the DANDI documentation
-            <LinkText text="here" uri="https://docs.dandiarchive.org/12_download/" />
-            .
-          </p>
         </q-card-section>
       </q-card>
     </div>
@@ -261,18 +267,5 @@ import PageTitle from 'src/components/PageTitle.vue';
 <style scoped>
 .q-item__section > .text-overline {
   font-size: 1rem;
-}
-.commands {
-  margin-left: 40px; /* Indent the command block */
-}
-
-.dark-red-text {
-  color: #8b0000; /* Dark red color */
-}
-
-.page-break {
-  margin-top: 50px; /* Adds vertical space */
-  border-top: 2px solid #ccc; /* Adds a horizontal line */
-  padding-top: 20px; /* Adds padding above the next content for separation */
 }
 </style>
