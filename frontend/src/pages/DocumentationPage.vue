@@ -4,7 +4,6 @@
     <div class="q-mx-xl">
       <q-card flat class="q-mt-lg">
         <q-card-section>
-          <div class="text-h2">Uploading to and Downloading Data from the EMBER-DANDI Archive</div>
           <p>
             EMBER is the BRAIN Initiative data archive for multi-modal neurophysiological and
             behavioral data. It serves as a platform for storing, sharing, and accessing multi-modal
@@ -19,8 +18,10 @@
             DANDI. Navigate to a section depending on your experience with each tool:
             <div class="q-pl-md">
               <ol>
-                <li>I've used DANDI or CLI tools before</li>
-                <li>I'm new to Python, CLI, and/or DANDI</li>
+                <li clickable @click="scrollTo(ref(experiencedUserSection))" class="cursor-pointer">
+                  I've used DANDI or CLI tools before
+                </li>
+                <li  clickable @click="scrollTo(ref(newUserSection))" class="cursor-pointer">I'm new to Python, CLI, and/or DANDI</li>
                 <ul>
                   <li>Set up Python and your environment, install DANDI CLI</li>
                   <li>How do I upload data?</li>
@@ -40,7 +41,7 @@
         </q-card-section>
         <q-separator class="q-my-lg" />
         <q-card-section>
-          <div class="text-h5">
+          <div class="text-h3">
             <span class="text-primary text-bold">Downloading Data</span>
           </div>
           <p>Before getting started, please review how to download data:</p>
@@ -78,7 +79,10 @@
         </q-card-section>
         <q-separator class="q-my-lg" />
         <q-card-section>
-          <div class="text-h5">
+          <div class="text-h3 q-mb-lg">
+            <span class="text-primary text-bold">Uploading Data</span>
+          </div>
+          <div class="text-h5 scrollable" ref="experiencedUserSection">
             <span class="text-primary text-bold">1. I've used DANDI or CLI tools before: </span>
           </div>
           <p>For experienced users, the steps for uploading data are as follows:</p>
@@ -96,9 +100,8 @@ dandi upload -i ember</code></pre>
             .
           </p>
         </q-card-section>
-        <q-separator class="q-my-lg" />
         <q-card-section>
-          <div class="text-h5">
+          <div class="text-h5 scrollable" ref="newUserSection">
             <span class="text-primary text-bold">2. I'm new to Python, CLI, and/or DANDI: </span>
           </div>
           <p>
@@ -260,8 +263,13 @@ dandi upload -i ember</code></pre>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
+import { scrollTo } from 'src/utils/scroll';
+
+const experiencedUserSection = ref<HTMLElement | null>(null);
+const newUserSection = ref<HTMLElement | null>(null);
 </script>
 
 <style scoped>
