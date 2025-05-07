@@ -22,9 +22,9 @@ A Vue.js 3 / Quasar Project
 
 1. Install dependencies
 
-```bash
-yarn install
-```
+   ```bash
+   yarn install
+   ```
 
 ## Development
 
@@ -38,24 +38,27 @@ yarn install
 
 ## Testing
 
-Our repository includes automated testing and formatting checks using GitLab CI/CD. The following is a list of tests that are run in the pipeline:
+### Continuous Integration (CI) for Frontend
 
-- Frontend Linting
+This repository uses a **GitHub Actions** workflow to ensure code quality by running **ESLint** and **Prettier** checks.
 
-  - Job: lint-test-frontend
-  - Description: Checks that frontend code follows linting rules using ESLint.
-  - Steps to Run:
+The workflow is triggered **on every pull request** and runs the following jobs:
 
-  ```bash
-  yarn run lint
-  ```
+#### ESLint Check
 
-- Frontend Formatting
+- **Job**: `link-check`
+- **Purpose**: Runs [ESLint](https://eslint.org/) to identify and enforce coding style and best practices.
+- **Failure Resolution**:
+  - Run `yarn run lint` locally to see the errors.
+  - Fix the reported linting issues.
+    - This can either be done manually, or with `yarn run lint-fix`
+  - Commit and push the changes.
 
-  - Job: format-test-frontend
-  - Description: Checks that frontend code is formatted correctly using Prettier.
-  - Steps to Run:
+#### Prettier Check
 
-  ```bash
-  yarn run format
-  ```
+- **Job**: `format-check`
+- **Purpose**: Runs [Prettier](https://prettier.io/) to check if the code follows the required formatting.
+- **Failure Resolution**:
+  - Run `yarn run format-check` locally to see the errors.
+  - Run `yarn run format` locally to automatically fix formatting issues.
+  - Commit and push the changes.

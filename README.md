@@ -4,8 +4,8 @@ This repository contains the web application code for the NIH-funded Brain Behav
 
 ## Development
 
-- Please refer to the [frontend][frontend/] README.md
+- Please refer to the [frontend](frontend/) README.md
 
 ## Contributing
 
-Contibutions are welcome through pull requests- please notify the BBQS EMBER team for review.
+Contibutions are welcome through pull requests. Please notify the BBQS EMBER team for review.

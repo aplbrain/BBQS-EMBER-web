@@ -1,4 +1,4 @@
-import { Tab } from 'src/models/mainLayout';
+import type { Tab } from 'src/models/mainLayout';
 
 export const defaultTabs: Tab[] = [
   { name: 'Projects', route: '/projects', external: false },

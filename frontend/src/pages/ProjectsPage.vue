@@ -81,12 +81,12 @@ import { getMonthYear } from 'src/utils/date';
 const projectCounts: Record<string, number> = {
   total: initialProjectList.length,
   r61r33: initialProjectList.filter(
-    (p) => p.funding.activityCode === 'R61' || p.funding.activityCode === 'R33'
+    (p) => p.funding.activityCode === 'R61' || p.funding.activityCode === 'R33',
   ).length,
   r34: initialProjectList.filter((p) => p.funding.activityCode === 'R34').length,
 };
 
 const earliestProjectStart: string = getMonthYear(
-  new Date(initialProjectList.map((p) => p.funding.startDate.getTime()).sort()[0])
+  new Date(initialProjectList.map((p) => p.funding.startDate.getTime()).sort()[0] || '01/01/2024'),
 );
 </script>
