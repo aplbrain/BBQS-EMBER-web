@@ -2647,6 +2647,11 @@ mimic-fn@^2.1.0:
   resolved "https://registry.npmjs.org/mimic-fn/-/mimic-fn-2.1.0.tgz"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
+mind-elixir@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/mind-elixir/-/mind-elixir-4.5.2.tgz#e1c75d5072b55d57cae3d6609a1d5bd609c6db33"
+  integrity sha512-PWPxspV56kdnR4PZ90QdCIPn4ckfHx/o6LTvtlHtlZNVhod5nCjFFFTp+28+wclmf2fg0+gOWU+bCGjrD6vv2Q==
+
 minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz"

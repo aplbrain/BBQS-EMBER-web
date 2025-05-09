@@ -38,6 +38,10 @@ const routes: RouteRecordRaw[] = [
         path: 'tos',
         component: () => import('pages/TermsOfService.vue'),
       },
+      {
+        path: 'BIDS-mindmap',
+        component: () => import('pages/BIDSMindMap.vue'),
+      },
     ],
   },
   // Always leave this as last one,
