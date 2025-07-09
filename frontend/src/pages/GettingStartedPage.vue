@@ -70,7 +70,7 @@
                 <q-item-label overline>Metadata</q-item-label>
                 <q-item-label>
                   Users can create an EMBER Project, specifying required and optional data for
-                  EMBERsets.
+                  dandisets.
                 </q-item-label>
               </q-item-section>
             </q-item>
