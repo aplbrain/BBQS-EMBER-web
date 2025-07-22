@@ -19,9 +19,38 @@
             As the BBQS program progresses, EMBER will be adding functionality to support PHI/PII
             data storage.
           </p>
+          <div class="text-h2 scrollable">Account Setup</div>
+          <q-list>
+            <q-item>
+              <q-item-section>
+                <q-item-label overline>Login & Approval</q-item-label>
+                <q-item-label>
+                  To create an account, users should log in through the
+                  <a href="https://dandi.emberarchive.org" target="_blank" class="link">
+                    EMBER-DANDI portal </a
+                  >. At this time, there is no login option on the main EMBER site (<a
+                    href="https://emberarchive.org"
+                    target="_blank"
+                    class="link"
+                    >emberarchive.org</a
+                  >). Users with a <code>.edu</code> email address will be automatically approved.
+                  All others will require manual approval by a member of the EMBER team.
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>
+                <q-item-label overline>Future Phases</q-item-label>
+                <q-item-label>
+                  In future phases, users can expect a separate login mechanism to support access to
+                  restricted data.
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
         </q-card-section>
       </q-card>
-
       <q-card flat class="q-mt-lg">
         <q-card-section>
           <div class="text-h2 scrollable" ref="complianceSection">Compliance</div>
