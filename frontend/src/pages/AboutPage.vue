@@ -73,7 +73,7 @@
             <div
               v-for="member in org.members"
               :key="member.name"
-              class="col-12 col-sm-4 col-md-3 column flex-center q-pa-md"
+              class="col-12 col-sm-4 col-md-3 col-lg-2 column flex-center q-pa-md"
               fit="cover"
             >
               <q-img :src="member.image" class="profile" ratio="1">
