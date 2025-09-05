@@ -18,6 +18,10 @@ export const team: OrganizationTeam[] = [
         image: 'team/han_yi.png',
       },
       {
+        name: 'Sandy Hider',
+        image: 'team/sandy_hider.png',
+      },
+      {
         name: 'Rahul Hingorani',
         image: 'team/rahul_hingorani.png',
       },
@@ -26,33 +30,33 @@ export const team: OrganizationTeam[] = [
         image: 'team/erik_johnson.png',
       },
       {
-        name: 'Mattson Ogg',
-        image: 'team/mattson_ogg.png',
+        name: 'Grace Bezold',
+        image: 'team/grace_bezold.png',
       },
       {
-        name: 'Sandy Hider',
-        image: 'team/sandy_hider.png',
-      },
-      {
-        name: 'Nicole Stock',
-        image: 'team/nicole_stock.png',
+        name: 'Lauren Diaz',
+        image: 'team/lauren_diaz.jpg',
       },
       {
         name: 'Nicole Guittari',
         image: 'team/nicole_guittari.png',
       },
       {
+        name: 'Mattson Ogg',
+        image: 'team/mattson_ogg.png',
+      },
+      {
         name: 'Neha Thomas',
         image: 'team/neha_thomas.png',
       },
       {
-        name: 'Lauren Diaz',
-        image: 'team/lauren_diaz.jpg',
+        name: 'Nicole Tregoning',
+        image: 'team/nicole_tregoning.png',
       },
     ],
   },
   {
-    name: 'University of California, Los Angeles',
+    name: 'Duke University',
     members: [
       {
         name: 'Nanthia Suthana (Co-I)',
@@ -64,16 +68,6 @@ export const team: OrganizationTeam[] = [
       },
     ],
   },
-  // TODO: In spring 2025, exact timeline TBD
-  // {
-  //   name: 'Duke University',
-  //   members: [
-  //     {
-  //       name: 'Nanthia Suthana (Co-I)',
-  //       image: 'team/nanthia_suthana.png',
-  //     },
-  //   ],
-  // },
   {
     name: 'University of Pennsylvania',
     members: [
@@ -89,6 +83,10 @@ export const team: OrganizationTeam[] = [
       {
         name: 'Yaroslav Halchenko (Co-I)',
         image: 'team/yaroslav_halchenko.png',
+      },
+      {
+        name: 'Cody Baker',
+        image: 'team/cody_baker.png',
       },
       {
         name: 'Austin Macdonald',
