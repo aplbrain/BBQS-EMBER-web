@@ -38,6 +38,10 @@ const routes: RouteRecordRaw[] = [
         path: 'tos',
         component: () => import('pages/TermsOfService.vue'),
       },
+      {
+        path: '/project/kumar2025',
+        component: () => import('pages/EmberProjectPage.vue'),
+      },
     ],
   },
   // Always leave this as last one,
