@@ -62,13 +62,14 @@
               <q-card-section>
                 <div class="text-subtitle1 q-mb-sm">How to access the data (Python)</div>
                 <q-banner rounded class="bg-grey-2 text-grey-9 q-mb-md">
-                  Install: <code>pip install intern</code>
+                  Install aws cli if not installed.
+                    <q-card flat bordered class="code-card">
+                    <q-card-section>
+                      <pre class="language-python"><code>{{ pythonSnippet }}</code></pre>
+                    </q-card-section>
+                  </q-card>
                 </q-banner>
-                <q-card flat bordered class="code-card">
-                  <q-card-section>
-                    <pre class="language-python"><code>{{ pythonSnippet }}</code></pre>
-                  </q-card-section>
-                </q-card>
+
               </q-card-section>
             </q-card>
 
@@ -197,7 +198,7 @@ const project = {
   uri: 'https://ember-open-data.s3.us-east-1.amazonaws.com/other/kumar2025/index.html'
 }
 
-const pythonSnippet = `# install aws cli if not installed\n# View contents of kumar2025\naws s3 ls s3://ember-open-data/other/kumar2025/\n\n# Copy specific file or whole directory\naws s3 cp s3://ember-open-data/other/kumar2025/somefile .`
+const pythonSnippet = `# View contents of kumar2025\naws s3 ls s3://ember-open-data/other/kumar2025/\n\n# Copy specific file or whole directory\naws s3 cp s3://ember-open-data/other/kumar2025/somefile .`
 
 async function copy (text: string): Promise<void> {
   try {
@@ -217,4 +218,6 @@ async function copy (text: string): Promise<void> {
 .break-all {
   word-break: break-all;
 }
+
+
 </style>
