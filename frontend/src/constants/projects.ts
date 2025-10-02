@@ -18,12 +18,8 @@ const initialProjectList: ProjectMetadata[] = [
       startDate: new Date('2025-09-01T12:09:00.000Z'),
       periodOfPerformance: 3,
       awardLink: '',
-      programOfficers: [
-        { name: 'Elizabeth Ankudowich' },
-      ],
-      principalInvestigators: [
-        { name: 'Joy Hirsch' },
-      ],
+      programOfficers: [{ name: 'Elizabeth Ankudowich' }],
+      principalInvestigators: [{ name: 'Joy Hirsch' }],
     },
     contributors: [
       {
@@ -50,18 +46,17 @@ const initialProjectList: ProjectMetadata[] = [
     approaches: [],
     dataGenerationSort: [],
   },
- {
+  {
     funding: {
-      awardTitle: 'Toward comprehensive models of naturalistic cooperation and competition in primates',
+      awardTitle:
+        'Toward comprehensive models of naturalistic cooperation and competition in primates',
       awardIdentifier: 'U01DA063534',
       activityCode: 'U01',
       awardeeOrganization: 'Yale University',
       startDate: new Date('2025-09-01T12:09:00.000Z'),
       periodOfPerformance: 5,
       awardLink: '',
-      programOfficers: [
-        { name: 'Holly Marie Moore' },
-      ],
+      programOfficers: [{ name: 'Holly Marie Moore' }],
       principalInvestigators: [
         { name: 'Steve W C Chang' },
         { name: 'Monika P Jadi' },
