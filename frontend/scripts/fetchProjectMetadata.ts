@@ -83,6 +83,8 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
 (async () => {
   const projects: ProjectMetadata[] = [];
   const grantNumbers: string[] = [
+    'U01DA063534',
+    'R61MH138705',
     'R61MH135106',
     'R34DA059510',
     'R34DA059509',
