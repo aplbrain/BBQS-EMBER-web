@@ -11,7 +11,7 @@ export const defaultTabs: Tab[] = [
       show: false,
       children: [
         { name: 'Documentation', route: '/documentation', external: false },
-        { name: 'Standards Overview', route: '/standards', external: false },
+        { name: 'Data Standards Overview', route: '/standards', external: false },
         { name: 'Workflow Guidance', route: '/guidance', external: false },
       ],
     },
