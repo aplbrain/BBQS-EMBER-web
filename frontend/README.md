@@ -9,7 +9,7 @@ This repository contains a Vue.js 3 + Quasar frontend supporting the EMBER Archi
 ## Prerequisities
 
 - [Node.js](https://nodejs.org/en) v20
-  - We recommend using `nvm` to manage Node.js versions. Follow the instructions [here](https://github.com/nvm-sh/nvm) for Linux or [here](https://github.com/coreybutler/nvm-windows) for Windows.
+    - We recommend using `nvm` to manage Node.js versions. Follow the instructions [here](https://github.com/nvm-sh/nvm) for Linux or [here](https://github.com/coreybutler/nvm-windows) for Windows.
 
 ## Install
 
