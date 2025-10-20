@@ -92,7 +92,8 @@
           <div class="text-h2">Contact Us</div>
         </q-card-section>
         <q-card-section>
-          <div>For any questions, suggestions, or collaboration interests please contact:
+          <div>
+            For any questions, suggestions, or collaboration interests please contact:
             <LinkText text="info@emberarchive.org" uri="mailto:info@emberarchive.org" />
           </div>
         </q-card-section>
