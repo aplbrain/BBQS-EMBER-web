@@ -29,7 +29,7 @@
                 <q-item-label>
                   <ul class="q-ml-lg q-mt-sm">
                     <li>Use NWB for neurophysiology and behavioral time series</li>
-                    <li>Use BIDS for imaging, EEG/MEG/iEEG, and derivatives</li>
+                    <li>Use file formats defined in BIDS for imaging, EEG/MEG/iEEG, and derivatives</li>
                     <li>Maintain consistent folder structures and naming conventions</li>
                   </ul>
                 </q-item-label>
