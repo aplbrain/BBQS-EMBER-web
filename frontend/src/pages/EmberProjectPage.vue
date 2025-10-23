@@ -3,7 +3,7 @@
       <q-page padding>
         <!-- Hero / Title -->
         <div class="q-mb-lg">
-          <div class="text-overline text-grey-7">EMBERarchive Project</div>
+          <div class="text-overline text-grey-7">EMBER Archive Project</div>
           <div class="row items-center no-wrap q-col-gutter-md">
             <div class="col-auto">
               <q-avatar square size="64px" color="primary" text-color="white">EA</q-avatar>
