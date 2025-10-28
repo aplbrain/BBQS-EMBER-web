@@ -2,7 +2,7 @@
   <q-page class="column items-center">
     <PageTitle title="About" />
     <div class="q-mx-xl">
-      <q-card flat class="q-mt-lg">
+      <q-card flat class="q-my-lg">
         <q-card-section>
           <p>
             In September 2024, our team at the
@@ -63,7 +63,7 @@
         </q-card-section>
       </q-card>
 
-      <q-card flat class="q-mt-lg">
+      <q-card flat class="q-my-lg">
         <q-card-section>
           <div class="text-h2">The Team</div>
         </q-card-section>
@@ -83,6 +83,18 @@
               </q-img>
               <span>{{ member.name }}</span>
             </div>
+          </div>
+        </q-card-section>
+      </q-card>
+
+      <q-card flat class="q-my-lg">
+        <q-card-section>
+          <div class="text-h2">Contact Us</div>
+        </q-card-section>
+        <q-card-section>
+          <div>
+            For any questions, suggestions, or collaboration interests please contact:
+            <LinkText text="info@emberarchive.org" uri="mailto:info@emberarchive.org" />
           </div>
         </q-card-section>
       </q-card>

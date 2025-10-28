@@ -11,6 +11,89 @@ import { ContributorRole } from 'src/models/projects';
 const initialProjectList: ProjectMetadata[] = [
   {
     funding: {
+      awardTitle: 'Neural and Behavioral Correlates of Live Face-to-Face Interactions',
+      awardIdentifier: 'R61MH138705',
+      activityCode: 'R61',
+      awardeeOrganization: 'Yale University',
+      startDate: new Date('2025-09-01T12:09:00.000Z'),
+      periodOfPerformance: 3,
+      awardLink: '',
+      programOfficers: [{ name: 'Elizabeth Ankudowich' }],
+      principalInvestigators: [{ name: 'Joy Hirsch' }],
+    },
+    contributors: [
+      {
+        name: 'Joy Hirsch',
+        email: 'joy.hirsch@yale.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [
+      {
+        taxonomyId: 9606,
+        currentName: 'Homo sapiens',
+        genbankCommonName: 'human',
+        ncbiBlastName: 'primates',
+        rank: 'species',
+        commonName: '',
+      },
+    ],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
+      awardTitle:
+        'Toward comprehensive models of naturalistic cooperation and competition in primates',
+      awardIdentifier: 'U01DA063534',
+      activityCode: 'U01',
+      awardeeOrganization: 'Yale University',
+      startDate: new Date('2025-09-01T12:09:00.000Z'),
+      periodOfPerformance: 5,
+      awardLink: '',
+      programOfficers: [{ name: 'Holly Marie Moore' }],
+      principalInvestigators: [
+        { name: 'Steve W C Chang' },
+        { name: 'Monika P Jadi' },
+        { name: 'Anirvan S Nandy' },
+        { name: 'Shreya Saxena' },
+      ],
+    },
+    contributors: [
+      {
+        name: 'Steve W C Chang',
+        email: 'steve.chang@yale.edu',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+      { name: 'Monika P Jadi', roles: [ContributorRole.principalInvestigator] },
+      { name: 'Anirvan S Nandy', roles: [ContributorRole.principalInvestigator] },
+      { name: 'Shreya Saxena', roles: [ContributorRole.principalInvestigator] },
+    ],
+    species: [
+      {
+        taxonomyId: 9483,
+        currentName: 'Callithrix jacchus',
+        genbankCommonName: 'common marmoset',
+        ncbiBlastName: 'primates',
+        rank: 'species',
+        commonName: 'common marmoset',
+      },
+    ],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
       awardTitle:
         'Synchronized neuronal and peripheral biomarker recordings in freely moving humans',
       awardIdentifier: 'R61MH135106',
