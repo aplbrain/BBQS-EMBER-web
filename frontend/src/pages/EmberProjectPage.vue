@@ -5,7 +5,7 @@
       <div class="text-overline text-grey-7">EMBER Archive Project</div>
       <div class="row items-center no-wrap q-col-gutter-md">
         <div class="col-auto">
-          <q-avatar square size="64px" color="primary" text-color="white">EA</q-avatar>
+          <q-avatar square size="64px" color="primary" text-color="white">VK</q-avatar>
         </div>
         <div class="col">
           <h1 class="text-h4 q-my-none">{{ project.title }}</h1>
