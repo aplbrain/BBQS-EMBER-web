@@ -58,7 +58,9 @@
             <q-card class="q-mb-lg" flat bordered>
               <q-card-section>
                 <div class="text-h6">Citation</div>
-                <div class="text-body2 q-mt-sm">If you use this dataset, please cite:</div>
+                <div class="text-body2 q-mt-sm">If you use this dataset, please cite:
+                  Kumar et al. 2025 [Data set]. EMBER Archive. https://doi.org/10.60533/EMBER-2025-K2N5
+                </div>
                 <q-list separator class="q-mt-sm">
                   <q-item v-for="pub in project.publications" :key="pub.title">
                     <q-item-section>
@@ -198,22 +200,22 @@ const $q = useQuasar();
 // const leftDrawerOpen = ref(false);
 
 const project = {
-  title: 'Kumar et al. 2025',
-  authors: 'Kumar S., et al.',
+  title: 'Visual detection of seizures in mice using supervised machine learning',
+  authors: 'Gautam S. Sabnis, Leinani Hession, J. Matthew Mahoney, Arie Mobley, Marina Santos, Brian Geuther, and Vivek Kumar',
   year: '2025',
-  tags: ['Electrophysiology', 'Mouse', 'OtherPossibleTag'],
+  tags: ['Seizure', 'Epilepsy', 'Machine Learning', 'Computer Vision', 'High Throughput', 'Supervised Learning', 'Mouse Models', 'Open Field'],
   summary:
-    'High level description of the dataset. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur exercitationem eos reiciendis vitae fugit veritatis dolores pariatur doloremque quis consequuntur! Minus fugit obcaecati veritatis consequatur!',
+    'Visual detection of seizures in mice using supervised machine learning',
   acquisition: 'Data was created using XXXXX; see publication for more details.',
   acknowledgements: 'Data hosted by EMBER. Funded in part by the NIH.',
   publications: [
     {
-      title: 'Complete dataset accompanying Kumar et al., 2025',
-      authors: 'Kumar S., et al.',
+      title: 'Visual detection of seizures in mice using supervised machine learning',
+      authors: 'Kumar et al. 2025',
       year: '2025',
-      doi: 'doi:10.1101/2025.01.01.123456',
-      doiUrl: 'https://doi.org/10.1101/2025.01.01.123456',
-      link: 'https://www.biorxiv.org/',
+      doi: 'doi:10.60533/EMBER-2025-K2N5',
+      doiUrl: 'https://doi.org/10.60533/EMBER-2025-K2N5',
+      link: 'https://www.cell.com/cell-reports/home',
     },
   ],
   links: {
@@ -225,7 +227,7 @@ const project = {
     Modality: 'Electrophysiology',
     Species: 'Mouse',
     License: 'CC BY-NC-SA 4.0 Attribution-NonCommercial-ShareAlike 4.0 International',
-    Size: '~TB-scale',
+    Size: '~GB-scale',
   },
   uri: 'https://ember-open-data.s3.us-east-1.amazonaws.com/other/kumar2025/index.html',
 };
