@@ -21,16 +21,15 @@ This repository contains a Vue.js 3 + Quasar frontend supporting the EMBER Archi
     ```
 
     ## _Note: For Windows users, if you needed to modify any environment variables, make sure you close and restart any terminals before trying to run nvm or npm commands_
-
     - nvm use will activate the Node.js version specified in frontend/.nvmrc
 
-1. Install `yarn`
+2. Install `yarn`
 
     ```bash
     npm install --global yarn
     ```
 
-1. Install dependencies
+3. Install dependencies
 
     ```bash
     yarn install
