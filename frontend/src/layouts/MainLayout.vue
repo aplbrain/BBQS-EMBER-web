@@ -13,7 +13,7 @@
           flat
           size="lg"
           label="EMBER"
-          icon-right="img:ember-logo.png"
+          icon-right="img:/ember-logo.png"
         />
         <q-space />
         <!-- Large screens: display tabs acorss the top -->
