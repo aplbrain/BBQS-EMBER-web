@@ -5,12 +5,14 @@
       <div class="text-overline text-grey-7">EMBER Archive Project</div>
       <div class="row items-center no-wrap q-col-gutter-md">
         <div class="col-auto">
-          <q-avatar square size="64px" color="primary" text-color="white"> {{ project.websiteSpecific.initials }} </q-avatar>
+          <q-avatar square size="64px" color="primary" text-color="white">
+            {{ project.websiteSpecific.initials }}
+          </q-avatar>
         </div>
         <div class="col">
           <h1 class="text-h4 q-my-none">{{ project.title }}</h1>
           <div class="text-subtitle2 text-grey-7 q-mt-xs">
-            {{ project.contributors.map(c => c.name).join(', ') }}
+            {{ project.contributors.map((c) => c.name).join(', ') }}
             <span v-if="project.year">&nbsp;•&nbsp;{{ project.year }}</span>
           </div>
           <div class="q-mt-xs">
@@ -58,7 +60,8 @@
           <q-card-section>
             <div class="text-h6">Citation</div>
             <div class="text-body2 q-mt-sm">
-              If you use this dataset, please cite: {{ project.websiteSpecific.citationAuthorYear }} [Data set]. EMBER Archive.
+              If you use this dataset, please cite:
+              {{ project.websiteSpecific.citationAuthorYear }} [Data set]. EMBER Archive.
               https://doi.org/{{ project.doi }}
             </div>
             <q-btn
@@ -70,7 +73,7 @@
             >
               <q-tooltip>Copy to Clipboard</q-tooltip>
             </q-btn>
-            </q-card-section>
+          </q-card-section>
         </q-card>
 
         <!-- Publications -->
@@ -82,7 +85,9 @@
               <q-item v-for="pub in project.publications" :key="pub.title">
                 <q-item-section>
                   <div class="text-body1">{{ pub.title }}</div>
-                  <div class="text-caption text-grey-7">{{ pub.authors.map(a => a.name).join(', ') }} ({{ pub.year }})</div>
+                  <div class="text-caption text-grey-7">
+                    {{ pub.authors.map((a) => a.name).join(', ') }} ({{ pub.year }})
+                  </div>
                   <div class="q-mt-xs">
                     <q-btn
                       v-if="pub.doi"
@@ -119,7 +124,10 @@
                   </div>
                   <div class="col-12 col-sm-6">
                     <div class="text-subtitle2 text-grey-7">Acknowledgements</div>
-                    <div class="text-body2">Data hosted by EMBER. Funded in part by {{ project.funding.map(f => f.awardIdentifier).join(', ') }}</div>
+                    <div class="text-body2">
+                      Data hosted by EMBER. Funded in part by
+                      {{ project.funding.map((f) => f.awardIdentifier).join(', ') }}
+                    </div>
                   </div>
                 </div>
               </q-card-section>
@@ -169,28 +177,30 @@
           <q-card-section>
             <div class="text-subtitle1">Dataset Metadata</div>
             <q-list dense class="q-mt-sm">
-               <q-item>
+              <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Modality</div>
-                  <div class="text-body2">{{project.dataModalities.join(', ')}}</div>
+                  <div class="text-body2">{{ project.dataModalities.join(', ') }}</div>
                 </q-item-section>
               </q-item>
               <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Species</div>
-                  <div class="text-body2">{{project.species.map(s => s.commonName).join(', ')}}</div>
+                  <div class="text-body2">
+                    {{ project.species.map((s) => s.commonName).join(', ') }}
+                  </div>
                 </q-item-section>
               </q-item>
               <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">License</div>
-                  <div class="text-body2">{{project.license }}</div>
+                  <div class="text-body2">{{ project.license }}</div>
                 </q-item-section>
               </q-item>
               <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Size</div>
-                  <div class="text-body2"> {{ project.websiteSpecific.size }} </div>
+                  <div class="text-body2">{{ project.websiteSpecific.size }}</div>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -217,9 +227,7 @@
     </div>
   </q-page>
   <q-page padding v-else>
-    <div class="row flex-center">
-      No Project Found
-    </div>
+    <div class="row flex-center">No Project Found</div>
   </q-page>
 </template>
 
@@ -229,7 +237,7 @@ import { emberProjects } from 'src/constants/projects';
 import { type EmberProjectMetadata } from 'src/models/projects';
 import { onMounted, ref } from 'vue';
 
-const props = defineProps({ id: {type:String, required: true} });
+const props = defineProps({ id: { type: String, required: true } });
 
 const $q = useQuasar();
 
@@ -242,10 +250,9 @@ onMounted(() => {
 
     pythonSnippet.value = `# View contents of ${props.id}\naws s3 ls ${project.value?.websiteSpecific.s3Uri}\n\n# Copy specific file or whole directory\naws s3 cp ${project.value?.websiteSpecific.s3Uri}<file> .`;
   } else {
-    console.log(`Project with id ${props.id} Not Found`)
+    console.log(`Project with id ${props.id} Not Found`);
   }
 });
-
 
 async function copy(text: string): Promise<void> {
   try {

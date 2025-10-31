@@ -41,7 +41,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'project/:id',
         component: () => import('pages/EmberProjectPage.vue'),
-        props: (route) => ({id: route.params.id}),
+        props: (route) => ({ id: route.params.id }),
       },
     ],
   },

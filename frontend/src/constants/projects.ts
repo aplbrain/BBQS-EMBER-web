@@ -1012,7 +1012,7 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
 ];
 
 const emberProjects: Record<string, EmberProjectMetadata> = {
-  'kumar2025': {
+  kumar2025: {
     id: 'kumar2025',
     title: 'Visual detection of seizures in mice using supervised machine learning',
     year: 2025,
@@ -1027,6 +1027,7 @@ const emberProjects: Record<string, EmberProjectMetadata> = {
       'Open Field',
     ],
     summary: 'Visual detection of seizures in mice using supervised machine learning',
+    doi: '10.60533/EMBER-2025-K2N5',
     publications: [
       {
         title: 'Visual detection of seizures in mice using supervised machine learning',
@@ -1057,7 +1058,6 @@ const emberProjects: Record<string, EmberProjectMetadata> = {
         doi: '10.1101/2024.05.29.596520',
       },
     ],
-    doi: '10.60533/EMBER-2025-K2N5',
     license: 'CC BY-NC-SA 4.0 Attribution-NonCommercial-ShareAlike 4.0 International',
     dataUri: 'https://ember-open-data.s3.us-east-1.amazonaws.com/other/kumar2025/index.html',
     funding: [
@@ -1154,8 +1154,8 @@ const emberProjects: Record<string, EmberProjectMetadata> = {
       citationAuthorYear: 'Kumar et al. 2025',
       s3Uri: 's3://ember-open-data/other/kumar2025/',
       size: '~GB-scale',
-    }
-  }
+    },
+  },
 };
 
 // Default sorting logic

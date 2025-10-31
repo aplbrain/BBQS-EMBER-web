@@ -5,7 +5,6 @@
  * This file was generated with assistance from ChatGPT.
  */
 
-
 import axios from 'axios';
 import * as fs from 'fs';
 import type { Contributor, NIHProjectMetadata, Person } from 'src/models/projects';

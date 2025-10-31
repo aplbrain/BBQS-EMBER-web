@@ -53,7 +53,6 @@ export interface Publications {
   authors: Person[];
   year: number;
   doi: string;
-
 }
 
 export interface Person {

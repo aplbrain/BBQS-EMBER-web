@@ -87,6 +87,8 @@ const projectCounts: Record<string, number> = {
 };
 
 const earliestProjectStart: string = getMonthYear(
-  new Date(initialBBQSProjectList.map((p) => p.funding.startDate.getTime()).sort()[0] || '01/01/2024'),
+  new Date(
+    initialBBQSProjectList.map((p) => p.funding.startDate.getTime()).sort()[0] || '01/01/2024',
+  ),
 );
 </script>
