@@ -2,13 +2,13 @@
  * projects.ts
  *
  * Contains the list of BBQS projects and metadata for each project.
- * TODO: Convert this file of data into a real database.
+ * TODO: Convert this file of data into a real database, and access via API
  */
-import type { ProjectMetadata } from 'src/models/projects';
+import type { EmberProjectMetadata, NIHProjectMetadata } from 'src/models/projects';
 import { ContributorRole } from 'src/models/projects';
 
 // Semi auto-generated from fetchProjectMetadata.ts script
-const initialProjectList: ProjectMetadata[] = [
+const initialBBQSProjectList: NIHProjectMetadata[] = [
   {
     funding: {
       awardTitle: 'Neural and Behavioral Correlates of Live Face-to-Face Interactions',
@@ -1011,8 +1011,155 @@ const initialProjectList: ProjectMetadata[] = [
   },
 ];
 
+const emberProjects: Record<string, EmberProjectMetadata> = {
+  'kumar2025': {
+    id: 'kumar2025',
+    title: 'Visual detection of seizures in mice using supervised machine learning',
+    year: 2025,
+    tags: [
+      'Seizure',
+      'Epilepsy',
+      'Machine Learning',
+      'Computer Vision',
+      'High Throughput',
+      'Supervised Learning',
+      'Mouse Models',
+      'Open Field',
+    ],
+    summary: 'Visual detection of seizures in mice using supervised machine learning',
+    publications: [
+      {
+        title: 'Visual detection of seizures in mice using supervised machine learning',
+        authors: [
+          {
+            name: 'Gautam S. Sabnis',
+          },
+          {
+            name: 'Leinani Hession',
+          },
+          {
+            name: 'J. Matthew Mahoney',
+          },
+          {
+            name: 'Arie Mobley',
+          },
+          {
+            name: 'Marina Santos',
+          },
+          {
+            name: 'Brian Geuther',
+          },
+          {
+            name: 'Vivek Kumar',
+          },
+        ],
+        year: 2025,
+        doi: '10.1101/2024.05.29.596520',
+      },
+    ],
+    doi: '10.60533/EMBER-2025-K2N5',
+    license: 'CC BY-NC-SA 4.0 Attribution-NonCommercial-ShareAlike 4.0 International',
+    dataUri: 'https://ember-open-data.s3.us-east-1.amazonaws.com/other/kumar2025/index.html',
+    funding: [
+      {
+        awardTitle:
+          'Application of Machine Vision to Determine the Influence of Sleep States and Social Interactions on Vulnerability to Drug Addiction',
+        awardIdentifier: 'R21DA048634',
+        activityCode: 'R21',
+        awardeeOrganization: 'Jackson Laboratory',
+        startDate: new Date('2019-03-01T05:00:00.000Z'),
+        periodOfPerformance: 2,
+        awardLink: 'https://reporter.nih.gov/project-details/9880430',
+        programOfficers: [
+          {
+            name: 'Olivier Berton',
+          },
+        ],
+        principalInvestigators: [
+          {
+            name: 'Vivek  Kumar',
+          },
+        ],
+      },
+      {
+        awardTitle:
+          'Establishment and Characterization of Novel Mutant Mouse Models for the Addiction Research Community',
+        awardIdentifier: 'U01DA051235',
+        activityCode: 'U01',
+        awardeeOrganization: 'Jackson Laboratory',
+        startDate: new Date('2021-08-15T04:00:00.000Z'),
+        periodOfPerformance: 5,
+        awardLink: 'https://reporter.nih.gov/project-details/11140301',
+        programOfficers: [
+          {
+            name: 'Amy C. Lossie',
+          },
+        ],
+        principalInvestigators: [
+          {
+            name: 'Vivek  Kumar',
+          },
+        ],
+      },
+    ],
+    contributors: [
+      {
+        name: 'Gautam S. Sabnis',
+        roles: [ContributorRole.author],
+      },
+      {
+        name: 'Leinani Hession',
+        roles: [ContributorRole.author],
+      },
+      {
+        name: 'J. Matthew Mahoney',
+        roles: [ContributorRole.author],
+      },
+      {
+        name: 'Arie Mobley',
+        roles: [ContributorRole.author],
+      },
+      {
+        name: 'Marina Santos',
+        roles: [ContributorRole.author],
+      },
+      {
+        name: 'Brian Geuther',
+        roles: [ContributorRole.author],
+      },
+      {
+        name: 'Vivek Kumar',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [
+      {
+        taxonomyId: 10090,
+        currentName: 'Mus musculus',
+        genbankCommonName: 'house mouse',
+        ncbiBlastName: 'rodents',
+        rank: 'species',
+        commonName: 'mouse',
+      },
+    ],
+    sensors: [],
+    dataModalities: ['Videography'],
+    approaches: [],
+    dataGenerationSort: [],
+    websiteSpecific: {
+      initials: 'VK',
+      citationAuthorYear: 'Kumar et al. 2025',
+      s3Uri: 's3://ember-open-data/other/kumar2025/',
+      size: '~GB-scale',
+    }
+  }
+};
+
 // Default sorting logic
-initialProjectList.sort((a: ProjectMetadata, b: ProjectMetadata) => {
+initialBBQSProjectList.sort((a: NIHProjectMetadata, b: NIHProjectMetadata) => {
   // Sort by (desc.) activity code (R61, R34)
   if (a.funding.activityCode > b.funding.activityCode) return -1;
   if (a.funding.activityCode < b.funding.activityCode) return 1;
@@ -1024,4 +1171,4 @@ initialProjectList.sort((a: ProjectMetadata, b: ProjectMetadata) => {
   return 0;
 });
 
-export { initialProjectList };
+export { initialBBQSProjectList, emberProjects };

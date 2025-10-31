@@ -1,19 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Run with
- *  yarn ts-node scripts/fetchProjectMetadata.ts
+ *  yarn tsx scripts/fetchProjectMetadata.ts
  *
- *
- * Generated with assistance from ChatGPT.
+ * This file was generated with assistance from ChatGPT.
  */
 
-//
+
 import axios from 'axios';
 import * as fs from 'fs';
-import { Contributor, Person, ProjectMetadata } from 'src/models/projects';
+import type { Contributor, NIHProjectMetadata, Person } from 'src/models/projects';
 
 // Function to query the NIH Reporter API
-async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | null> {
+async function fetchProjectData(grantNumber: string): Promise<NIHProjectMetadata | null> {
   const url = 'https://api.reporter.nih.gov/v2/projects/search';
 
   // API payload
@@ -37,6 +35,7 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
       const endDate = new Date(project.project_end_date);
       const yearsBetween = endDate.getFullYear() - startDate.getFullYear();
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const contributors: Contributor[] = project.principal_investigators.map((pi: any) => {
         if (pi.is_contact_pi) {
           return { name: pi.full_name, email: pi.email || undefined, roles: ['pi', 'contact_pi'] };
@@ -46,7 +45,7 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
       });
 
       // Map the API response to the TypeScript object
-      const projectData: ProjectMetadata = {
+      const projectData: NIHProjectMetadata = {
         funding: {
           awardTitle: project.project_title,
           awardIdentifier: project.core_project_num,
@@ -55,6 +54,7 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
           startDate,
           periodOfPerformance: yearsBetween,
           awardLink: project.project_detail_url,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           programOfficers: project.program_officers.map((po: any) => {
             return { name: po.full_name };
           }),
@@ -80,9 +80,10 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
 }
 
 // Example usage
-(async () => {
-  const projects: ProjectMetadata[] = [];
+await (async () => {
+  const projects: NIHProjectMetadata[] = [];
   const grantNumbers: string[] = [
+    // Initial NIH BBQS Project List
     'U01DA063534',
     'R61MH138705',
     'R61MH135106',
@@ -101,6 +102,9 @@ async function fetchProjectData(grantNumber: string): Promise<ProjectMetadata | 
     'R61MH135114',
     'R61MH135405',
     'R61MH135407',
+    // EMBER Project - Kumar 2025
+    // 'R21DA048634',
+    // 'U01DA051235'
   ];
 
   for (const grant of grantNumbers) {

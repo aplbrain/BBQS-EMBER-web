@@ -37,7 +37,7 @@
 
     <div class="q-mx-xl q-px-md row justify-center">
       <q-table
-        :rows="initialProjectList"
+        :rows="initialBBQSProjectList"
         :columns="ProjectTableColumns"
         :rows-per-page-options="[0]"
         class="col-12"
@@ -74,19 +74,19 @@
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 import { links } from 'src/constants/links';
-import { initialProjectList } from 'src/constants/projects';
+import { initialBBQSProjectList } from 'src/constants/projects';
 import { ProjectTableColumns } from 'src/models/projects';
 import { getMonthYear } from 'src/utils/date';
 
 const projectCounts: Record<string, number> = {
-  total: initialProjectList.length,
-  r61r33: initialProjectList.filter(
+  total: initialBBQSProjectList.length,
+  r61r33: initialBBQSProjectList.filter(
     (p) => p.funding.activityCode === 'R61' || p.funding.activityCode === 'R33',
   ).length,
-  r34: initialProjectList.filter((p) => p.funding.activityCode === 'R34').length,
+  r34: initialBBQSProjectList.filter((p) => p.funding.activityCode === 'R34').length,
 };
 
 const earliestProjectStart: string = getMonthYear(
-  new Date(initialProjectList.map((p) => p.funding.startDate.getTime()).sort()[0] || '01/01/2024'),
+  new Date(initialBBQSProjectList.map((p) => p.funding.startDate.getTime()).sort()[0] || '01/01/2024'),
 );
 </script>
