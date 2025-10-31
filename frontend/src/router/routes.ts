@@ -39,8 +39,9 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/TermsOfService.vue'),
       },
       {
-        path: 'project/kumar2025',
+        path: 'project/:id',
         component: () => import('pages/EmberProjectPage.vue'),
+        props: (route) => ({id: route.params.id}),
       },
     ],
   },
