@@ -233,7 +233,7 @@ const project = {
     project: 'https://emberarchive.org/project/kumar2025',
   },
   metadata: {
-    Modality: 'Electrophysiology',
+    Modality: 'Videography',
     Species: 'Mouse',
     License: 'CC BY-NC-SA 4.0 Attribution-NonCommercial-ShareAlike 4.0 International',
     Size: '~GB-scale',
