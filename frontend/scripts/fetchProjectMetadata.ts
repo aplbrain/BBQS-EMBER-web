@@ -171,10 +171,7 @@ import { ContributorRole } from 'src/models/projects';
 
 export const nihProjectMetadataList: NIHProjectMetadata[] = ${JSON.stringify(projects, null, 2)
     // Dates → new Date()
-    .replace(
-      /"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)"/g,
-      'new Date("$1")'
-    )
+    .replace(/"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)"/g, 'new Date("$1")')
     // Enum replacements
     .replace(/"pi"/g, 'ContributorRole.principalInvestigator')
     .replace(/"contact_pi"/g, 'ContributorRole.contactPrincipalInvestigator')
@@ -183,7 +180,7 @@ export const nihProjectMetadataList: NIHProjectMetadata[] = ${JSON.stringify(pro
     .replace(/\\n/g, '\n')};
 `;
 
-  const tsFilePath = `scripts/out/projectMetadata_${today}.ts`
+  const tsFilePath = `scripts/out/projectMetadata_${today}.ts`;
   fs.writeFileSync(tsFilePath, tsFileContent, 'utf8');
   console.log(`TypeScript file written to: ${tsFilePath}`);
 })();
