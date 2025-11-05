@@ -2,13 +2,13 @@
  * projects.ts
  *
  * Contains the list of BBQS projects and metadata for each project.
- * TODO: Convert this file of data into a real database.
+ * TODO: Convert this file of data into a real database, and access via API
  */
-import type { ProjectMetadata } from 'src/models/projects';
+import type { NIHProjectMetadata } from 'src/models/projects';
 import { ContributorRole } from 'src/models/projects';
 
 // Semi auto-generated from fetchProjectMetadata.ts script
-const initialProjectList: ProjectMetadata[] = [
+const initialBBQSProjectList: NIHProjectMetadata[] = [
   {
     funding: {
       awardTitle: 'Neural and Behavioral Correlates of Live Face-to-Face Interactions',
@@ -1009,10 +1009,163 @@ const initialProjectList: ProjectMetadata[] = [
     approaches: [],
     dataGenerationSort: [],
   },
+  {
+    funding: {
+      awardTitle:
+        'Mapping dynamic transitions across neural, behavioral, and social scales in interacting animals',
+      awardIdentifier: 'R34DA061924',
+      activityCode: 'R34',
+      awardeeOrganization: 'Michigan State University',
+      startDate: new Date('2025-02-01T05:00:00.000Z'),
+      periodOfPerformance: 2,
+      awardLink: 'https://reporter.nih.gov/project-details/11035335',
+      programOfficers: [{ name: 'Holly Marie Moore' }],
+      principalInvestigators: [{ name: 'Flavio Frohlich' }, { name: 'Mengsen Zhang' }],
+    },
+    contributors: [
+      { name: 'Flavio Frohlich', roles: [ContributorRole.principalInvestigator] },
+      {
+        name: 'Mengsen Zhang',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
+      awardTitle:
+        'Quantifying organism-environment interactions in a new model system for neuroscience',
+      awardIdentifier: 'R34DA061984',
+      activityCode: 'R34',
+      awardeeOrganization: 'Harvard University',
+      startDate: new Date('2025-02-01T05:00:00.000Z'),
+      periodOfPerformance: 2,
+      awardLink: 'https://reporter.nih.gov/project-details/11036699',
+      programOfficers: [{ name: 'Holly Marie Moore' }],
+      principalInvestigators: [{ name: 'Mansi Srivastava' }],
+    },
+    contributors: [
+      {
+        name: 'Mansi Srivastava',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
+      awardTitle:
+        'A naturalistic multimodal platform for capturing brain-body interactions in people during physical effort-based decision making',
+      awardIdentifier: 'R61MH138966',
+      activityCode: 'R61',
+      awardeeOrganization: 'Georgia Institute of Technology',
+      startDate: new Date('2025-02-01T05:00:00.000Z'),
+      periodOfPerformance: 3,
+      awardLink: 'https://reporter.nih.gov/project-details/11046239',
+      programOfficers: [{ name: 'Elizabeth Ankudowich' }],
+      principalInvestigators: [{ name: 'Christopher John Rozell' }],
+    },
+    contributors: [
+      {
+        name: 'Christopher John Rozell',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
+      awardTitle:
+        'Building an “AI Forest” to identify the social and environmental factors underlying complex behavioral traits in wild primates.',
+      awardIdentifier: 'R34DA061925',
+      activityCode: 'R34',
+      awardeeOrganization: 'University of Michigan at Ann Arbor',
+      startDate: new Date('2025-03-15T04:00:00.000Z'),
+      periodOfPerformance: 2,
+      awardLink: 'https://reporter.nih.gov/project-details/11035427',
+      programOfficers: [{ name: 'Holly Marie Moore' }],
+      principalInvestigators: [
+        { name: 'Jacinta Beehner' },
+        { name: 'Marcela Eugenia Benitez' },
+        { name: 'Shelly Beth Flagel' },
+      ],
+    },
+    contributors: [
+      { name: 'Jacinta Beehner', roles: [ContributorRole.principalInvestigator] },
+      { name: 'Marcela Eugenia Benitez', roles: [ContributorRole.principalInvestigator] },
+      {
+        name: 'Shelly Beth Flagel',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
+      awardTitle:
+        'Combining neural oscillations, physiology and privacy-preserving LiDAR/millimeter wave sensing technology to track attention states in natural contexts',
+      awardIdentifier: 'R61MH138713',
+      activityCode: 'R61',
+      awardeeOrganization: 'University of California Los Angeles',
+      startDate: new Date('2025-06-01T04:00:00.000Z'),
+      periodOfPerformance: 3,
+      awardLink: 'https://reporter.nih.gov/project-details/11037221',
+      programOfficers: [{ name: 'Elizabeth Ankudowich' }],
+      principalInvestigators: [
+        { name: 'Emre Ertin' },
+        { name: 'Jennie K. Grammer' },
+        { name: 'Agatha Lenartowicz' },
+      ],
+    },
+    contributors: [
+      { name: 'Emre Ertin', roles: [ContributorRole.principalInvestigator] },
+      { name: 'Jennie K. Grammer', roles: [ContributorRole.principalInvestigator] },
+      {
+        name: 'Agatha Lenartowicz',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
 ];
 
 // Default sorting logic
-initialProjectList.sort((a: ProjectMetadata, b: ProjectMetadata) => {
+initialBBQSProjectList.sort((a: NIHProjectMetadata, b: NIHProjectMetadata) => {
   // Sort by (desc.) activity code (R61, R34)
   if (a.funding.activityCode > b.funding.activityCode) return -1;
   if (a.funding.activityCode < b.funding.activityCode) return 1;
@@ -1024,4 +1177,4 @@ initialProjectList.sort((a: ProjectMetadata, b: ProjectMetadata) => {
   return 0;
 });
 
-export { initialProjectList };
+export { initialBBQSProjectList };
