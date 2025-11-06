@@ -1072,12 +1072,12 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
     species: [
       {
         taxonomyId: 442651,
-        currentName: 'Hofstenia miamia' ,
+        currentName: 'Hofstenia miamia',
         genbankCommonName: '',
         ncbiBlastName: 'animals',
         rank: 'species',
         commonName: '',
-      }
+      },
     ],
     sensors: [],
     dataModalities: [],
@@ -1150,14 +1150,14 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
       },
     ],
     species: [
-       {
+      {
         taxonomyId: 2715852,
-        currentName: 'Cebus imitator' ,
+        currentName: 'Cebus imitator',
         genbankCommonName: 'Panamanian white-faced capuchin',
         ncbiBlastName: 'primates',
         rank: 'species',
         commonName: '',
-      }
+      },
     ],
     sensors: [],
     dataModalities: [],
@@ -1193,7 +1193,7 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
       },
     ],
     species: [
-            {
+      {
         taxonomyId: 9606,
         currentName: 'Homo sapiens',
         genbankCommonName: 'human',
@@ -1237,7 +1237,16 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         ],
       },
     ],
-    species: [],
+    species: [
+      {
+        taxonomyId: 10090,
+        currentName: 'Mus musculus',
+        genbankCommonName: 'house mouse',
+        ncbiBlastName: 'rodents',
+        rank: 'species',
+        commonName: 'mouse',
+      },
+    ],
     sensors: [],
     dataModalities: [],
     approaches: [],
