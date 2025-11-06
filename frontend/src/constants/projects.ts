@@ -116,7 +116,7 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
     contributors: [
       {
         name: 'Nanthia A Suthana',
-        email: 'nanthia@ucla.edu',
+        email: 'nanthia@duke.edu',
         roles: [
           ContributorRole.principalInvestigator,
           ContributorRole.contactPrincipalInvestigator,
@@ -1032,7 +1032,16 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         ],
       },
     ],
-    species: [],
+    species: [
+      {
+        taxonomyId: 9668,
+        currentName: 'Mustela putorius',
+        genbankCommonName: 'European polecat',
+        ncbiBlastName: 'carnivores',
+        rank: 'species',
+        commonName: '',
+      },
+    ],
     sensors: [],
     dataModalities: [],
     approaches: [],
@@ -1060,7 +1069,16 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         ],
       },
     ],
-    species: [],
+    species: [
+      {
+        taxonomyId: 442651,
+        currentName: 'Hofstenia miamia',
+        genbankCommonName: '',
+        ncbiBlastName: 'animals',
+        rank: 'species',
+        commonName: '',
+      },
+    ],
     sensors: [],
     dataModalities: [],
     approaches: [],
@@ -1088,7 +1106,16 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         ],
       },
     ],
-    species: [],
+    species: [
+      {
+        taxonomyId: 9606,
+        currentName: 'Homo sapiens',
+        genbankCommonName: 'human',
+        ncbiBlastName: 'primates',
+        rank: 'species',
+        commonName: '',
+      },
+    ],
     sensors: [],
     dataModalities: [],
     approaches: [],
@@ -1122,7 +1149,16 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         ],
       },
     ],
-    species: [],
+    species: [
+      {
+        taxonomyId: 2715852,
+        currentName: 'Cebus imitator',
+        genbankCommonName: 'Panamanian white-faced capuchin',
+        ncbiBlastName: 'primates',
+        rank: 'species',
+        commonName: '',
+      },
+    ],
     sensors: [],
     dataModalities: [],
     approaches: [],
@@ -1156,7 +1192,61 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         ],
       },
     ],
-    species: [],
+    species: [
+      {
+        taxonomyId: 9606,
+        currentName: 'Homo sapiens',
+        genbankCommonName: 'human',
+        ncbiBlastName: 'primates',
+        rank: 'species',
+        commonName: '',
+      },
+    ],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
+  {
+    funding: {
+      awardTitle:
+        'The International Development Project (IDP): An international collaboration for the standardized study of experience-dependent brain and behavioral development',
+      awardIdentifier: 'R34DA062119',
+      activityCode: 'R34',
+      awardeeOrganization: 'University Of California Berkeley',
+      startDate: new Date('2025-09-01T04:00:00.000Z'),
+      periodOfPerformance: 2,
+      awardLink: 'https://reporter.nih.gov/project-details/11045432',
+      programOfficers: [
+        {
+          name: 'Holly Marie Moore',
+        },
+      ],
+      principalInvestigators: [
+        {
+          name: 'Linda E Wilbrecht',
+        },
+      ],
+    },
+    contributors: [
+      {
+        name: 'Linda E Wilbrecht',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [
+      {
+        taxonomyId: 10090,
+        currentName: 'Mus musculus',
+        genbankCommonName: 'house mouse',
+        ncbiBlastName: 'rodents',
+        rank: 'species',
+        commonName: 'mouse',
+      },
+    ],
     sensors: [],
     dataModalities: [],
     approaches: [],
