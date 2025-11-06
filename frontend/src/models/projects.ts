@@ -1,8 +1,33 @@
 import type { QTableColumn } from 'quasar/dist/types/api/qtable.js';
 import { getDateString } from 'src/utils/date';
 
-export interface ProjectMetadata {
+export interface EmberProjectMetadata extends ProjectMetadata {
+  id: string;
+  title: string;
+  year: number;
+  tags: string[];
+  summary: string;
+  funding: Funding[];
+  publications: Publications[];
+  doi: string; // EMBER project DOI
+  license: string; // TODO - object like BossDB ?
+  dataUri: string; // TODO
+  // TODO -- Relationships in EMBER: dandiset_ids, embervault_ids, etc.
+
+  websiteSpecific: WebsiteMetadata;
+}
+
+export interface WebsiteMetadata {
+  initials: string;
+  citationAuthorYear: string; // TODO - could probably auto-generate this
+  s3Uri: string; // TOOD -- could probably auto-generate this
+  size: string; // TODO -- auto calculat this via s3 somehow?
+}
+
+export interface NIHProjectMetadata extends ProjectMetadata {
   funding: Funding;
+}
+export interface ProjectMetadata {
   contributors: Contributor[];
   species: Species[];
   sensors: string[]; // TODO -- what should be the type? should this be broken down?
@@ -12,7 +37,6 @@ export interface ProjectMetadata {
 }
 
 export interface Funding {
-  // TODO -- can we auto-populate (some) fields from https://api.reporter.nih.gov/ ?
   awardTitle: string;
   awardIdentifier: string;
   activityCode: string; // i.e. R61, R34, etc.
@@ -24,6 +48,13 @@ export interface Funding {
   principalInvestigators: Person[];
 }
 
+export interface Publications {
+  title: string;
+  authors: Person[];
+  year: number;
+  doi: string;
+}
+
 export interface Person {
   name: string;
   email?: string;
@@ -33,7 +64,8 @@ export interface Person {
 export enum ContributorRole {
   principalInvestigator = 'pi',
   contactPrincipalInvestigator = 'contact_pi',
-  // Author , ...
+  author = 'author',
+  // TODO -- other roles ...
 }
 export interface Contributor extends Person {
   roles: ContributorRole[];
