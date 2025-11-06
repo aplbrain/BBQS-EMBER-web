@@ -1162,6 +1162,42 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
     approaches: [],
     dataGenerationSort: [],
   },
+  {
+    funding: {
+      awardTitle:
+        'The International Development Project (IDP): An international collaboration for the standardized study of experience-dependent brain and behavioral development',
+      awardIdentifier: 'R34DA062119',
+      activityCode: 'R34',
+      awardeeOrganization: 'University Of California Berkeley',
+      startDate: new Date('2025-09-01T04:00:00.000Z'),
+      periodOfPerformance: 2,
+      awardLink: 'https://reporter.nih.gov/project-details/11045432',
+      programOfficers: [
+        {
+          name: 'Holly Marie Moore',
+        },
+      ],
+      principalInvestigators: [
+        {
+          name: 'Linda E Wilbrecht',
+        },
+      ],
+    },
+    contributors: [
+      {
+        name: 'Linda E Wilbrecht',
+        roles: [
+          ContributorRole.principalInvestigator,
+          ContributorRole.contactPrincipalInvestigator,
+        ],
+      },
+    ],
+    species: [],
+    sensors: [],
+    dataModalities: [],
+    approaches: [],
+    dataGenerationSort: [],
+  },
 ];
 
 // Default sorting logic
