@@ -116,7 +116,7 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
     contributors: [
       {
         name: 'Nanthia A Suthana',
-        email: 'nanthia@ucla.edu',
+        email: 'nanthia@duke.edu',
         roles: [
           ContributorRole.principalInvestigator,
           ContributorRole.contactPrincipalInvestigator,
