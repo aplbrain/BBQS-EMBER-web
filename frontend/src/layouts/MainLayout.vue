@@ -120,7 +120,7 @@
       <div class="row justify-between">
         <div>
           <a href="https://github.com/aplbrain" target="_blank">
-            <q-icon name="img:outside-logos/github-mark-white.svg" size="sm" />
+            <q-icon name="img:/outside-logos/github-mark-white.svg" size="sm" />
           </a>
         </div>
         <div class="text-body2 text-right">
