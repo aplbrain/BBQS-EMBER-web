@@ -176,17 +176,13 @@
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
             <div class="text-subtitle1">Dataset Species</div>
-                <div class="row justify-center items-center" style="height: 200px;">
-                  <q-img 
-                      :src="
-                            '/species/' +
-                              project.species.map((s) => s.commonName) + 
-                              '.svg'
-                            "
-                      fit="contain"
-                      style="max-width: 200px; max-height: 200px;"
-                     />
-                </div>
+            <div class="row justify-center items-center" style="height: 200px">
+              <q-img
+                :src="'/species/' + project.species.map((s) => s.commonName) + '.svg'"
+                fit="contain"
+                style="max-width: 200px; max-height: 200px"
+              />
+            </div>
           </q-card-section>
         </q-card>
 
