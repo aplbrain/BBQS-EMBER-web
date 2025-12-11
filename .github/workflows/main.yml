@@ -5,7 +5,7 @@ on:
   # but only for the master branch
   push:
     branches:
-      - master
+      - 88-new-githubaws-asset-storage
 
 jobs:
   build:
