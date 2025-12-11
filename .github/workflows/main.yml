@@ -17,8 +17,12 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: yarn install
-    - run: yarn build
+    - name: Install dependencies
+      run: yarn install
+      working-directory: ./src
+    - name: build
+      run: yarn build
+      working-directory: ./src
     - name: S3 Sync
       uses: jakejarvis/s3-sync-action@v0.5.0
       with:
