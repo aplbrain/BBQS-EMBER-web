@@ -179,7 +179,10 @@
             <div class="row justify-center items-center" style="height: 200px">
               <q-img
                 :src="
-                  ASSETS_BASE_URL + 'species/' + project.species.map((s) => s.commonName.toLowerCase()) + '.svg'
+                  ASSETS_BASE_URL +
+                  'species/' +
+                  project.species.map((s) => s.commonName.toLowerCase()) +
+                  '.svg'
                 "
                 fit="contain"
                 style="max-width: 200px; max-height: 200px"

@@ -57,7 +57,7 @@
           <div class="row flex-center">
             <img
               class="self-center col-4"
-              :src="ASSETS_BASE_URL+'documentation-images/download_dandiset.png'"
+              :src="ASSETS_BASE_URL + 'documentation-images/download_dandiset.png'"
               alt="Download Dandiset"
             />
           </div>
@@ -256,7 +256,11 @@ dandi upload -i ember</code></pre>
             </li>
           </ol>
           <div class="row flex-center">
-            <img :src="ASSETS_BASE_URL + 'documentation-images/API_key.png'" alt="API Key" class="self-center col-4" />
+            <img
+              :src="ASSETS_BASE_URL + 'documentation-images/API_key.png'"
+              alt="API Key"
+              class="self-center col-4"
+            />
           </div>
         </q-card-section>
       </q-card>
