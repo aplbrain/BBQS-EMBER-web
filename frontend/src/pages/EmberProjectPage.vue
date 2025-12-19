@@ -254,7 +254,6 @@ import { type EmberProjectMetadata } from 'src/models/projects';
 import { onMounted, ref } from 'vue';
 
 const props = defineProps({ id: { type: String, required: true } });
-console.log(ASSETS_BASE_URL)
 
 const $q = useQuasar();
 
