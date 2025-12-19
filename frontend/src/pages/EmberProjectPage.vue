@@ -178,7 +178,9 @@
             <div class="text-subtitle1">Dataset Species</div>
             <div class="row justify-center items-center" style="height: 200px">
               <q-img
-                :src=" ASSETS_BASE_URL + '/species/' + project.species.map((s) => s.commonName) + '.svg'"
+                :src="
+                  ASSETS_BASE_URL + '/species/' + project.species.map((s) => s.commonName) + '.svg'
+                "
                 fit="contain"
                 style="max-width: 200px; max-height: 200px"
               />
