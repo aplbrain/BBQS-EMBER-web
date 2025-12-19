@@ -73,7 +73,7 @@
 
           <div class="row flex-center">
             <img
-              :src="ASSETS_BASE_URL + '/documentation-images/files_tab.png'"
+              :src="ASSETS_BASE_URL + 'documentation-images/files_tab.png'"
               alt="Files Tab"
               class="self-center col-10"
             />
@@ -216,7 +216,7 @@ dandi upload -i ember</code></pre>
             <li>Fill out basic metadata and hit "Register Dandiset"</li>
             <div class="row flex-center">
               <img
-                :src="ASSETS_BASE_URL + '/documentation-images/register_new_dandiset.png'"
+                :src="ASSETS_BASE_URL + 'documentation-images/register_new_dandiset.png'"
                 alt="New Dandiset"
                 class="self-center col-8"
               />
@@ -237,7 +237,7 @@ dandi upload -i ember</code></pre>
             <li>Navigate to your dataset in the EMBER-DANDI archive and note the ID number</li>
             <div class="row flex-center">
               <img
-                :src="ASSETS_BASE_URL + '/documentation-images/test_number_data.png'"
+                :src="ASSETS_BASE_URL + 'documentation-images/test_number_data.png'"
                 alt="Test Number Data"
                 class="self-center col-8"
               />
@@ -256,7 +256,7 @@ dandi upload -i ember</code></pre>
             </li>
           </ol>
           <div class="row flex-center">
-            <img :src="ASSETS_BASE_URL + '/documentation-images/API_key.png'" alt="API Key" class="self-center col-4" />
+            <img :src="ASSETS_BASE_URL + 'documentation-images/API_key.png'" alt="API Key" class="self-center col-4" />
           </div>
         </q-card-section>
       </q-card>
