@@ -179,7 +179,7 @@
             <div class="row justify-center items-center" style="height: 200px">
               <q-img
                 :src="
-                  ASSETS_BASE_URL + '/species/' + project.species.map((s) => s.commonName) + '.svg'
+                  ASSETS_BASE_URL + 'species/' + project.species.map((s) => s.commonName.toLowerCase()) + '.svg'
                 "
                 fit="contain"
                 style="max-width: 200px; max-height: 200px"
@@ -254,6 +254,7 @@ import { type EmberProjectMetadata } from 'src/models/projects';
 import { onMounted, ref } from 'vue';
 
 const props = defineProps({ id: { type: String, required: true } });
+console.log(ASSETS_BASE_URL)
 
 const $q = useQuasar();
 
