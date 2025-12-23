@@ -57,7 +57,7 @@
           <div class="row flex-center">
             <img
               class="self-center col-4"
-              src="/documentation-images/download_dandiset.png"
+              :src="ASSETS_BASE_URL + 'documentation-images/download_dandiset.png'"
               alt="Download Dandiset"
             />
           </div>
@@ -73,7 +73,7 @@
 
           <div class="row flex-center">
             <img
-              src="/documentation-images/files_tab.png"
+              :src="ASSETS_BASE_URL + 'documentation-images/files_tab.png'"
               alt="Files Tab"
               class="self-center col-10"
             />
@@ -216,7 +216,7 @@ dandi upload -i ember</code></pre>
             <li>Fill out basic metadata and hit "Register Dandiset"</li>
             <div class="row flex-center">
               <img
-                src="/documentation-images/register_new_dandiset.png"
+                :src="ASSETS_BASE_URL + 'documentation-images/register_new_dandiset.png'"
                 alt="New Dandiset"
                 class="self-center col-8"
               />
@@ -237,7 +237,7 @@ dandi upload -i ember</code></pre>
             <li>Navigate to your dataset in the EMBER-DANDI archive and note the ID number</li>
             <div class="row flex-center">
               <img
-                src="/documentation-images/test_number_data.png"
+                :src="ASSETS_BASE_URL + 'documentation-images/test_number_data.png'"
                 alt="Test Number Data"
                 class="self-center col-8"
               />
@@ -256,7 +256,11 @@ dandi upload -i ember</code></pre>
             </li>
           </ol>
           <div class="row flex-center">
-            <img src="/documentation-images/API_key.png" alt="API Key" class="self-center col-4" />
+            <img
+              :src="ASSETS_BASE_URL + 'documentation-images/API_key.png'"
+              alt="API Key"
+              class="self-center col-4"
+            />
           </div>
         </q-card-section>
       </q-card>
@@ -265,6 +269,7 @@ dandi upload -i ember</code></pre>
 </template>
 
 <script setup lang="ts">
+import { ASSETS_BASE_URL } from 'src/assets';
 import { ref } from 'vue';
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
