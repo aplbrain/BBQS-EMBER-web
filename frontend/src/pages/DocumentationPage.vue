@@ -18,10 +18,18 @@
             DANDI. Navigate to a section depending on your experience with each tool:
             <div class="q-pl-md">
               <ol>
-                <li clickable @click="scrollTo(ref(experiencedUserSection))" class="cursor-pointer">
+                <li
+                  clickable
+                  @click="scrollTo(ref(experiencedUserSection))"
+                  class="cursor-pointer text-primary text-underline"
+                >
                   I've used DANDI or CLI tools before
                 </li>
-                <li clickable @click="scrollTo(ref(newUserSection))" class="cursor-pointer">
+                <li
+                  clickable
+                  @click="scrollTo(ref(newUserSection))"
+                  class="cursor-pointer text-primary text-underline"
+                >
                   I'm new to Python, CLI, and/or DANDI
                 </li>
                 <ul>
@@ -49,7 +57,7 @@
           <p>Before getting started, please review how to download data:</p>
           <div class="text-h6">How do I download existing data?</div>
           <p>To download the whole dataset:</p>
-          <ol style="margin-top: 0">
+          <ol>
             <li>Make sure you have the DANDI CLI tool installed</li>
             <li>Click the "Download" tab on the right-hand panel</li>
             <li>Copy the command into your python terminal and hit enter</li>
@@ -64,7 +72,7 @@
 
           <div class="text-h6">How do I download a specific file?</div>
           <p>To download specific files:</p>
-          <ol style="margin-top: 0">
+          <ol>
             <li>Navigate to the URL of the dataset of interest</li>
             <li>Click on the "Files" tab on the right-hand panel</li>
             <li>Navigate to the folder containing the desired file</li>
@@ -94,11 +102,14 @@ cd &lt;dataset_id&gt;
 dandi organize "source_folder" -f dry
 dandi organize "source_folder"
 dandi validate .
-dandi upload -i ember</code></pre>
+dandi upload -i ember-dandi</code></pre>
           </q-card>
           <p>
             For downloading data, use the standard procedures from the DANDI documentation
-            <LinkText text="here" uri="https://docs.dandiarchive.org/12_download/" />
+            <LinkText
+              text="here"
+              uri="https://docs.dandiarchive.org/user-guide-using/accessing-data/downloading/"
+            />
             .
           </p>
         </q-card-section>
@@ -106,42 +117,40 @@ dandi upload -i ember</code></pre>
           <div class="text-h5 scrollable" ref="newUserSection">
             <span class="text-primary text-bold">2. I'm new to Python, CLI, and/or DANDI: </span>
           </div>
-          <p>
-            If you're new to Python, follow these instructions to get Python and a virtual Anaconda
-            environment installed:
-          </p>
 
           <div class="text-h6">How do I install Python?</div>
-          There are many ways to install and use Python, so we've highlighted one common way to get
-          you started.
-          <ol>
+          If you're new to Python, it may be useful to start by checking out
+          <LinkText
+            text="Python's Getting Started page"
+            uri="https://www.python.org/about/gettingstarted/"
+          />
+          .There are many ways to install and use Python, so we've highlighted a few common ways to
+          get started below.
+
+          <ul>
             <li>
               <LinkText
                 text="Install Anaconda"
                 uri="https://www.anaconda.com/docs/getting-started/getting-started"
               />
-              to get Python and standard data science/machine learning packages, and a desktop
-              application
             </li>
-            <li>After installing, launch the Anaconda Navigator</li>
-            <li>Navigate to the "Environments" tab on the left pane</li>
-            <li>Create a new environment with your desired name</li>
-            <li>
-              Click on the newly created environment, press the "Play" icon and select "Open
-              Terminal"
-            </li>
-          </ol>
+            <li><LinkText text="Install uv" uri="https://docs.astral.sh/uv/#installation" /></li>
+          </ul>
 
           <div class="text-h6">
             How do I install the
             <LinkText text="DANDI CLient" uri="https://pypi.org/project/dandi/" />?
           </div>
+          <p>
+            Once you've gotten up and running with Python, the following command will install the
+            DANDI CLI:
+          </p>
           <q-card flat class="bg-grey-2 q-ml-lg q-py-xs q-px-md">
             <pre><code>pip install -U dandi</code></pre>
           </q-card>
 
           <div class="text-h6">How do I upload data?</div>
-          <ol style="margin-top: 0">
+          <ol>
             <li>
               Create a GitHub account
               <LinkText text="here" uri="https://github.com/" />
@@ -160,7 +169,7 @@ dandi upload -i ember</code></pre>
           </ol>
 
           <div class="text-h6">Convert files to appropriate standards</div>
-          <ol style="margin-top: 0">
+          <ol>
             <li>
               <LinkText
                 text="Install NWB GUIDE"
@@ -225,7 +234,7 @@ dandi upload -i ember</code></pre>
 
           <div class="text-h6">Upload the converted files</div>
 
-          <ol style="margin-top: 0">
+          <ol>
             <li>
               In the python terminal in your ember-dandi specific environment, run: `pip install -U
               dandi`
@@ -251,7 +260,7 @@ cd &lt;dataset_id&gt;
 dandi organize "source_folder" -f dry
 dandi organize "source_folder"
 dandi validate .
-dandi upload -i ember</code></pre>
+dandi upload -i ember-dandi</code></pre>
               </q-card>
             </li>
           </ol>
