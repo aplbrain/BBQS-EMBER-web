@@ -1,19 +1,15 @@
-# EMBER Archive
+# EMBER Archive Portal - Frontend
 
-## EMBER: Ecosystem for Multi-modal Brain-behavior Experimentation and Research
-
-EMBER is the NIH BRAIN Initiative data archive for multi-modal neurophysiological and behavioral data, supporting the Brain Behavior Quantification and Synchronization (BBQS) Program.
-
-This repository contains a Vue.js 3 + Quasar frontend supporting the EMBER Archive.
+This folder contains a Vue.js 3 + Quasar frontend supporting the EMBER Archive portal.
 
 ## Prerequisities
 
 - [Node.js](https://nodejs.org/en) v20
     - We recommend using `nvm` to manage Node.js versions. Follow the instructions [here](https://github.com/nvm-sh/nvm) for Linux or [here](https://github.com/coreybutler/nvm-windows) for Windows.
 
-## Install
+## Initial Setup
 
-1. (Recommend) Ensure you have `nvm` installed and enabled
+1. (Optional) Ensure you have `nvm` installed and enabled
 
     ```bash
     nvm on
