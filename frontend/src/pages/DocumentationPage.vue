@@ -18,10 +18,18 @@
             DANDI. Navigate to a section depending on your experience with each tool:
             <div class="q-pl-md">
               <ol>
-                <li clickable @click="scrollTo(ref(experiencedUserSection))" class="cursor-pointer text-primary text-underline">
+                <li
+                  clickable
+                  @click="scrollTo(ref(experiencedUserSection))"
+                  class="cursor-pointer text-primary text-underline"
+                >
                   I've used DANDI or CLI tools before
                 </li>
-                <li clickable @click="scrollTo(ref(newUserSection))" class="cursor-pointer text-primary text-underline">
+                <li
+                  clickable
+                  @click="scrollTo(ref(newUserSection))"
+                  class="cursor-pointer text-primary text-underline"
+                >
                   I'm new to Python, CLI, and/or DANDI
                 </li>
                 <ul>
@@ -116,8 +124,8 @@ dandi upload -i ember-dandi</code></pre>
             text="Python's Getting Started page"
             uri="https://www.python.org/about/gettingstarted/"
           />
-          .There are many ways to install and use Python, so we've highlighted a few common ways
-          to get started below.
+          .There are many ways to install and use Python, so we've highlighted a few common ways to
+          get started below.
 
           <ul>
             <li>
@@ -133,7 +141,10 @@ dandi upload -i ember-dandi</code></pre>
             How do I install the
             <LinkText text="DANDI CLient" uri="https://pypi.org/project/dandi/" />?
           </div>
-          <p>Once you've gotten up and running with Python, the following command will install the DANDI CLI:</p>
+          <p>
+            Once you've gotten up and running with Python, the following command will install the
+            DANDI CLI:
+          </p>
           <q-card flat class="bg-grey-2 q-ml-lg q-py-xs q-px-md">
             <pre><code>pip install -U dandi</code></pre>
           </q-card>
