@@ -120,7 +120,7 @@
       <div class="row justify-between">
         <div>
           <a href="https://github.com/aplbrain" target="_blank">
-            <q-icon name="img:/outside-logos/github-mark-white.svg" size="sm" />
+            <q-icon :name="`img:${ASSETS_BASE_URL}outside-logos/github-mark-white.svg`" size="sm" />
           </a>
         </div>
         <div class="text-body2 text-right">
@@ -137,6 +137,7 @@
 </template>
 
 <script setup lang="ts">
+import { ASSETS_BASE_URL } from 'src/assets';
 import { defaultTabs } from 'src/constants/mainLayout';
 import type { Tab } from 'src/models/mainLayout';
 import { ref } from 'vue';

@@ -178,7 +178,12 @@
             <div class="text-subtitle1">Dataset Species</div>
             <div class="row justify-center items-center" style="height: 200px">
               <q-img
-                :src="'/species/' + project.species.map((s) => s.commonName) + '.svg'"
+                :src="
+                  ASSETS_BASE_URL +
+                  'species/' +
+                  project.species.map((s) => s.commonName.toLowerCase()) +
+                  '.svg'
+                "
                 fit="contain"
                 style="max-width: 200px; max-height: 200px"
               />
@@ -245,6 +250,7 @@
 </template>
 
 <script setup lang="ts">
+import { ASSETS_BASE_URL } from 'src/assets';
 import { copyToClipboard, useQuasar } from 'quasar';
 import { emberProjects } from 'src/constants/projects';
 import { type EmberProjectMetadata } from 'src/models/projects';

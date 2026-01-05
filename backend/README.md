@@ -14,7 +14,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
 1. Install (MacOS)
 
     ```bash
-    brew install postgresql@18`
+    brew install postgresql@18
     ```
 
     - For Windows, see https://www.postgresql.org/download/windows/
@@ -33,6 +33,27 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     echo 'export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"' >> ~/.zshrc
     source ~/.zshrc
     ```
+
+### Set Up Database
+1. Create postgres user
+    ```
+    createuser -s postgres
+    ```
+1. Enter postgres shell 
+    ```
+    psql -U postgres
+    ```
+1. Inside postgres shell run:
+    ```
+    CREATE USER ember WITH PASSWORD 'test123'; # password is up to you
+    CREATE ROLE ember_admin WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'test123'; # password is up to you
+    CREATE DATABASE ember_db OWNER ember;
+    ```
+
+### Environment Setup
+1. Create .env file in BBQS-EMBER-web/backend/ember 
+1. In .env file define ```DATABASE_URL``` following the pattern: ```postgres://[user[:password]]:@localhost:5432/[dbname]```
+
 
 ## Initial Setup
 
