@@ -21,7 +21,7 @@ class EmberProject(models.Model):
     access_level_emberdandisets = models.JSONField(default=list, blank=True, help_text="EMBER-DANDI dandiset ids")
     access_level_restricted_datasets = models.JSONField(default=list, blank=True, help_text="Restricted dataset ids")
     access_level_access_vault_ids = models.JSONField(default=list, blank=True, help_text="EMBERvault dataset ids")
-    related_publications = models.JSONField(default=list, blank=True, help_text="DOIs for related publications")
+    related_publications = models.JSONField(default=list, blank=True, help_text="DOIs for related publications")  # Question - should this be a ManyToMany field with a Publication class?
     related_repositories = models.JSONField(default=list, blank=True, help_text="Identifiers for related repositories")
     related_dandisets = models.JSONField(default=list, blank=True, help_text="DOIs for related dandisets")
     related_data = models.JSONField(default=list, blank=True, help_text="Identifiers for other related datasets")
