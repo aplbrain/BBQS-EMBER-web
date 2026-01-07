@@ -3,4 +3,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("EMBER API Index.")
+    return HttpResponse("Welcome to the EMBER API!")

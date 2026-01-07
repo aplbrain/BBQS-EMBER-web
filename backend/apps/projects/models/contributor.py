@@ -9,7 +9,7 @@ class Contributor(models.Model):
     contributor_id = models.CharField(primary_key=True, help_text="Internal identifier for the contributor within EMBER metadata")
     external_identifiers = models.JSONField(blank=True, help_text="External identifiers such as ORCID")
     name = models.CharField(help_text="Full name of the contributor")
-    email = models.CharField(blank=True, help_text="Contact email address")
+    email = models.EmailField(blank=True, help_text="Contact email address")
     institution = models.CharField(blank=True, help_text="Institutional affiliation")
 
 

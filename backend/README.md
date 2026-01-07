@@ -2,7 +2,7 @@
 
 This folder contains a Django + PostgreSQL backend supporting the EMBER Archive portal
 
-## Prerequisities
+## Prerequisites
 
 - Python 3.12+
 - [PostgreSQL](#installing-postgresql)
@@ -42,7 +42,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
 1. Enter postgres shell 
     ```
     psql -U postgres
-    ```
+    ````
 1. Inside postgres shell run:
     ```
     CREATE USER ember WITH PASSWORD 'test123'; # password is up to you
