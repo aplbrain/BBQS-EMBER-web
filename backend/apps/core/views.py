@@ -1,7 +1,16 @@
-from django.http import HttpResponse
+from drf_spectacular.utils import extend_schema
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-# Create your views here.
+from apps.core.serializers import MessageSerializer
 
 
-def index(request):
-    return HttpResponse("Welcome to the EMBER API!")
+class ApiIndexView(APIView):
+    @extend_schema(
+        responses={200: MessageSerializer},
+        description="EMBER API Root",
+    )
+    def get(self, request):
+        return Response(
+            {"message": "Welcome to the EMBER API!"},
+        )

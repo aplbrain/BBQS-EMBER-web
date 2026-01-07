@@ -1,4 +1,4 @@
-name: Python CI
+name: Backend CI
 
 on: [pull_request]
 
@@ -8,6 +8,7 @@ defaults:
 
 jobs:
   checks:
+    name: Run formatting and linting checks
     runs-on: ubuntu-latest
     strategy:
       matrix:
