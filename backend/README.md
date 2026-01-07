@@ -2,7 +2,7 @@
 
 This folder contains a Django + PostgreSQL backend supporting the EMBER Archive portal
 
-## Prerequisities
+## Prerequisites
 
 - Python 3.12+
 - [PostgreSQL](#installing-postgresql)
@@ -52,7 +52,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
 
 ### Environment Setup
 1. Create .env file in BBQS-EMBER-web/backend/ember 
-1. In .env file define ```DATABASE_URL``` following the pattern: ```postgres://[user[:password]]:@localhost:5432/[dbname]```
+1. In .env file define ```DATABASE_URL``` following the pattern: ```postgres://[user:[password]]@localhost:5432/[dbname]```
 
 
 ## Initial Setup

@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 
-# Create your views here.
 
-def index(request):
-    return HttpResponse("EMBER API Index.")
+def projects(request):
+    return HttpResponse("Placeholder: List all Projects")
+
+
+def project(request, project_id):
+    return HttpResponse(f"Placeholder: Get Project with id={project_id}")
