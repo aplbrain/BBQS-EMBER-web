@@ -6,6 +6,7 @@ class Funding(models.Model):
     Funding source metadata.
     """
 
+    id = models.BigAutoField(primary_key=True)
     funding_institute = models.CharField(help_text="Name of the funding institute (e.g., NIH, NSF, DARPA)")
     award_number = models.CharField(help_text="Funding award or grant number")
     award_title = models.CharField(blank=True, help_text="Title of the funded award")
