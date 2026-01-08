@@ -98,7 +98,7 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
         'Synchronized neuronal and peripheral biomarker recordings in freely moving humans',
       awardIdentifier: 'R61MH135106',
       activityCode: 'R61',
-      awardeeOrganization: 'University Of California Los Angeles',
+      awardeeOrganization: 'Duke University',
       startDate: new Date('2024-02-21T12:02:00.000Z'),
       periodOfPerformance: 3,
       awardLink: 'https://reporter.nih.gov/project-details/10792386',
@@ -116,7 +116,7 @@ const initialBBQSProjectList: NIHProjectMetadata[] = [
     contributors: [
       {
         name: 'Nanthia A Suthana',
-        email: 'nanthia@duke.edu',
+        email: 'nanthia.suthana@duke.edu',
         roles: [
           ContributorRole.principalInvestigator,
           ContributorRole.contactPrincipalInvestigator,

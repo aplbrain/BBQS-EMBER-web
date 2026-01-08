@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import views
+from apps.core.views import ApiIndexView
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", ApiIndexView.as_view(), name="index"),
 ]

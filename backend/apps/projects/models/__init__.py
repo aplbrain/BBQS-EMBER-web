@@ -1,5 +1,4 @@
-from .contributor import Contributor
-from .contributor import ProjectContributor
+from .contributor import Contributor, ProjectContributor
 from .funding import Funding
 from .project import EmberProject
 

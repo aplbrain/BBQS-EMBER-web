@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.projects.models import EmberProject, Contributor, Funding
+from apps.projects.models import Contributor, EmberProject, Funding
 
 # Register your models here.
 
