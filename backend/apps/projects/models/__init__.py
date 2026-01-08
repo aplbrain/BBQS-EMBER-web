@@ -1,5 +1,6 @@
-from .contributor import Contributor, ProjectContributor
+from .contributor import Contributor, PublicationContributor
 from .funding import Funding
 from .project import EmberProject
+from .publication import Publication
 
-__all__ = ["EmberProject", "Contributor", "ProjectContributor", "Funding"]
+__all__ = ["EmberProject", "Contributor", "PublicationContributor", "Funding", "Publication"]
