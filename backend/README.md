@@ -2,7 +2,7 @@
 
 This folder contains a Django + PostgreSQL backend supporting the EMBER Archive portal
 
-## Prerequisities
+## Prerequisites
 
 - Python 3.12+
 - [PostgreSQL](#installing-postgresql)
@@ -51,9 +51,15 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     ```
 
 ### Environment Setup
-1. Create .env file in BBQS-EMBER-web/backend/ember 
-1. In .env file define ```DATABASE_URL``` following the pattern: ```postgres://[user[:password]]:@localhost:5432/[dbname]```
-
+1. Create .env file in BBQS-EMBER-web/backend/config 
+1. In .env file define ```DATABASE_URL``` following the pattern: ```postgres://[user:[password]]@localhost:5432/[dbname]```
+1. Run the following to generate a secret key and write it to your .env file:
+    ```
+    uv run python - <<'EOF' >> config/.env
+    from django.core.management.utils import get_random_secret_key
+    print(f"DJANGO_SECRET_KEY={get_random_secret_key()}")
+    EOF
+    ```
 
 ## Initial Setup
 
