@@ -9,3 +9,8 @@ ember_dandi_id_validator = RegexValidator(
 )
 
 year_validator = RegexValidator(regex=r"\d{4}", message="This field must be a valid year")
+
+orcid_validator = RegexValidator(
+    regex=r"^https://orcid.org/\\d{4}-\\d{4}-\\d{4}-\\d{4}$",
+    message="This field must be a valid ORCID",
+)

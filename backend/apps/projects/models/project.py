@@ -6,12 +6,19 @@ from apps.projects.validators import doi_validator, ember_dandi_id_validator
 class EmberProject(models.Model):
     """
     EMBER Project metadata.
+
+    v1.0.0 - https://github.com/aplbrain/BBQS-EMBER-Data-Model/releases/tag/v1.0.0
     """
 
     id = models.BigAutoField(primary_key=True)
     project_id = models.CharField(help_text="Project identifier")
     project_title = models.CharField(help_text="Title of the project")
     project_description = models.TextField(help_text="Text description of the project")
+    model_organism = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
+    )
     data_use_agreement = models.TextField(
         blank=True,
         help_text="Description or reference to the data use agreement governing access to restricted or controlled data",
