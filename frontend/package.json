@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
-    "@quasar/app-vite": "^2.0.0",
+    "@quasar/app-vite": "^2.3.0",
     "@types/node": "^20.14.8",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.5.0",
     "autoprefixer": "^10.4.2",
@@ -38,13 +38,13 @@
     "globals": "^16.0.0",
     "prettier": "3.6.2",
     "tsx": "^4.20.6",
-    "typescript": "~5.5.4",
+    "typescript": "^5.9.3",
     "vite-plugin-checker": "^0.9.1",
     "vue-tsc": "^2.2.10"
   },
   "engines": {
-    "node": "^20 || ^18 || ^16",
-    "npm": ">= 6.13.4",
+    "node": "^20 || ^22",
+    "npm": ">= 10.7.0",
     "yarn": ">= 1.21.1"
   }
 }

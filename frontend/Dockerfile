@@ -1,4 +1,4 @@
-FROM node:20-alpine AS frontend
+FROM node:22-alpine AS frontend
 
 LABEL maintainer="Nicole Stock <nicole.stock@jhuapl.edu>"
 LABEL description="A Docker image for the BBQS EMBER Archive web frontend"
@@ -27,8 +27,7 @@ ADD frontend /frontend
 
 WORKDIR /frontend
 
-RUN yarn
-RUN yarn global add @quasar/cli
-RUN yarn quasar build
+RUN npm install
+RUN npm run build
 
 CMD ["quasar","serve", "dist/spa", "--port", "8080", "--history"]
