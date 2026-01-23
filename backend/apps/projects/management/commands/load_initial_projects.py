@@ -11,21 +11,13 @@ from django.db import transaction
 from apps.projects.models import Contributor, EmberProject, Funding, Publication
 
 GITHUB_REPO = "https://github.com/aplbrain/BBQS-EMBER-Data-Model"
-GITHUB_TAG = "v1.0.0"
-GITHUB_ZIP_URL = f"{GITHUB_REPO}/archive/refs/tags/{GITHUB_TAG}.zip"
+GITHUB_REF = "heads/34-ember-project-initial-data-updates"
+GITHUB_ZIP_URL = f"{GITHUB_REPO}/archive/refs/{GITHUB_REF}.zip"
 DATA_FILES_DIR = "EMBER_Metadata/data"
 
 PROJECT_SCALAR_FIELDS = {
     field.name for field in EmberProject._meta.fields if not field.name == "id" and not field.is_relation
 }
-
-# PROJECT_FK_FIELDS = {
-#     field.name for field in EmberProject._meta.fields if field.is_relation and field.many_to_one
-# }
-
-# PROJECT_M2M_FIELDS = {
-#     field.name for field in EmberProject._meta.many_to_many
-# }
 
 CONTRIBUTOR_SCALAR_FIELDS = {
     field.name for field in Contributor._meta.fields if not field.name == "id" and not field.is_relation
@@ -44,7 +36,7 @@ class Command(BaseCommand):
     help = "Load initial EMBER Projects YAML files"
 
     def add_arguments(self, parser):
-        parser.add_argument("path", nargs="?", help=f"Local path to directory containing YAML files. If omitted, default behavior pulls YAML files from {GITHUB_REPO} Tag {GITHUB_TAG}")
+        parser.add_argument("path", nargs="?", help=f"Local path to directory containing YAML files. If omitted, default behavior pulls YAML files from {GITHUB_ZIP_URL}")
         parser.add_argument("--dryrun", action="store_true", help="Do not write to DB")
         
         return super().add_arguments(parser)
@@ -82,7 +74,7 @@ class Command(BaseCommand):
                     if field in data
                 }
 
-                # Handle Foreign Key fields
+                # Handle Foreign Key fields - data_administrator (Contributor)
                 field_data_admin = "data_administrator"
                 data_admin_raw_data = data.get(field_data_admin)
                 if not data_admin_raw_data:
@@ -108,7 +100,7 @@ class Command(BaseCommand):
                     },
                 )
 
-                # Handle Many-to-Many fields
+                # Handle Many-to-Many fields - related_publications (Publication), funding (Funding)
                 field_related_pubs = "related_publications"
                 field_funding = "funding"
 
@@ -127,6 +119,28 @@ class Command(BaseCommand):
                             publication_doi=publication_doi,
                             defaults=related_pub_data
                         )
+
+                        # Handle Many-to-Many fields within Publication - authors (Contributor)
+                        field_authors = "authors"
+                        authors_raw_data = pub.get(field_authors, [])
+                        authors = []
+                        if authors_raw_data:
+                            for author_raw in authors_raw_data:
+                                author_name = author_raw.get("name")
+                                author_data = {
+                                    field: author_raw.get(field)
+                                    for field in CONTRIBUTOR_SCALAR_FIELDS
+                                    if field in author_raw
+                                }
+
+                                author, _ = Contributor.objects.update_or_create(
+                                    name=author_name,
+                                    defaults=author_data
+                                )
+
+                                authors.append(author)
+
+                            getattr(related_pub, field_authors).set(authors)
                 
                         related_pubs.append(related_pub)
 

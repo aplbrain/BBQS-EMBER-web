@@ -75,6 +75,12 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     uv run manage.py createsuperuser
     ```
 
+1. Load initial data
+
+    ```bash
+    uv run manage.py load_initial_projects
+    ```
+
 ## Development
 
 1. Start the backend application

@@ -17,7 +17,6 @@ class Publication(models.Model):
     title = models.CharField(help_text="Title of the publication")
     authors = models.ManyToManyField(
         "Contributor",
-        through="PublicationContributor",
         blank=True,
         help_text="Authors of the publication",
     )

@@ -11,7 +11,7 @@ class EmberProject(models.Model):
     """
 
     id = models.BigAutoField(primary_key=True)
-    project_id = models.CharField(help_text="Project identifier")
+    project_id = models.CharField(help_text="Project identifier", unique=True)
     project_title = models.CharField(help_text="Title of the project")
     project_description = models.TextField(help_text="Text description of the project")
     model_organism = models.JSONField(
