@@ -16,15 +16,21 @@ GITHUB_ZIP_URL = f"{GITHUB_REPO}/archive/refs/{GITHUB_REF}.zip"
 DATA_FILES_DIR = "EMBER_Metadata/data"
 
 PROJECT_SCALAR_FIELDS = {
-    field.name for field in EmberProject._meta.fields if not field.name == "id" and not field.is_relation
+    field.name
+    for field in EmberProject._meta.fields
+    if not field.name == "id" and not field.is_relation
 }
 
 CONTRIBUTOR_SCALAR_FIELDS = {
-    field.name for field in Contributor._meta.fields if not field.name == "id" and not field.is_relation
+    field.name
+    for field in Contributor._meta.fields
+    if not field.name == "id" and not field.is_relation
 }
 
 PUBLICATION_SCALAR_FIELDS = {
-    field.name for field in Publication._meta.fields if not field.name == "id" and not field.is_relation 
+    field.name
+    for field in Publication._meta.fields
+    if not field.name == "id" and not field.is_relation
 }
 
 FUNDING_SCALAR_FIELDS = {
@@ -36,15 +42,19 @@ class Command(BaseCommand):
     help = "Load initial EMBER Projects YAML files"
 
     def add_arguments(self, parser):
-        parser.add_argument("path", nargs="?", help=f"Local path to directory containing YAML files. If omitted, default behavior pulls YAML files from {GITHUB_ZIP_URL}")
+        parser.add_argument(
+            "path",
+            nargs="?",
+            help=f"Local path to directory containing YAML files. If omitted, default behavior pulls YAML files from {GITHUB_ZIP_URL}",
+        )
         parser.add_argument("--dryrun", action="store_true", help="Do not write to DB")
-        
+
         return super().add_arguments(parser)
 
     def handle(self, *args, **options):
         # Get arguments
-        path = options['path']
-        dryrun = options['dryrun']
+        path = options["path"]
+        dryrun = options["dryrun"]
 
         if path:
             files = Path(path).glob("*.yaml")
@@ -69,16 +79,16 @@ class Command(BaseCommand):
                 print(f"Loading Project {project_id}")
 
                 project_data = {
-                    field: data.get(field)
-                    for field in PROJECT_SCALAR_FIELDS
-                    if field in data
+                    field: data.get(field) for field in PROJECT_SCALAR_FIELDS if field in data
                 }
 
                 # Handle Foreign Key fields - data_administrator (Contributor)
                 field_data_admin = "data_administrator"
                 data_admin_raw_data = data.get(field_data_admin)
                 if not data_admin_raw_data:
-                    raise CommandError(f"EMBER Project {project_id} is missing required FK: {field_data_admin}")
+                    raise CommandError(
+                        f"EMBER Project {project_id} is missing required FK: {field_data_admin}"
+                    )
 
                 name = data_admin_raw_data.get("name")
                 data_admin_data = {
@@ -88,16 +98,12 @@ class Command(BaseCommand):
                 }
 
                 data_admin, _ = Contributor.objects.update_or_create(
-                    name=name,
-                    defaults=data_admin_data
+                    name=name, defaults=data_admin_data
                 )
 
                 project, _ = EmberProject.objects.update_or_create(
                     project_id=project_id,
-                    defaults={
-                        "data_administrator": data_admin,
-                        **project_data
-                    },
+                    defaults={"data_administrator": data_admin, **project_data},
                 )
 
                 # Handle Many-to-Many fields - related_publications (Publication), funding (Funding)
@@ -116,8 +122,7 @@ class Command(BaseCommand):
                         }
 
                         related_pub, _ = Publication.objects.update_or_create(
-                            publication_doi=publication_doi,
-                            defaults=related_pub_data
+                            publication_doi=publication_doi, defaults=related_pub_data
                         )
 
                         # Handle Many-to-Many fields within Publication - authors (Contributor)
@@ -134,14 +139,13 @@ class Command(BaseCommand):
                                 }
 
                                 author, _ = Contributor.objects.update_or_create(
-                                    name=author_name,
-                                    defaults=author_data
+                                    name=author_name, defaults=author_data
                                 )
 
                                 authors.append(author)
 
                             getattr(related_pub, field_authors).set(authors)
-                
+
                         related_pubs.append(related_pub)
 
                     getattr(project, field_related_pubs).set(related_pubs)
@@ -158,10 +162,9 @@ class Command(BaseCommand):
                         }
 
                         funding, _ = Funding.objects.update_or_create(
-                            award_number=award_number,
-                            defaults=funding_data
+                            award_number=award_number, defaults=funding_data
                         )
-                
+
                         funding_list.append(funding)
 
                     getattr(project, field_funding).set(funding_list)
