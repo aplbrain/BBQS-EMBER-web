@@ -51,6 +51,10 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     ```
 
 ### Environment Setup
+1. Within the `backend/` directory, run the following:
+    ```
+    uv sync
+    ```
 1. Create .env file in BBQS-EMBER-web/backend/config 
 1. In .env file define `DATABASE_URL` following the pattern: `postgres://[user:[password]]@localhost:5432/[dbname]`
     - For example, following the steps above, we defined:
