@@ -100,7 +100,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     uv run manage.py runserver
     ```
 
-1. The backend should now be running at [http://localhost:8000]().
+1. The backend should now be running at [http://localhost:8000](). To view the API endpoints, see [http://localhost:8000/api]().
 
 ## Testing
 
