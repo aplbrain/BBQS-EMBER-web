@@ -16,7 +16,7 @@ class EmberProject(models.Model):
     project_id = models.CharField(help_text="Project identifier", unique=True)
     project_title = models.CharField(help_text="Title of the project")
     project_description = models.TextField(help_text="Text description of the project")
-    model_organism = JSONField(
+    model_organisms = JSONField(
         default=list,
         blank=True,
         help_text="Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",

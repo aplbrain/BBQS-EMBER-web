@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
                 ('project_id', models.CharField(help_text='Project identifier', unique=True)),
                 ('project_title', models.CharField(help_text='Title of the project')),
                 ('project_description', models.TextField(help_text='Text description of the project')),
-                ('model_organism', django_jsonform.models.fields.JSONField(blank=True, default=list, help_text='Model organisms used in this project (e.g., Mus musculus, Homo sapiens)')),
+                ('model_organisms', django_jsonform.models.fields.JSONField(blank=True, default=list, help_text='Model organisms used in this project (e.g., Mus musculus, Homo sapiens)')),
                 ('data_use_agreement', models.TextField(blank=True, help_text='Description or reference to the data use agreement governing access to restricted or controlled data')),
                 ('data_use_agreement_required', models.BooleanField(default=False, help_text='Indicates whether a data use agreement is required to access any project data')),
                 ('data_availability_emberdandi', models.BooleanField(default=False, help_text='Indicates if data is available in EMBER-DANDI', verbose_name='Data in EMBER-DANDI?')),
