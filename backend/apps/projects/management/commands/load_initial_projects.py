@@ -1,7 +1,6 @@
 import io
 import zipfile
 from pathlib import Path
-from pprint import pprint
 
 import requests
 import yaml
@@ -11,8 +10,8 @@ from django.db import transaction
 from apps.projects.models import Contributor, EmberProject, Funding, Publication
 
 GITHUB_REPO = "https://github.com/aplbrain/BBQS-EMBER-Data-Model"
-GITHUB_REF = "heads/34-ember-project-initial-data-updates"
-GITHUB_ZIP_URL = f"{GITHUB_REPO}/archive/refs/{GITHUB_REF}.zip"
+GITHUB_REF = "refs/heads/main"
+GITHUB_ZIP_URL = f"{GITHUB_REPO}/archive/{GITHUB_REF}.zip"
 DATA_FILES_DIR = "EMBER_Metadata/data"
 
 PROJECT_SCALAR_FIELDS = {
