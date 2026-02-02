@@ -20,3 +20,6 @@ class Contributor(models.Model):
     name = models.CharField(help_text="Full name of the contributor")
     email = models.EmailField(blank=True, help_text="Contact email address")
     institution = models.CharField(blank=True, help_text="Institutional affiliation")
+
+    def __str__(self):
+        return self.name

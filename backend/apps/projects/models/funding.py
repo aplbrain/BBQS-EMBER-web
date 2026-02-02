@@ -28,3 +28,6 @@ class Funding(models.Model):
     funding_url = models.URLField(
         blank=True, help_text="URL to the funding announcement or award page"
     )
+
+    def __str__(self):
+        return self.award_number

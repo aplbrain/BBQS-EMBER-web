@@ -29,3 +29,6 @@ class Publication(models.Model):
     publication_url = models.URLField(
         blank=True, help_text="URL to the publication landing page or preprint"
     )
+
+    def __str__(self):
+        return self.title

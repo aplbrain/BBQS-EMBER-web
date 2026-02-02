@@ -16,6 +16,8 @@ class FundingSerializer(serializers.ModelSerializer):
 
 
 class PublicationSerializer(serializers.ModelSerializer):
+    authors = ContributorSerializer(many=True, read_only=True)
+
     class Meta:
         model = Publication
         fields = "__all__"
