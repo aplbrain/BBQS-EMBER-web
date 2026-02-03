@@ -1,6 +1,68 @@
 import type { QTableColumn } from 'quasar/dist/types/api/qtable.js';
 import { getDateString } from 'src/utils/date';
 
+// TODO: Computed Data
+export interface ProjectComputedData {
+  authorInitials: string;
+  authorLastName: string;
+  year: string;
+}
+
+export interface ProjectModel {
+  id: number;
+  dataAdministrator: ContributorModel;
+  relatedPublications: PublicationModel[];
+  funding: FundingModel[];
+  projectId: string;
+  title: string;
+  description: string;
+  modelOrganisms?: string[];
+  dataUseAgreement?: string;
+  dataUseAgreementRequired: boolean;
+  dataAvailabilityEmberdandi: boolean;
+  dataAvailabilityEmberrestricted: boolean;
+  dataAvailabilityEmbervault: boolean;
+  accessTierSummary?: string;
+  lastMetadataUpdate: string;
+  metadataVersion?: string;
+  emberDoi?: string;
+  accessLevelEmberdandisets?: string[];
+  accessLevelRestrictedDatasets?: string[];
+  accessLevelAccessVaultIds?: string[];
+  relatedRepositories?: string[];
+  relatedDandisets?: string[];
+  relatedData?: string[];
+}
+
+export interface ContributorModel {
+  id: number;
+  name: string;
+  orcid?: string;
+  // externalIdentifiers?: unknown;
+  email?: string;
+  institution?: string;
+}
+
+export interface FundingModel {
+  id: number;
+  startYear?: number;
+  endYear?: number;
+  fundingInstitute: string;
+  awardNumber: string;
+  awardTitle?: string;
+  fundingUrl?: string;
+}
+
+export interface PublicationModel {
+  id: number;
+  doi?: string;
+  title: string;
+  journal?: string;
+  year?: number;
+  publicationUrl?: string;
+  authors: ContributorModel[];
+}
+
 export interface EmberProjectMetadata extends ProjectMetadata {
   id: string;
   title: string;

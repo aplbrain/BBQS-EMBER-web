@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_spectacular",
     "django_jsonform",
+    "corsheaders",
     "apps.projects.apps.ProjectsConfig",
     "apps.core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -142,3 +144,9 @@ SPECTACULAR_SETTINGS = {
     # 'SWAGGER_UI_FAVICON_HREF': # TODO: Add ember logo
     # OTHER SETTINGS
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:9000",
+    "http://127.0.0.1:9000",
+    # TODO: Production Server
+]

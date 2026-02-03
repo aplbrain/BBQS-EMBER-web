@@ -1,22 +1,26 @@
 <template>
-  <q-page padding v-if="project">
+  <q-page padding v-if="loading" class="column flex-center">
+    <q-spinner size="10vh" color="primary" />
+  </q-page>
+  <q-page padding v-else-if="project">
     <!-- Hero / Title -->
     <div class="q-mb-lg">
       <div class="text-overline text-grey-7">EMBER Archive Project</div>
       <div class="row items-center no-wrap q-col-gutter-md">
         <div class="col-auto">
           <q-avatar square size="64px" color="primary" text-color="white">
-            {{ project.websiteSpecific.initials }}
+            {{ computedProjectData.authorInitials }}
           </q-avatar>
         </div>
         <div class="col">
           <h1 class="text-h4 q-my-none">{{ project.title }}</h1>
           <div class="text-subtitle2 text-grey-7 q-mt-xs">
-            {{ project.contributors.map((c) => c.name).join(', ') }}
-            <span v-if="project.year">&nbsp;•&nbsp;{{ project.year }}</span>
+            {{ project.dataAdministrator.name }}
+            <span>&nbsp;•&nbsp;{{ computedProjectData.year }}</span>
           </div>
           <div class="q-mt-xs">
-            <q-chip
+            <!-- TODO: Tags -->
+            <!-- <q-chip
               v-for="tag in project.tags"
               :key="tag"
               dense
@@ -25,7 +29,7 @@
               text-color="grey-9"
               class="q-mr-sm"
               >{{ tag }}</q-chip
-            >
+            > -->
           </div>
         </div>
       </div>
@@ -39,10 +43,11 @@
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
             <div class="text-h6">Summary</div>
-            <div class="text-body1 q-mt-sm">{{ project.summary }}</div>
+            <div class="text-body1 q-mt-sm">{{ project.description }}</div>
           </q-card-section>
           <q-separator />
-          <q-card-section>
+          <!-- Should this be per data rather than per project ? -->
+          <!-- <q-card-section>
             <div class="text-subtitle1 q-mb-sm">How to access the data (Python)</div>
             <q-banner rounded class="bg-grey-2 text-grey-9 q-mb-md">
               Install aws cli if not installed.
@@ -52,7 +57,7 @@
                 </q-card-section>
               </q-card>
             </q-banner>
-          </q-card-section>
+          </q-card-section> -->
         </q-card>
 
         <!-- Citation -->
@@ -61,15 +66,17 @@
             <div class="text-h6">Citation</div>
             <div class="text-body2 q-mt-sm">
               If you use this dataset, please cite:
-              {{ project.websiteSpecific.citationAuthorYear }} [Data set]. EMBER Archive.
-              https://doi.org/{{ project.doi }}
+              {{ computedProjectData.authorLastName }} et al.
+              {{ computedProjectData.year }} [Dataset]. EMBER Archive.
+              <span v-if="project.emberDoi">https://doi.org/{{ project.emberDoi }}</span>
             </div>
             <q-btn
+              v-if="project.emberDoi"
               flat
               dense
               icon="bookmark"
-              :label="`DOI:${project.doi}`"
-              @click="copy(`https://doi.org/${project.doi}`)"
+              :label="`DOI:${project.emberDoi}`"
+              @click="copy(`https://doi.org/${project.emberDoi}`)"
             >
               <q-tooltip>Copy to Clipboard</q-tooltip>
             </q-btn>
@@ -82,20 +89,30 @@
             <div class="text-h6">Publications</div>
 
             <q-list separator class="q-mt-sm">
-              <q-item v-for="pub in project.publications" :key="pub.title">
+              <q-item v-for="pub in project.relatedPublications" :key="pub.title">
                 <q-item-section>
                   <div class="text-body1">{{ pub.title }}</div>
                   <div class="text-caption text-grey-7">
-                    {{ pub.authors.map((a) => a.name).join(', ') }} ({{ pub.year }})
+                    {{ pub.authors?.map((a) => a.name).join(', ') }} ({{ pub.year }})
                   </div>
                   <div class="q-mt-xs">
                     <q-btn
                       v-if="pub.doi"
                       flat
                       dense
-                      icon="bookmark"
+                      icon="article"
                       :label="`DOI:${pub.doi}`"
                       :href="`https://doi.org/${pub.doi}`"
+                      target="_blank"
+                      icon-right="launch"
+                    />
+                    <q-btn
+                      v-else-if="pub.publicationUrl"
+                      flat
+                      dense
+                      icon="article"
+                      label="Publication Link"
+                      :href="pub.publicationUrl"
                       target="_blank"
                       icon-right="launch"
                     />
@@ -126,7 +143,11 @@
                     <div class="text-subtitle2 text-grey-7">Acknowledgements</div>
                     <div class="text-body2">
                       Data hosted by EMBER. Funded in part by
-                      {{ project.funding.map((f) => f.awardIdentifier).join(', ') }}
+                      {{
+                        project.funding
+                          .map((f) => `${f.fundingInstitute} ${f.awardNumber}`)
+                          .join(', ')
+                      }}
                     </div>
                   </div>
                 </div>
@@ -140,44 +161,80 @@
       <div class="col-12 col-md-4">
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
-            <div class="text-subtitle1">Links</div>
-            <div class="q-gutter-sm q-mt-sm">
-              <q-btn
-                outline
-                color="primary"
-                icon="table_view"
-                label="Explore Data"
-                :href="project.dataUri"
-                target="_blank"
-                class="full-width"
-              />
-              <!-- <q-btn
-                outline
-                color="primary"
-                icon="code"
-                label="EMBER-DANDI API Docs"
-                :href="project.links.api"
-                target="_blank"
-                class="full-width"
-              /> -->
-              <!-- <q-btn
-                outline
-                color="secondary"
-                icon="link"
-                label="Project Page"
-                :href="project.links.project"
-                target="_blank"
-                class="full-width"
-              /> -->
-            </div>
+            <div class="text-subtitle1">Data</div>
+            <q-list dense class="q-mt-sm">
+              <q-item>
+                <q-item-section>
+                  <div class="text-caption text-grey-7">EMBER-DANDI</div>
+                  <div v-if="!project.dataAvailabilityEmberdandi">None</div>
+                  <div
+                    v-else
+                    v-for="(item, idx) in project.accessLevelEmberdandisets"
+                    :key="idx"
+                    class="text-body2"
+                  >
+                    {{ item }}
+                  </div>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <div class="text-caption text-grey-7">EMBER Restricted</div>
+                  <div v-if="!project.dataAvailabilityEmberrestricted">None</div>
+                  <div
+                    v-else
+                    v-for="(item, idx) in project.accessLevelRestrictedDatasets"
+                    :key="idx"
+                    class="text-body2"
+                  >
+                    {{ item }}
+                  </div>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <div class="text-caption text-grey-7">EMBERvault</div>
+                  <div v-if="!project.dataAvailabilityEmbervault">None</div>
+                  <div
+                    v-else
+                    v-for="(item, idx) in project.accessLevelAccessVaultIds"
+                    :key="idx"
+                    class="text-body2"
+                  >
+                    {{ item }}
+                  </div>
+                </q-item-section>
+              </q-item>
+            </q-list>
           </q-card-section>
         </q-card>
 
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
+            <div class="text-subtitle1">Links</div>
+            <div class="q-gutter-sm q-mt-sm">
+              <q-btn
+                v-for="(dataset, idx) in project.relatedData"
+                :key="idx"
+                outline
+                color="primary"
+                icon="table_view"
+                label="Explore Data"
+                :href="dataset"
+                target="_blank"
+                class="full-width"
+              />
+            </div>
+          </q-card-section>
+        </q-card>
+
+        <!-- TODO: Model Organisms
+              - Need standard format & mapping of name to image -->
+        <!-- <q-card class="q-mb-lg" flat bordered>
+          <q-card-section>
             <div class="text-subtitle1">Dataset Species</div>
             <div class="row justify-center items-center" style="height: 200px">
-              <q-img
+             <q-img
                 :src="
                   ASSETS_BASE_URL +
                   'species/' +
@@ -189,43 +246,51 @@
               />
             </div>
           </q-card-section>
-        </q-card>
+        </q-card> -->
 
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
             <div class="text-subtitle1">Dataset Metadata</div>
             <q-list dense class="q-mt-sm">
-              <q-item>
+              <!-- TODO: Data Modality -->
+              <!-- <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Modality</div>
                   <div class="text-body2">{{ project.dataModalities.join(', ') }}</div>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
               <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Species</div>
                   <div class="text-body2">
-                    {{ project.species.map((s) => s.commonName).join(', ') }}
+                    {{
+                      project.modelOrganisms?.length
+                        ? project.modelOrganisms?.join(', ')
+                        : 'None Listed'
+                    }}
                   </div>
                 </q-item-section>
               </q-item>
-              <q-item>
+              <!-- TODO: License -->
+              <!-- <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">License</div>
                   <div class="text-body2">{{ project.license }}</div>
                 </q-item-section>
-              </q-item>
-              <q-item>
+              </q-item> -->
+              <!-- TODO: Size -->
+              <!-- <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Size</div>
                   <div class="text-body2">{{ project.websiteSpecific.size }}</div>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
             </q-list>
           </q-card-section>
         </q-card>
 
-        <q-card flat bordered>
+        <!-- TODO: Data URI -- should be split into pointers to all  data -->
+        <!-- <q-card flat bordered>
           <q-card-section>
             <div class="text-subtitle1">EMBER Archive URI</div>
             <q-banner rounded class="bg-grey-2 text-grey-9 q-mt-sm">
@@ -240,38 +305,66 @@
               @click="copy(project.dataUri)"
             />
           </q-card-section>
-        </q-card>
+        </q-card> -->
       </div>
     </div>
   </q-page>
-  <q-page padding v-else>
-    <div class="row flex-center">No Project Found</div>
+  <q-page padding v-else class="column flex-center">
+    <div class="text-h4">No Project Found</div>
+    <q-btn
+      class="q-mt-md"
+      color="primary"
+      text-color="white"
+      unelevated
+      to="/"
+      label="Go Home"
+      no-caps
+    />
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { ASSETS_BASE_URL } from 'src/assets';
+// import { ASSETS_BASE_URL } from 'src/assets';
 import { copyToClipboard, useQuasar } from 'quasar';
-import { emberProjects } from 'src/constants/projects';
-import { type EmberProjectMetadata } from 'src/models/projects';
-import { onMounted, ref } from 'vue';
+import type { ProjectComputedData, ProjectModel } from 'src/models/projects';
+import projectService from 'src/services/projects.service';
+import { computed, onMounted, ref } from 'vue';
 
-const props = defineProps({ id: { type: String, required: true } });
+const props = defineProps({ projectId: { type: String, required: true } });
 
 const $q = useQuasar();
 
-const project = ref<EmberProjectMetadata>();
-const pythonSnippet = ref<string>();
-
-onMounted(() => {
-  if (props.id in emberProjects) {
-    project.value = emberProjects[props.id];
-
-    pythonSnippet.value = `# View contents of ${props.id}\naws s3 ls ${project.value?.websiteSpecific.s3Uri}\n\n# Copy specific file or whole directory\naws s3 cp ${project.value?.websiteSpecific.s3Uri}<file> .`;
-  } else {
-    console.log(`Project with id ${props.id} Not Found`);
+const loading = ref(false);
+const project = ref<ProjectModel>();
+const computedProjectData = computed<ProjectComputedData>(() => {
+  if (!project.value) {
+    return { authorInitials: '', authorLastName: '', year: '' } as ProjectComputedData;
   }
+  return {
+    authorInitials: getInitials(project.value.dataAdministrator.name),
+    authorLastName: project.value.dataAdministrator.name.split(' ').pop(),
+    year: project.value.relatedPublications.at(0)?.year ?? '', // TOOD: Year -- is there a better way? projectId ?
+  } as ProjectComputedData;
 });
+
+onMounted(async () => {
+  loading.value = true;
+  await projectService
+    .getByProjectId(props.projectId)
+    .then((value) => (project.value = value))
+    .catch(() => (project.value = undefined));
+  loading.value = false;
+});
+
+function getInitials(name: string): string {
+  if (!name) return '';
+  const names = name.split(' ');
+  const initials = names
+    .filter((n) => n.length > 0)
+    .map((n) => n[0]?.toUpperCase())
+    .join('');
+  return initials;
+}
 
 async function copy(text: string): Promise<void> {
   try {
