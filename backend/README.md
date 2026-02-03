@@ -51,8 +51,19 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     ```
 
 ### Environment Setup
+1. Within the `backend/` directory, run the following:
+    ```
+    uv sync
+    ```
 1. Create .env file in BBQS-EMBER-web/backend/config 
-1. In .env file define ```DATABASE_URL``` following the pattern: ```postgres://[user:[password]]@localhost:5432/[dbname]```
+1. In .env file define `DATABASE_URL` following the pattern: `postgres://[user:[password]]@localhost:5432/[dbname]`
+    - For example, following the steps above, we defined:
+        - user as "ember"
+        - password as "test123"
+        - and dbname as "ember_db"
+    ```
+    DATABASE_URL=postgres://ember:test123@localhost:5432/ember_db
+    ```
 1. Run the following to generate a secret key and write it to your .env file:
     ```
     uv run python - <<'EOF' >> config/.env
@@ -75,6 +86,12 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     uv run manage.py createsuperuser
     ```
 
+1. Load initial data
+
+    ```bash
+    uv run manage.py load_initial_projects
+    ```
+
 ## Development
 
 1. Start the backend application
@@ -83,7 +100,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     uv run manage.py runserver
     ```
 
-1. The backend should now be running at [http://localhost:8000]().
+1. The backend should now be running at [http://localhost:8000](). To view the API endpoints, see [http://localhost:8000/docs](). To view the admin console, see [http://localhost:8000/admin]()
 
 ## Testing
 

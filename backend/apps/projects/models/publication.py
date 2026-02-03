@@ -17,7 +17,6 @@ class Publication(models.Model):
     title = models.CharField(help_text="Title of the publication")
     authors = models.ManyToManyField(
         "Contributor",
-        through="PublicationContributor",
         blank=True,
         help_text="Authors of the publication",
     )
@@ -30,3 +29,6 @@ class Publication(models.Model):
     publication_url = models.URLField(
         blank=True, help_text="URL to the publication landing page or preprint"
     )
+
+    def __str__(self):
+        return self.title

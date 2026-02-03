@@ -1,6 +1,8 @@
 from django.db import models
+from django_jsonform.models.fields import JSONField
 
-from apps.projects.validators import doi_validator, ember_dandi_id_validator
+from apps.projects.models.common import LIST_STR_SCHEMA
+from apps.projects.validators import doi_validator, validate_list_ember_dandi_ids
 
 
 class EmberProject(models.Model):
@@ -11,13 +13,14 @@ class EmberProject(models.Model):
     """
 
     id = models.BigAutoField(primary_key=True)
-    project_id = models.CharField(help_text="Project identifier")
+    project_id = models.CharField(help_text="Project identifier", unique=True)
     project_title = models.CharField(help_text="Title of the project")
     project_description = models.TextField(help_text="Text description of the project")
-    model_organism = models.JSONField(
+    model_organisms = JSONField(
         default=list,
         blank=True,
         help_text="Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
+        schema=LIST_STR_SCHEMA,
     )
     data_use_agreement = models.TextField(
         blank=True,
@@ -59,29 +62,45 @@ class EmberProject(models.Model):
         help_text="DOI in EMBER system (empty string allowed until assigned)",
         validators=[doi_validator],
     )
-    access_level_emberdandisets = models.JSONField(
+    access_level_emberdandisets = JSONField(
         default=list,
         blank=True,
         help_text="EMBER-DANDI dandiset ids",
-        validators=[ember_dandi_id_validator],
+        schema=LIST_STR_SCHEMA,
+        validators=[validate_list_ember_dandi_ids],
     )
-    access_level_restricted_datasets = models.JSONField(
-        default=list, blank=True, help_text="Restricted dataset ids"
+    access_level_restricted_datasets = JSONField(
+        default=list,
+        blank=True,
+        help_text="Restricted dataset ids",
+        schema=LIST_STR_SCHEMA,
     )
-    access_level_access_vault_ids = models.JSONField(
-        default=list, blank=True, help_text="EMBERvault dataset ids"
+    access_level_access_vault_ids = JSONField(
+        default=list,
+        blank=True,
+        help_text="EMBERvault dataset ids",
+        schema=LIST_STR_SCHEMA,
     )
     related_publications = models.ManyToManyField(
         "Publication", blank=True, help_text="Publications associated with this project"
     )
-    related_repositories = models.JSONField(
-        default=list, blank=True, help_text="Identifiers for related repositories"
+    related_repositories = JSONField(
+        default=list,
+        blank=True,
+        help_text="Identifiers for related repositories",
+        schema=LIST_STR_SCHEMA,
     )
-    related_dandisets = models.JSONField(
-        default=list, blank=True, help_text="DOIs for related dandisets"
+    related_dandisets = JSONField(
+        default=list,
+        blank=True,
+        help_text="DOIs for related dandisets",
+        schema=LIST_STR_SCHEMA,
     )
-    related_data = models.JSONField(
-        default=list, blank=True, help_text="Identifiers for other related datasets"
+    related_data = JSONField(
+        default=list,
+        blank=True,
+        help_text="Identifiers for other related datasets",
+        schema=LIST_STR_SCHEMA,
     )
     funding = models.ManyToManyField(
         "Funding",
@@ -89,6 +108,9 @@ class EmberProject(models.Model):
         blank=True,
         help_text="Funding sources supporting this project",
     )
+
+    def __str__(self):
+        return self.project_id
 
     class Meta:
         verbose_name = "EMBER Project"

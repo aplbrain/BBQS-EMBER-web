@@ -15,7 +15,10 @@ class Funding(models.Model):
         blank=True, help_text="Start year of the funding award", validators=[year_validator]
     )
     end_year = models.IntegerField(
-        blank=True, help_text="End year of the funding award", validators=[year_validator]
+        blank=True,
+        null=True,
+        help_text="End year of the funding award",
+        validators=[year_validator],
     )
     funding_institute = models.CharField(
         help_text="Name of the funding institute (e.g., NIH, NSF, DARPA)"
@@ -25,3 +28,6 @@ class Funding(models.Model):
     funding_url = models.URLField(
         blank=True, help_text="URL to the funding announcement or award page"
     )
+
+    def __str__(self):
+        return self.award_number
