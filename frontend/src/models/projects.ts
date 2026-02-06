@@ -96,15 +96,6 @@ export const ProjectTableColumns: QTableColumn[] = [
     required: true,
     sortable: true,
   },
-  // {
-  //   name: 'startDate',
-  //   label: 'Project Start Date',
-  //   align: 'left',
-  //   field: (row) => row.funding.startDate, // getDateString(row.funding.startDate),
-  //   required: true,
-  //   sortable: true,
-  //   sort: (a, b, rowA, rowB) => rowA.funding.startDate - rowB.funding.startDate,
-  // },
   {
     name: 'modelOrganisms',
     label: 'Model Organism(s)',

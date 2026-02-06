@@ -106,7 +106,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
 
 ### Schema Migrations
 
-If schema changes are made to any Django models, please follow the steps below 
+If schema changes are made to any Django models, please follow the steps below: 
 
 1. Generate Python migration files
 
@@ -126,6 +126,8 @@ If schema changes are made to any Django models, please follow the steps below
     cd ../scripts
     ./update-schema.sh
     ```
+
+    > This will update frontend/src/services/schema.d.ts
 
 1. Check that the frontend services and models still align.  
     Relevant files will be in:

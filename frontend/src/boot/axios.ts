@@ -1,12 +1,9 @@
-import { defineBoot } from '#q-app/wrappers';
 import axios from 'axios';
+import { boot } from 'quasar/wrappers';
 
-const baseUrl = 'http://localhost:8000'; // TODO
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 const api = axios.create({ baseURL: baseUrl });
 
-export default defineBoot(({ app }) => {
-  app.config.globalProperties.$axios = axios;
-  app.config.globalProperties.$api = api;
-});
+export default boot(() => {});
 
-export { axios, api };
+export { api };
