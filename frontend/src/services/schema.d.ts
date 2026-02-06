@@ -108,7 +108,7 @@ export interface components {
       /** @description Text description of the project */
       project_description: string;
       /** @description Model organisms used in this project (e.g., Mus musculus, Homo sapiens) */
-      model_organism?: unknown;
+      model_organisms?: unknown;
       /** @description Description or reference to the data use agreement governing access to restricted or controlled data */
       data_use_agreement?: string;
       /** @description Indicates whether a data use agreement is required to access any project data */

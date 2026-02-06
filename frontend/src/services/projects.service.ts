@@ -28,7 +28,7 @@ function mapProjectResponse(project: ProjectResponse): ProjectModel {
       mapPublicationResponse(pub),
     ),
     funding: project.funding.map((f: FundingResponse) => mapFundingResponse(f)),
-    modelOrganisms: project.model_organism as string[],
+    modelOrganisms: project.model_organisms as string[],
     dataUseAgreement: project.data_use_agreement ?? '',
     dataUseAgreementRequired: project.data_use_agreement_required ?? false,
     dataAvailabilityEmberdandi: project.data_availability_emberdandi ?? false,
