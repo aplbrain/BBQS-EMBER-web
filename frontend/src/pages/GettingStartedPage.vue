@@ -27,9 +27,10 @@
                 <q-item-label>
                   To create an account, users should log in through the
                   <LinkText :link="links.ember_dandi" />
-                  portal. At this time, there is no login option on the main EMBER site
-                  (<LinkText text="emberarchive.org" uri="https://emberarchive.org" />).
-                  Users with a <code>.edu</code> email address will be automatically approved.
+                  portal. At this time, there is no login option on the main EMBER site (<LinkText
+                    text="emberarchive.org"
+                    uri="https://emberarchive.org"
+                  />). Users with a <code>.edu</code> email address will be automatically approved.
                   All others will require manual approval by a member of the EMBER team.
                 </q-item-label>
               </q-item-section>

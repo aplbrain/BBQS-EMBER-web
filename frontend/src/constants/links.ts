@@ -8,7 +8,7 @@ import type { Link } from 'src/models/common';
 export const urls = {
   ember_dandi: 'https://dandi.emberarchive.org',
   ember_dandiset: 'https://dandi.emberarchive.org/dandiset',
-}
+};
 
 export const links: Record<string, Link> = {
   brain_initiative: {

@@ -173,7 +173,10 @@
                     :key="idx"
                     class="text-body2"
                   >
-                  <LinkText :text="item" :uri="`${urls.ember_dandiset}/${item.replace('EMBER-DANDI:', '')}`" />
+                    <LinkText
+                      :text="item"
+                      :uri="`${urls.ember_dandiset}/${item.replace('EMBER-DANDI:', '')}`"
+                    />
                   </div>
                 </q-item-section>
               </q-item>
