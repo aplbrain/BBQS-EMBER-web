@@ -134,5 +134,22 @@ If schema changes are made to any Django models, please follow the steps below:
     - frontend/src/services/
     - frontend/src/models/
 
+### Refresh your Database
+
+During the initial phases of database development, you may want or need to wipe your local database and start over. 
+
+The following steps will erase your database and create a fresh one
+
+1. Enter postgres shell 
+    ```
+    psql -U postgres
+    ````
+1. Inside postgres shell run
+    ```
+    DROP DATABASE ember_db;
+    CREATE DATABASE ember_db OWNER ember;
+    ```
+1. Follow [Initial Setup](#initial-setup) again
+
 ## Testing
 
