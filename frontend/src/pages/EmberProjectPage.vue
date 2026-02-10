@@ -45,7 +45,7 @@
             <div class="text-h6">Summary</div>
             <div class="text-body1 q-mt-sm">{{ project.description }}</div>
           </q-card-section>
-          <q-separator />
+          <!-- <q-separator /> -->
           <!-- Should this be per data rather than per project ? -->
           <!-- <q-card-section>
             <div class="text-subtitle1 q-mb-sm">How to access the data (Python)</div>
@@ -173,7 +173,7 @@
                     :key="idx"
                     class="text-body2"
                   >
-                    {{ item }}
+                  <LinkText :text="item" :uri="`${urls.ember_dandiset}/${item.replace('EMBER-DANDI:', '')}`" />
                   </div>
                 </q-item-section>
               </q-item>
@@ -212,7 +212,7 @@
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
             <div class="text-subtitle1">Links</div>
-            <div class="q-gutter-sm q-mt-sm">
+            <div class="q-gutter-sm q-mt-sm q-px-md">
               <q-btn
                 v-for="(dataset, idx) in project.relatedData"
                 :key="idx"
@@ -224,6 +224,7 @@
                 target="_blank"
                 class="full-width"
               />
+              <div v-if="!project.relatedData?.length" class="text-body2">None</div>
             </div>
           </q-card-section>
         </q-card>
@@ -326,6 +327,8 @@
 <script setup lang="ts">
 // import { ASSETS_BASE_URL } from 'src/assets';
 import { copyToClipboard, useQuasar } from 'quasar';
+import LinkText from 'src/components/LinkText.vue';
+import { urls } from 'src/constants/links';
 import type { ProjectComputedData, ProjectModel } from 'src/models/projects';
 import projectService from 'src/services/projects.service';
 import { computed, onMounted, ref } from 'vue';

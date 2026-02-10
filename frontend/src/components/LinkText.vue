@@ -1,5 +1,5 @@
 <template>
-  <a :href="uri" target="_blank" class="link">{{ text }}</a>
+  <a :href="uri" target="_blank" class="link" rel="noopener noreferrer">{{ text }}</a>
 </template>
 
 <script setup lang="ts">
