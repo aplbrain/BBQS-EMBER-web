@@ -11,12 +11,20 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ProjectsPage.vue'),
       },
       {
+        path: 'standards',
+        component: () => import('pages/OverviewStandardsPage.vue'),
+      },
+      {
         path: 'documentation',
         component: () => import('pages/DocumentationPage.vue'),
       },
       {
         path: 'getting-started',
         component: () => import('pages/GettingStartedPage.vue'),
+      },
+      {
+        path: 'guidance',
+        component: () => import('pages/WorkflowGuidancePage.vue'),
       },
       {
         path: 'tools',
