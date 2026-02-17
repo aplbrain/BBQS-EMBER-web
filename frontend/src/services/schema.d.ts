@@ -101,14 +101,17 @@ export interface components {
       readonly data_administrator: components['schemas']['Contributor'];
       readonly related_publications: components['schemas']['Publication'][];
       readonly funding: components['schemas']['Funding'][];
+      readonly model_organisms: components['schemas']['Taxonomy'][];
       /** @description Project identifier */
       project_id: string;
       /** @description Title of the project */
       project_title: string;
       /** @description Text description of the project */
       project_description: string;
-      /** @description Model organisms used in this project (e.g., Mus musculus, Homo sapiens) */
-      model_organisms?: unknown;
+      /** @description Start year of the  project */
+      year?: number;
+      /** @description Keywords associated with the project */
+      keywords?: unknown;
       /** @description Description or reference to the data use agreement governing access to restricted or controlled data */
       data_use_agreement?: string;
       /** @description Indicates whether a data use agreement is required to access any project data */
@@ -151,6 +154,8 @@ export interface components {
       related_dandisets?: unknown;
       /** @description Identifiers for other related datasets */
       related_data?: unknown;
+      /** @description Custom content for the website project page */
+      website_content?: string;
     };
     Publication: {
       readonly id: number;
@@ -168,6 +173,32 @@ export interface components {
        * @description URL to the publication landing page or preprint
        */
       publication_url?: string;
+    };
+    /**
+     * @description * `SPECIES` - Species
+     *     * `GENUS` - Genus
+     *     * `FAMILY` - Family
+     * @enum {string}
+     */
+    RankEnum: 'SPECIES' | 'GENUS' | 'FAMILY';
+    Taxonomy: {
+      readonly id: number;
+      /** @description NCBI Taxonomy ID */
+      taxonomy_id: number;
+      /**
+       * @description Taxonomic rank
+       *
+       *     * `SPECIES` - Species
+       *     * `GENUS` - Genus
+       *     * `FAMILY` - Family
+       */
+      rank?: components['schemas']['RankEnum'];
+      /** @description Current scientific name */
+      current_scientific_name: string;
+      /** @description Common name */
+      common_name?: string;
+      /** @description Image source path */
+      image_source?: string;
     };
   };
   responses: never;

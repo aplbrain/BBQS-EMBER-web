@@ -18,13 +18,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
       
       - name: Run dependencies
-        run: yarn run lint
+        run: npm run lint
 
   format-check:
     name: Run Prettier check
@@ -37,10 +37,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
       
       - name: Run dependencies
-        run: yarn run format-check
+        run: npm run format-check

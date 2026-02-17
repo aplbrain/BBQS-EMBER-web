@@ -2,25 +2,33 @@ from django.db import models
 from django_jsonform.models.fields import JSONField
 
 from apps.projects.models.common import LIST_STR_SCHEMA
-from apps.projects.validators import doi_validator, validate_list_ember_dandi_ids
+from apps.projects.validators import doi_validator, validate_list_ember_dandi_ids, year_validator
 
 
 class EmberProject(models.Model):
     """
     EMBER Project metadata.
 
-    v1.0.0 - https://github.com/aplbrain/BBQS-EMBER-Data-Model/releases/tag/v1.0.0
+    v1.1.0 - https://github.com/aplbrain/BBQS-EMBER-Data-Model/releases/tag/v1.1.0
     """
 
     id = models.BigAutoField(primary_key=True)
     project_id = models.CharField(help_text="Project identifier", unique=True)
     project_title = models.CharField(help_text="Title of the project")
     project_description = models.TextField(help_text="Text description of the project")
-    model_organisms = JSONField(
+    year = models.IntegerField(
+        blank=True, help_text="Start year of the  project", validators=[year_validator]
+    )
+    keywords = JSONField(
         default=list,
         blank=True,
-        help_text="Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
+        help_text="Keywords associated with the project",
         schema=LIST_STR_SCHEMA,
+    )
+    model_organisms = models.ManyToManyField(
+        "Taxonomy",
+        blank=True,
+        help_text="Model organisms used in this project",
     )
     data_use_agreement = models.TextField(
         blank=True,
@@ -107,6 +115,9 @@ class EmberProject(models.Model):
         related_name="projects",
         blank=True,
         help_text="Funding sources supporting this project",
+    )
+    website_content = models.TextField(
+        blank=True, help_text="Custom content for the website project page"
     )
 
     def __str__(self):

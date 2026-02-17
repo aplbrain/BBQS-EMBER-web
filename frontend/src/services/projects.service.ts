@@ -5,6 +5,7 @@ import type {
   FundingModel,
   ProjectModel,
   PublicationModel,
+  TaxonomyModel,
 } from 'src/models/projects';
 import type { components } from 'src/services/schema';
 
@@ -15,6 +16,7 @@ type ProjectResponse = components['schemas']['Project'];
 type ContributorResponse = components['schemas']['Contributor'];
 type FundingResponse = components['schemas']['Funding'];
 type PublicationResponse = components['schemas']['Publication'];
+type TaxonomyResponse = components['schemas']['Taxonomy'];
 
 // Helper Functions
 function mapProjectResponse(project: ProjectResponse): ProjectModel {
@@ -23,12 +25,14 @@ function mapProjectResponse(project: ProjectResponse): ProjectModel {
     projectId: project.project_id,
     title: project.project_title,
     description: project.project_description,
+    year: project.year ?? new Date().getFullYear(),
+    keywords: project.keywords as string[],
     dataAdministrator: mapContributorResponse(project.data_administrator),
     relatedPublications: project.related_publications.map((pub: PublicationResponse) =>
       mapPublicationResponse(pub),
     ),
     funding: project.funding.map((f: FundingResponse) => mapFundingResponse(f)),
-    modelOrganisms: project.model_organisms as string[],
+    modelOrganisms: project.model_organisms?.map((t: TaxonomyResponse) => mapTaxonomyResponse(t)),
     dataUseAgreement: project.data_use_agreement ?? '',
     dataUseAgreementRequired: project.data_use_agreement_required ?? false,
     dataAvailabilityEmberdandi: project.data_availability_emberdandi ?? false,
@@ -44,6 +48,7 @@ function mapProjectResponse(project: ProjectResponse): ProjectModel {
     relatedRepositories: project.related_repositories as string[],
     relatedDandisets: project.related_dandisets as string[],
     relatedData: project.related_data as string[],
+    websiteContent: project.website_content ?? '',
   };
 }
 
@@ -79,6 +84,17 @@ function mapPublicationResponse(publication: PublicationResponse): PublicationMo
     ...(publication.year && { year: publication.year }),
     publicationUrl: publication.publication_url ?? '',
     authors: publication.authors?.map((a: ContributorResponse) => mapContributorResponse(a)),
+  };
+}
+
+function mapTaxonomyResponse(taxonomy: TaxonomyResponse): TaxonomyModel {
+  return {
+    id: taxonomy.id,
+    taxonomyId: taxonomy.taxonomy_id,
+    rank: taxonomy.rank ?? '',
+    currentScientificName: taxonomy.current_scientific_name,
+    commonName: taxonomy.common_name ?? '',
+    imageSource: taxonomy.image_source ?? '',
   };
 }
 

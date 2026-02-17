@@ -3,7 +3,6 @@ import type { QTableColumn } from 'quasar/dist/types/api/qtable.js';
 export interface ProjectComputedData {
   authorInitials: string;
   authorLastName: string;
-  year: string;
 }
 
 export interface ProjectModel {
@@ -14,7 +13,9 @@ export interface ProjectModel {
   projectId: string;
   title: string;
   description: string;
-  modelOrganisms?: string[];
+  year: number;
+  keywords: string[];
+  modelOrganisms?: TaxonomyModel[];
   dataUseAgreement?: string;
   dataUseAgreementRequired: boolean;
   dataAvailabilityEmberdandi: boolean;
@@ -30,6 +31,7 @@ export interface ProjectModel {
   relatedRepositories?: string[];
   relatedDandisets?: string[];
   relatedData?: string[];
+  websiteContent?: string;
 }
 
 export interface ContributorModel {
@@ -59,6 +61,15 @@ export interface PublicationModel {
   year?: number;
   publicationUrl?: string;
   authors: ContributorModel[];
+}
+
+export interface TaxonomyModel {
+  id: number;
+  taxonomyId: number;
+  rank: string;
+  currentScientificName: string;
+  commonName: string;
+  imageSource: string;
 }
 
 export const ProjectTableColumns: QTableColumn[] = [
@@ -100,7 +111,10 @@ export const ProjectTableColumns: QTableColumn[] = [
     name: 'modelOrganisms',
     label: 'Model Organism(s)',
     align: 'left',
-    field: (row) => (row.modelOrganisms?.length ? row.modelOrganisms?.join(', ') : 'None Listed'),
+    field: (row) =>
+      row.modelOrganisms?.length
+        ? row.modelOrganisms.map((taxon: TaxonomyModel) => taxon.currentScientificName).join(', ')
+        : 'None Listed',
     required: true,
     sortable: true,
   },

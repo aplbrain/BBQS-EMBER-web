@@ -8,7 +8,7 @@ from apps.projects.models.common import LIST_STR_SCHEMA
 
 class EmberProjectForm(forms.ModelForm):
     # JSON Form Field using list of strings schema
-    model_organisms = JSONFormField(required=False, schema=LIST_STR_SCHEMA)
+    keywords = JSONFormField(required=False, schema=LIST_STR_SCHEMA)
     access_level_emberdandisets = JSONFormField(required=False, schema=LIST_STR_SCHEMA)
     access_level_restricted_datasets = JSONFormField(required=False, schema=LIST_STR_SCHEMA)
     access_level_access_vault_ids = JSONFormField(required=False, schema=LIST_STR_SCHEMA)

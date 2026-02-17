@@ -7,7 +7,7 @@ import yaml
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from apps.projects.models import Contributor, EmberProject, Funding, Publication
+from apps.projects.models import Contributor, EmberProject, Funding, Publication, Taxonomy
 
 GITHUB_REPO = "https://github.com/aplbrain/BBQS-EMBER-Data-Model"
 GITHUB_REF = "refs/heads/main"
@@ -34,6 +34,12 @@ PUBLICATION_SCALAR_FIELDS = {
 
 FUNDING_SCALAR_FIELDS = {
     field.name for field in Funding._meta.fields if not field.name == "id" and not field.is_relation
+}
+
+TAXONOMY_SCALAR_FIELDS = {
+    field.name
+    for field in Taxonomy._meta.fields
+    if not field.name == "id" and not field.is_relation
 }
 
 
@@ -105,10 +111,12 @@ class Command(BaseCommand):
                     defaults={"data_administrator": data_admin, **project_data},
                 )
 
-                # Handle Many-to-Many fields - related_publications (Publication), funding (Funding)
+                # Handle Many-to-Many fields - related_publications (Publication), funding (Funding), model_organisms (Taxonomy)
                 field_related_pubs = "related_publications"
                 field_funding = "funding"
+                field_model_orgs = "model_organisms"
 
+                # - related_publications (Publication)
                 related_pubs_raw_data = data.get(field_related_pubs, [])
                 related_pubs = []
                 if related_pubs_raw_data:
@@ -149,6 +157,7 @@ class Command(BaseCommand):
 
                     getattr(project, field_related_pubs).set(related_pubs)
 
+                # - funding (Funding)
                 funding_raw_data = data.get(field_funding, [])
                 funding_list = []
                 if funding_raw_data:
@@ -167,6 +176,26 @@ class Command(BaseCommand):
                         funding_list.append(funding)
 
                     getattr(project, field_funding).set(funding_list)
+
+                # -  model_organisms (Taxonomy)
+                model_orgs_raw_data = data.get(field_model_orgs, [])
+                model_orgs_list = []
+                if model_orgs_raw_data:
+                    for model_org_raw in model_orgs_raw_data:
+                        taxonomy_id = model_org_raw.get("taxonomy_id", "")
+                        model_org_data = {
+                            field: model_org_raw.get(field)
+                            for field in TAXONOMY_SCALAR_FIELDS
+                            if field in model_org_raw
+                        }
+
+                        model_org, _ = Taxonomy.objects.update_or_create(
+                            taxonomy_id=taxonomy_id, defaults=model_org_data
+                        )
+
+                        model_orgs_list.append(model_org)
+
+                    getattr(project, field_model_orgs).set(model_orgs_list)
 
             if dryrun:
                 transaction.set_rollback(True)

@@ -16,20 +16,19 @@
           <h1 class="text-h4 q-my-none">{{ project.title }}</h1>
           <div class="text-subtitle2 text-grey-7 q-mt-xs">
             {{ project.dataAdministrator.name }}
-            <span>&nbsp;•&nbsp;{{ computedProjectData.year }}</span>
+            <span>&nbsp;•&nbsp;{{ project.year }}</span>
           </div>
           <div class="q-mt-xs">
-            <!-- TODO: Tags -->
-            <!-- <q-chip
-              v-for="tag in project.tags"
-              :key="tag"
+            <q-chip
+              v-for="keyword in project.keywords"
+              :key="keyword"
               dense
               square
               color="grey-3"
               text-color="grey-9"
               class="q-mr-sm"
-              >{{ tag }}</q-chip
-            > -->
+              >{{ keyword }}</q-chip
+            >
           </div>
         </div>
       </div>
@@ -45,19 +44,10 @@
             <div class="text-h6">Summary</div>
             <div class="text-body1 q-mt-sm">{{ project.description }}</div>
           </q-card-section>
-          <!-- <q-separator /> -->
-          <!-- Should this be per data rather than per project ? -->
-          <!-- <q-card-section>
-            <div class="text-subtitle1 q-mb-sm">How to access the data (Python)</div>
-            <q-banner rounded class="bg-grey-2 text-grey-9 q-mb-md">
-              Install aws cli if not installed.
-              <q-card flat bordered class="code-card">
-                <q-card-section>
-                  <pre class="language-python"><code>{{ pythonSnippet }}</code></pre>
-                </q-card-section>
-              </q-card>
-            </q-banner>
-          </q-card-section> -->
+          <q-separator />
+          <q-card-section>
+            <div class="markdown-body" v-html="renderedMarkdown"></div>
+          </q-card-section>
         </q-card>
 
         <!-- Citation -->
@@ -66,8 +56,8 @@
             <div class="text-h6">Citation</div>
             <div class="text-body2 q-mt-sm">
               If you use this dataset, please cite:
-              {{ computedProjectData.authorLastName }} et al.
-              {{ computedProjectData.year }} [Dataset]. EMBER Archive.
+              {{ computedProjectData.authorLastName }} et al. {{ project.year }} [Dataset]. EMBER
+              Archive.
               <span v-if="project.emberDoi">https://doi.org/{{ project.emberDoi }}</span>
             </div>
             <q-btn
@@ -232,31 +222,26 @@
           </q-card-section>
         </q-card>
 
-        <!-- TODO: Model Organisms
-              - Need standard format & mapping of name to image -->
-        <!-- <q-card class="q-mb-lg" flat bordered>
+        <q-card class="q-mb-lg" flat bordered v-if="project.modelOrganisms">
           <q-card-section>
             <div class="text-subtitle1">Dataset Species</div>
             <div class="row justify-center items-center" style="height: 200px">
-             <q-img
-                :src="
-                  ASSETS_BASE_URL +
-                  'species/' +
-                  project.species.map((s) => s.commonName.toLowerCase()) +
-                  '.svg'
-                "
+              <q-img
+                v-for="taxon in project.modelOrganisms"
+                :key="taxon.id"
+                :src="taxon.imageSource"
                 fit="contain"
                 style="max-width: 200px; max-height: 200px"
               />
             </div>
           </q-card-section>
-        </q-card> -->
+        </q-card>
 
         <q-card class="q-mb-lg" flat bordered>
           <q-card-section>
             <div class="text-subtitle1">Dataset Metadata</div>
             <q-list dense class="q-mt-sm">
-              <!-- TODO: Data Modality -->
+              <!-- TODO: Data Modality from DANDI api -->
               <!-- <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Modality</div>
@@ -275,14 +260,14 @@
                   </div>
                 </q-item-section>
               </q-item>
-              <!-- TODO: License -->
+              <!-- TODO: License from DANDI api-->
               <!-- <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">License</div>
                   <div class="text-body2">{{ project.license }}</div>
                 </q-item-section>
               </q-item> -->
-              <!-- TODO: Size -->
+              <!-- TODO: Size from DANDI api -->
               <!-- <q-item>
                 <q-item-section>
                   <div class="text-caption text-grey-7">Size</div>
@@ -292,24 +277,6 @@
             </q-list>
           </q-card-section>
         </q-card>
-
-        <!-- TODO: Data URI -- should be split into pointers to all  data -->
-        <!-- <q-card flat bordered>
-          <q-card-section>
-            <div class="text-subtitle1">EMBER Archive URI</div>
-            <q-banner rounded class="bg-grey-2 text-grey-9 q-mt-sm">
-              <code class="break-all">{{ project.dataUri }}</code>
-            </q-banner>
-            <q-btn
-              class="q-mt-sm"
-              dense
-              outline
-              icon="content_copy"
-              label="Copy URI"
-              @click="copy(project.dataUri)"
-            />
-          </q-card-section>
-        </q-card> -->
       </div>
     </div>
   </q-page>
@@ -328,17 +295,19 @@
 </template>
 
 <script setup lang="ts">
-// import { ASSETS_BASE_URL } from 'src/assets';
-import { copyToClipboard, useQuasar } from 'quasar';
 import LinkText from 'src/components/LinkText.vue';
 import { urls } from 'src/constants/links';
 import type { ProjectComputedData, ProjectModel } from 'src/models/projects';
 import projectService from 'src/services/projects.service';
 import { computed, onMounted, ref } from 'vue';
+import { copyToClipboard, useQuasar } from 'quasar';
+import MarkdownIt from 'markdown-it';
+import DOMPurify from 'dompurify';
 
 const props = defineProps({ projectId: { type: String, required: true } });
 
 const $q = useQuasar();
+const md = new MarkdownIt({ html: false, linkify: false, breaks: true });
 
 const loading = ref(false);
 const project = ref<ProjectModel>();
@@ -349,8 +318,15 @@ const computedProjectData = computed<ProjectComputedData>(() => {
   return {
     authorInitials: getInitials(project.value.dataAdministrator.name),
     authorLastName: project.value.dataAdministrator.name.split(' ').pop(),
-    year: project.value.relatedPublications.at(0)?.year ?? '', // TOOD: Year -- is there a better way? projectId ?
   } as ProjectComputedData;
+});
+
+const renderedMarkdown = computed(() => {
+  if (project.value?.websiteContent) {
+    const raw = md.render(project.value?.websiteContent);
+    return DOMPurify.sanitize(raw);
+  }
+  return '';
 });
 
 onMounted(async () => {
@@ -382,12 +358,19 @@ async function copy(text: string): Promise<void> {
 }
 </script>
 
-<style scoped>
-.code-card pre {
-  margin: 0;
-  white-space: pre-wrap;
+<style>
+.markdown-body pre {
+  background: #f5f5f5;
+  padding: 12px;
+  overflow-x: auto;
+  border-radius: 4px;
 }
-.break-all {
-  word-break: break-all;
+
+.markdown-body code {
+  font-family: monospace;
+}
+
+.markdown-body p {
+  margin-bottom: 1em;
 }
 </style>
