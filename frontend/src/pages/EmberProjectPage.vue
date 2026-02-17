@@ -254,7 +254,9 @@
                   <div class="text-body2">
                     {{
                       project.modelOrganisms?.length
-                        ? project.modelOrganisms?.join(', ')
+                        ? project.modelOrganisms
+                            .map((taxon: TaxonomyModel) => taxon.currentScientificName)
+                            .join(', ')
                         : 'None Listed'
                     }}
                   </div>
@@ -297,7 +299,7 @@
 <script setup lang="ts">
 import LinkText from 'src/components/LinkText.vue';
 import { urls } from 'src/constants/links';
-import type { ProjectComputedData, ProjectModel } from 'src/models/projects';
+import type { ProjectComputedData, ProjectModel, TaxonomyModel } from 'src/models/projects';
 import projectService from 'src/services/projects.service';
 import { computed, onMounted, ref } from 'vue';
 import { copyToClipboard, useQuasar } from 'quasar';
