@@ -1,6 +1,6 @@
-FROM node:22-alpine AS frontend
+FROM node:20-alpine AS frontend
 
-LABEL maintainer="Nicole Stock <nicole.stock@jhuapl.edu>"
+LABEL maintainer="Nicole Tregoning <nicole.tregoning@jhuapl.edu>"
 LABEL description="A Docker image for the BBQS EMBER Archive web frontend"
 
 RUN sed -i 's/https/http/' /etc/apk/repositories
@@ -28,6 +28,7 @@ ADD frontend /frontend
 WORKDIR /frontend
 
 RUN npm install
+RUN npm i -g @quasar/cli
 RUN npm run build
 
 CMD ["quasar","serve", "dist/spa", "--port", "8080", "--history"]
