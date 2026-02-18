@@ -5,7 +5,7 @@ class Taxonomy(models.Model):
     """
     Organism taxonomy metadata
 
-    v1.1.0
+    v1.1.0 - https://github.com/aplbrain/BBQS-EMBER-Data-Model/releases/tag/v1.1.0
     """
 
     class TaxonomicRank(models.TextChoices):
