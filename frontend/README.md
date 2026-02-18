@@ -23,16 +23,10 @@ This repository contains a Vue.js 3 + Quasar frontend supporting the EMBER Archi
     ## _Note: For Windows users, if you needed to modify any environment variables, make sure you close and restart any terminals before trying to run nvm or npm commands_
     - nvm use will activate the Node.js version specified in frontend/.nvmrc
 
-2. Install `yarn`
+2. Install dependencies
 
     ```bash
-    npm install --global yarn
-    ```
-
-3. Install dependencies
-
-    ```bash
-    yarn install
+    npm install
     ```
 
 ## Development
@@ -40,7 +34,7 @@ This repository contains a Vue.js 3 + Quasar frontend supporting the EMBER Archi
 1. Start the application in development mode
 
     ```bash
-    yarn run dev
+    npm run dev
     ```
 
 1. The frontend should now be running at [http://localhost:9000](). The application will reload as you make edits.
@@ -58,9 +52,9 @@ The workflow is triggered **on every pull request** and runs the following jobs:
 - **Job**: `link-check`
 - **Purpose**: Runs [ESLint](https://eslint.org/) to identify and enforce coding style and best practices.
 - **Failure Resolution**:
-    - Run `yarn run lint` locally to see the errors.
+    - Run `npm run lint` locally to see the errors.
     - Fix the reported linting issues.
-        - This can either be done manually, or with `yarn run lint-fix`
+        - This can either be done manually, or with `npm run lint-fix`
     - Commit and push the changes.
 
 #### Prettier Check
@@ -68,6 +62,6 @@ The workflow is triggered **on every pull request** and runs the following jobs:
 - **Job**: `format-check`
 - **Purpose**: Runs [Prettier](https://prettier.io/) to check if the code follows the required formatting.
 - **Failure Resolution**:
-    - Run `yarn run format-check` locally to see the errors.
-    - Run `yarn run format` locally to automatically fix formatting issues.
+    - Run `npm run format-check` locally to see the errors.
+    - Run `npm run format` locally to automatically fix formatting issues.
     - Commit and push the changes.
