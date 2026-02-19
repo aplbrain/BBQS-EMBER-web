@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from apps.projects.forms import EmberProjectForm
-from apps.projects.models import Contributor, EmberProject, Funding, Publication
+from apps.projects.models import Contributor, EmberProject, Funding, Publication, Taxonomy
 
 
 @admin.register(EmberProject)
@@ -13,3 +13,4 @@ class EmberProjectAdmin(admin.ModelAdmin):
 admin.site.register(Contributor)
 admin.site.register(Funding)
 admin.site.register(Publication)
+admin.site.register(Taxonomy)

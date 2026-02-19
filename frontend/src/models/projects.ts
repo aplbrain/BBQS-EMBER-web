@@ -1,142 +1,120 @@
 import type { QTableColumn } from 'quasar/dist/types/api/qtable.js';
-import { getDateString } from 'src/utils/date';
 
-export interface EmberProjectMetadata extends ProjectMetadata {
-  id: string;
+export interface ProjectComputedData {
+  authorInitials: string;
+  authorLastName: string;
+}
+
+export interface ProjectModel {
+  id: number;
+  dataAdministrator: ContributorModel;
+  relatedPublications: PublicationModel[];
+  funding: FundingModel[];
+  projectId: string;
   title: string;
+  description: string;
   year: number;
-  tags: string[];
-  summary: string;
-  funding: Funding[];
-  publications: Publications[];
-  doi: string; // EMBER project DOI
-  license: string; // TODO - object like BossDB ?
-  dataUri: string; // TODO
-  // TODO -- Relationships in EMBER: dandiset_ids, embervault_ids, etc.
-
-  websiteSpecific: WebsiteMetadata;
+  keywords: string[];
+  modelOrganisms?: TaxonomyModel[];
+  dataUseAgreement?: string;
+  dataUseAgreementRequired: boolean;
+  dataAvailabilityEmberdandi: boolean;
+  dataAvailabilityEmberrestricted: boolean;
+  dataAvailabilityEmbervault: boolean;
+  accessTierSummary?: string;
+  lastMetadataUpdate: string;
+  metadataVersion?: string;
+  emberDoi?: string;
+  accessLevelEmberdandisets?: string[];
+  accessLevelRestrictedDatasets?: string[];
+  accessLevelAccessVaultIds?: string[];
+  relatedRepositories?: string[];
+  relatedDandisets?: string[];
+  relatedData?: string[];
+  websiteContent?: string;
 }
 
-export interface WebsiteMetadata {
-  initials: string;
-  citationAuthorYear: string; // TODO - could probably auto-generate this
-  s3Uri: string; // TOOD -- could probably auto-generate this
-  size: string; // TODO -- auto calculat this via s3 somehow?
-}
-
-export interface NIHProjectMetadata extends ProjectMetadata {
-  funding: Funding;
-}
-export interface ProjectMetadata {
-  contributors: Contributor[];
-  species: Species[];
-  sensors: string[]; // TODO -- what should be the type? should this be broken down?
-  dataModalities: string[]; // TOOD -- what should be the type? should this be broken down?
-  approaches: string[]; // TOOD -- what should be the type? should this be broken down?
-  dataGenerationSort: string[]; // TOOD -- what should be the type? should this be broken down?
-}
-
-export interface Funding {
-  awardTitle: string;
-  awardIdentifier: string;
-  activityCode: string; // i.e. R61, R34, etc.
-  awardeeOrganization: string;
-  periodOfPerformance: number; // (years)
-  startDate: Date;
-  awardLink: string; // Link to NIH RePORTER project details
-  programOfficers: Person[];
-  principalInvestigators: Person[];
-}
-
-export interface Publications {
-  title: string;
-  authors: Person[];
-  year: number;
-  doi: string;
-}
-
-export interface Person {
+export interface ContributorModel {
+  id: number;
   name: string;
+  orcid?: string;
+  // externalIdentifiers?: unknown;
   email?: string;
-  // TODO -- identifier for person (i.e., ORCID)
+  institution?: string;
 }
 
-export enum ContributorRole {
-  principalInvestigator = 'pi',
-  contactPrincipalInvestigator = 'contact_pi',
-  author = 'author',
-  // TODO -- other roles ...
-}
-export interface Contributor extends Person {
-  roles: ContributorRole[];
+export interface FundingModel {
+  id: number;
+  startYear?: number;
+  endYear?: number;
+  fundingInstitute: string;
+  awardNumber: string;
+  awardTitle?: string;
+  fundingUrl?: string;
 }
 
-export interface Species {
+export interface PublicationModel {
+  id: number;
+  doi?: string;
+  title: string;
+  journal?: string;
+  year?: number;
+  publicationUrl?: string;
+  authors: ContributorModel[];
+}
+
+export interface TaxonomyModel {
+  id: number;
   taxonomyId: number;
-  currentName: string;
-  genbankCommonName: string;
-  ncbiBlastName: string;
-  rank: string; // TODO Enum ?
+  rank: string;
+  currentScientificName: string;
   commonName: string;
+  imageSource: string;
 }
 
 export const ProjectTableColumns: QTableColumn[] = [
   {
-    name: 'awardIdentifier',
-    label: 'Grant Number',
+    name: 'projectId',
+    label: 'Project ID',
     align: 'left',
-    field: (row) => row.funding.awardIdentifier,
+    field: 'projectId',
     required: true,
     sortable: true,
   },
   {
-    name: 'awardTitle',
-    label: 'Grant Title',
+    name: 'title',
+    label: 'Project Title',
     align: 'left',
-    field: (row) => row.funding.awardTitle,
+    field: 'title',
     required: true,
     sortable: true,
+    style: 'max-width: 20vw',
+    classes: 'ellipsis',
   },
   {
     name: 'principalInvestigator',
-    label: 'Principal Investigator(s)',
+    label: 'Principal Investigator',
     align: 'left',
-    field: (row) =>
-      row.contributors.sort((a: Contributor, b: Contributor) => {
-        if (a.roles.includes(ContributorRole.contactPrincipalInvestigator)) return -1;
-        if (b.roles.includes(ContributorRole.contactPrincipalInvestigator)) return 1;
-
-        return 0;
-      }),
-    required: true,
-    sortable: true,
-    format: (val) => val.map((c: Contributor) => c.name).join(', '),
-  },
-  {
-    name: 'contactPrincipalInvestigator',
-    label: 'Contact PI',
-    align: 'left',
-    field: (row) =>
-      row.contributors.filter((c: Contributor) =>
-        c.roles.includes(ContributorRole.contactPrincipalInvestigator),
-      ),
+    field: (row) => row.dataAdministrator.name,
     required: true,
     sortable: true,
   },
   {
-    name: 'startDate',
-    label: 'Project Start Date',
+    name: 'funding',
+    label: 'Funding',
     align: 'left',
-    field: (row) => getDateString(row.funding.startDate),
+    field: (row) => row.funding,
     required: true,
     sortable: true,
-    sort: (a, b, rowA, rowB) => rowA.funding.startDate - rowB.funding.startDate,
   },
   {
-    name: 'currentName',
+    name: 'modelOrganisms',
     label: 'Model Organism(s)',
     align: 'left',
-    field: (row) => row.species.map((s: Species) => s.currentName).join(', '),
+    field: (row) =>
+      row.modelOrganisms?.length
+        ? row.modelOrganisms.map((taxon: TaxonomyModel) => taxon.currentScientificName).join(', ')
+        : 'None Listed',
     required: true,
     sortable: true,
   },

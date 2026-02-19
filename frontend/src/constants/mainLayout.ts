@@ -1,8 +1,9 @@
 import type { Tab } from 'src/models/mainLayout';
+import { urls } from './links';
 
 export const defaultTabs: Tab[] = [
   { name: 'Projects', route: '/projects', external: false },
-  { name: 'Data', route: 'https://dandi.emberarchive.org/', external: true },
+  { name: 'Data', route: urls.ember_dandi, external: true },
   {
     name: 'Getting Started',
     route: '/getting-started',

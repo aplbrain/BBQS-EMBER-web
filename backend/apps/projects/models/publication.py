@@ -7,7 +7,7 @@ class Publication(models.Model):
     """
     Publication metadata.
 
-    v1.0.0 - https://github.com/aplbrain/BBQS-EMBER-Data-Model/releases/tag/v1.0.0
+    v1.1.0 - https://github.com/aplbrain/BBQS-EMBER-Data-Model/releases/tag/v1.1.0
     """
 
     id = models.BigAutoField(primary_key=True)

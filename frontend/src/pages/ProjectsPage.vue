@@ -9,59 +9,69 @@
             <LinkText :link="links.brain_initiative" />
             , through its ongoing
             <LinkText :link="links.bbqs_full" />
-            , has funded {{ projectCounts.total }} research projects, with the earliest project
-            start date of {{ earliestProjectStart }}. {{ projectCounts.r61r33 }} of the projects are
-            funded through the
+            , has funded over 20 research projects (and counting), with the earliest project start
+            date of January 2024. Each BBQS project is funded through one of the R61, R33, or R24
+            NIH funding mechansims. The
             <LinkText
               text="R61/R33 mechanism"
               uri="https://grants.nih.gov/grants/guide/rfa-files/RFA-MH-22-240.html"
             />
-            intended to support the development and validation of next-generation tools, methods,
+            is intended to support the development and validation of next-generation tools, methods,
             and analytic approaches to precisely quantify behaviors and combine them with
-            simultaneous recordings of brain activity in humans; {{ projectCounts.r34 }} of the
-            projects are funded through the
+            simultaneous recordings of brain activity in humans, The
             <LinkText
               text="R34 mechanism"
               uri="https://grants.nih.gov/grants/guide/rfa-files/RFA-DA-23-030.html"
             />
-            , intended to support planning and development of the research framework, design, and
+            is intended to support planning and development of the research framework, design, and
             approach, including activities that will establish feasibility, validity, and/or other
             technically qualifying results that, if successful, would support a competitive
             application for a U01, R01 or equivalent NIH research award.
           </p>
 
-          <p>A quick overview of the BBQS research projects is provided below.</p>
+          <p>A quick overview of the projects supported by EMBER is provided below.</p>
         </q-card-section>
       </q-card>
     </div>
 
     <div class="q-mx-xl q-px-md row justify-center">
       <q-table
-        :rows="initialBBQSProjectList"
+        :rows="projects"
         :columns="ProjectTableColumns"
         :rows-per-page-options="[0]"
-        class="col-12"
+        class="col-12 q-mb-lg"
       >
-        <template v-slot:body-cell-awardIdentifier="props">
+        <template v-slot:body-cell-projectId="props">
           <q-td>
-            <a :href="props.row.funding.awardLink" target="_blank" class="link">
+            <router-link :to="`project/${props.row.projectId}`" target="_blank" class="link">
               {{ props.value }}
-            </a>
+            </router-link>
           </q-td>
         </template>
-        <template v-slot:body-cell-contactPrincipalInvestigator="props">
+        <template v-slot:body-cell-principalInvestigator="props">
           <q-td>
-            <span v-for="(pi, idx) in props.value" :key="pi">
-              <a
-                v-if="'email' in pi && pi.email"
-                :href="`mailto:${pi.email}`"
-                target="_blank"
-                class="link"
-              >
-                {{ pi.name }}
-              </a>
-              <span v-else>{{ pi.name }}</span>
+            <a
+              v-if="props.row.dataAdministrator.email"
+              :href="`mailto:${props.row.dataAdministrator.email}`"
+              target="_blank"
+              class="link"
+            >
+              {{ props.value }}
+            </a>
+            <span v-else>
+              {{ props.value }}
+            </span>
+          </q-td>
+        </template>
+        <template v-slot:body-cell-funding="props">
+          <q-td>
+            <span v-for="(funding, idx) in props.row.funding" :key="idx">
               <span v-if="idx != 0">, </span>
+
+              <a v-if="funding.fundingUrl" :href="funding.fundingUrl" target="_blank" class="link">
+                {{ funding.fundingInstitute }} {{ funding.awardNumber }}
+              </a>
+              <span v-else>{{ funding.fundingInstitute }} {{ funding.awardNumber }}</span>
             </span>
           </q-td>
         </template>
@@ -74,21 +84,20 @@
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 import { links } from 'src/constants/links';
-import { initialBBQSProjectList } from 'src/constants/projects';
+import type { ProjectModel } from 'src/models/projects';
 import { ProjectTableColumns } from 'src/models/projects';
-import { getMonthYear } from 'src/utils/date';
+import projectsService from 'src/services/projects.service';
+import { onMounted, ref } from 'vue';
 
-const projectCounts: Record<string, number> = {
-  total: initialBBQSProjectList.length,
-  r61r33: initialBBQSProjectList.filter(
-    (p) => p.funding.activityCode === 'R61' || p.funding.activityCode === 'R33',
-  ).length,
-  r34: initialBBQSProjectList.filter((p) => p.funding.activityCode === 'R34').length,
-};
+const projects = ref<ProjectModel[]>([]);
+const loading = ref(false);
 
-const earliestProjectStart: string = getMonthYear(
-  new Date(
-    initialBBQSProjectList.map((p) => p.funding.startDate.getTime()).sort()[0] || '01/01/2024',
-  ),
-);
+onMounted(async () => {
+  loading.value = true;
+  await projectsService
+    .getAll()
+    .then((value) => (projects.value = value))
+    .catch(() => (projects.value = []));
+  loading.value = false;
+});
 </script>

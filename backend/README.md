@@ -72,7 +72,9 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     EOF
     ```
 
-## Initial Setup
+## Development
+
+### Initial Setup
 
 1. Apply database migrations
 
@@ -92,7 +94,7 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     uv run manage.py load_initial_projects
     ```
 
-## Development
+### Run Application
 
 1. Start the backend application
 
@@ -101,6 +103,53 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     ```
 
 1. The backend should now be running at [http://localhost:8000](). To view the API endpoints, see [http://localhost:8000/docs](). To view the admin console, see [http://localhost:8000/admin]()
+
+### Schema Migrations
+
+If schema changes are made to any Django models, please follow the steps below: 
+
+1. Generate Python migration files
+
+    ```bash
+    uv run manage.py makemigrations
+    ```
+
+1. Apply database migrations
+
+    ```bash
+    uv run manage.py migrate
+    ```
+
+1. Generate TypeScript schema used for API endpoints
+
+    ```bash
+    cd ../scripts
+    ./update-schema.sh
+    ```
+
+    > This will update frontend/src/services/schema.d.ts
+
+1. Check that the frontend services and models still align.  
+    Relevant files will be in:
+    - frontend/src/services/
+    - frontend/src/models/
+
+### Refresh your Database
+
+During the initial phases of database development, you may want or need to wipe your local database and start over. 
+
+The following steps will erase your database and create a fresh one
+
+1. Enter postgres shell 
+    ```
+    psql -U postgres
+    ````
+1. Inside postgres shell run
+    ```
+    DROP DATABASE ember_db;
+    CREATE DATABASE ember_db OWNER ember;
+    ```
+1. Follow [Initial Setup](#initial-setup) again
 
 ## Testing
 
