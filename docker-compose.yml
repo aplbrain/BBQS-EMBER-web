@@ -7,3 +7,13 @@ services:
     ports:
       - 8080:8080
     restart: unless-stopped
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: ember_web_backend
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    env_file:
+      - backend/config/.env

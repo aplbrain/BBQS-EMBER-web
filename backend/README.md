@@ -6,8 +6,8 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
 
 - Python 3.12+
 - [PostgreSQL](#installing-postgresql)
-- (Optional) [uv](https://docs.astral.sh/uv/getting-started/installation/)
-    - We recommend using `uv` to manage Python
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+    - We highly recommend using `uv` to manage Python
 
 ### Install PostgreSQL
 
@@ -63,6 +63,15 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
         - and dbname as "ember_db"
     ```
     DATABASE_URL=postgres://ember:test123@localhost:5432/ember_db
+    ```
+1. Note: To run the backend with Docker, you will need to modify your `DATABASE_URL` to follow the pattern:  `postgres://[user:[password]]@host.docker.internal:5432/[dbname]`
+    - The key difference is replacing `localhost` with `host.docker.internal`
+    - For example, following the steps above, we defined:
+        - user as "ember"
+        - password as "test123"
+        - and dbname as "ember_db"
+    ```
+    DATABASE_URL=postgres://ember:test123@host.docker.internal:5432/ember_db
     ```
 1. Run the following to generate a secret key and write it to your .env file:
     ```

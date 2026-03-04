@@ -4,9 +4,24 @@ services:
       context: .
       dockerfile: frontend/Dockerfile
       args:
+        # Override .env.prod with Local Backend
+        VITE_API_BASE_URL: http://localhost:8000
         APL_ROOT_CERT: "https://apllinuxdepot.jhuapl.edu/linux/APL-root-cert/JHUAPL-MS-Root-CA-05-21-2038-B64-text.cer"
         APL_DOM1_CERT: "https://apllinuxdepot.jhuapl.edu/linux/certs/JHUAPL-MS-DOM1-CA-05-21-2028.pem"
     container_name: ember_web_frontend
     ports:
       - 8080:8080
     restart: unless-stopped
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        APL_ROOT_CERT: "https://apllinuxdepot.jhuapl.edu/linux/APL-root-cert/JHUAPL-MS-Root-CA-05-21-2038-B64-text.cer"
+        APL_DOM1_CERT: "https://apllinuxdepot.jhuapl.edu/linux/certs/JHUAPL-MS-DOM1-CA-05-21-2028.pem"
+    container_name: ember_web_backend
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    env_file:
+      - backend/config/.env
