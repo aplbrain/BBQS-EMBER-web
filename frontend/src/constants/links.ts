@@ -5,6 +5,11 @@
  */
 import type { Link } from 'src/models/common';
 
+export const urls = {
+  ember_dandi: 'https://dandi.emberarchive.org',
+  ember_dandiset: 'https://dandi.emberarchive.org/dandiset',
+};
+
 export const links: Record<string, Link> = {
   brain_initiative: {
     text: 'BRAIN Initiative',
@@ -30,9 +35,12 @@ export const links: Record<string, Link> = {
     text: 'Distributed Archives for Neurophysiology Data Integration (DANDI)',
     uri: 'https://dandiarchive.org/',
   },
+  ember_dandi: {
+    text: 'EMBER-DANDI',
+    uri: urls.ember_dandi,
+  },
   open_data: {
     text: 'Open Data',
-    uri: 'https://aws.amazon.com/opendata',
-    // uri: 'https://registry.opendata.aws/ember', TODO: When/If site is published
+    uri: 'https://registry.opendata.aws/ember',
   },
 };
