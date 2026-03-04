@@ -146,8 +146,8 @@ SPECTACULAR_SETTINGS = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:9000", # Native Frontend
-    "http://127.0.0.1:9000", # Native Frontend
-    "http://localhost:8080", # Docker Frontend
-    "https://emberarchive.org", # Production Server
+    "http://localhost:9000",  # Native Frontend
+    "http://127.0.0.1:9000",  # Native Frontend
+    "http://localhost:8080",  # Docker Frontend
+    "https://emberarchive.org",  # Production Server
 ]
