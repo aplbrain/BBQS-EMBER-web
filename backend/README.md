@@ -1,13 +1,13 @@
 # EMBER Archive Portal - Backend
 
-This folder contains a Django + PostgreSQL backend supporting the EMBER Archive portal
+This folder contains a Django backend + PostgreSQL database supporting the EMBER Archive portal
 
 ## Prerequisites
 
 - Python 3.12+
-- [PostgreSQL](#installing-postgresql)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
     - We highly recommend using `uv` to manage Python
+- [PostgreSQL](#installing-postgresql)
 
 ### Install PostgreSQL
 
