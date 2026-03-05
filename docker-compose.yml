@@ -17,3 +17,5 @@ services:
     restart: unless-stopped
     env_file:
       - backend/config/.env
+    volumes:
+      - /var/www/html/static:/backend/staticfiles
