@@ -30,4 +30,4 @@ WORKDIR /backend
 RUN pip install uv
 RUN uv sync --frozen --no-cache --no-dev
 
-CMD ["uv", "run", "gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["uv", "run", "gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--access-logfile", "-", "--error-logfile", "-"]
