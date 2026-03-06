@@ -23,6 +23,7 @@ EOF
 
 ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 ENV UV_HTTP_TIMEOUT=100
+ENV REQUESTS_CA_BUNDLE=$SSL_CERT_FILE
 
 ADD backend /backend
 WORKDIR /backend

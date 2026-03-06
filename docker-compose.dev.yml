@@ -25,3 +25,17 @@ services:
     restart: unless-stopped
     env_file:
       - backend/config/.env
+    command: uv run manage.py runserver 0.0.0.0:8000
+  postgres:
+    image: postgres:18
+    container_name: ember_db
+    ports:
+      - 5433:5432
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    env_file:
+      - backend/config/.env.db
+
+volumes:
+  postgres_data:

@@ -160,5 +160,5 @@ The following steps will erase your database and create a fresh one
     ```
 1. Follow [Initial Setup](#initial-setup) again
 
-## Testing
-
+<!-- ## Testing -->
+<!-- TODO -->
