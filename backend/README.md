@@ -1,13 +1,13 @@
 # EMBER Archive Portal - Backend
 
-This folder contains a Django + PostgreSQL backend supporting the EMBER Archive portal
+This folder contains a Django backend + PostgreSQL database supporting the EMBER Archive portal
 
 ## Prerequisites
 
 - Python 3.12+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+    - We highly recommend using `uv` to manage Python
 - [PostgreSQL](#installing-postgresql)
-- (Optional) [uv](https://docs.astral.sh/uv/getting-started/installation/)
-    - We recommend using `uv` to manage Python
 
 ### Install PostgreSQL
 
@@ -55,8 +55,11 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     ```
     uv sync
     ```
-1. Create .env file in BBQS-EMBER-web/backend/config 
-1. In .env file define `DATABASE_URL` following the pattern: `postgres://[user:[password]]@localhost:5432/[dbname]`
+1. Create .env file in BBQS-EMBER-web/backend/config. We will add three variables: `DEBUG`, `DATABASE_URL`, and `DJANGO_SECRET_KEY`.
+
+1. Set debug mode to true, by adding `DEBUG=True` to your .env
+
+1. Define `DATABASE_URL` following the pattern: `postgres://[user]:[password]@localhost:5432/[dbname]`
     - For example, following the steps above, we defined:
         - user as "ember"
         - password as "test123"
@@ -70,6 +73,13 @@ This folder contains a Django + PostgreSQL backend supporting the EMBER Archive 
     from django.core.management.utils import get_random_secret_key
     print(f"DJANGO_SECRET_KEY={get_random_secret_key()}")
     EOF
+    ```
+1. A complete .env should look like
+
+    ```
+    DEBUG=True
+    DATABASE_URL=postgres://myusername:mypassword@localhost:5432/mydatabase
+    DJANGO_SECRET_KEY=key
     ```
 
 ## Development
@@ -151,5 +161,5 @@ The following steps will erase your database and create a fresh one
     ```
 1. Follow [Initial Setup](#initial-setup) again
 
-## Testing
-
+<!-- ## Testing -->
+<!-- TODO -->
