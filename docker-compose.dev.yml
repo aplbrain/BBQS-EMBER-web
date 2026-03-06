@@ -24,7 +24,7 @@ services:
       - 8000:8000
     restart: unless-stopped
     env_file:
-      - backend/config/.env
+      - backend/config/.env.docker
     command: uv run manage.py runserver 0.0.0.0:8000
   postgres:
     image: postgres:18
@@ -35,7 +35,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql
     env_file:
-      - backend/config/.env.db
+      - backend/config/.env.docker
 
 volumes:
   postgres_data:

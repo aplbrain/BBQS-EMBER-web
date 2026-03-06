@@ -55,8 +55,11 @@ This folder contains a Django backend + PostgreSQL database supporting the EMBER
     ```
     uv sync
     ```
-1. Create .env file in BBQS-EMBER-web/backend/config 
-1. In .env file define `DATABASE_URL` following the pattern: `postgres://[user:[password]]@localhost:5432/[dbname]`
+1. Create .env file in BBQS-EMBER-web/backend/config. We will add three variables: `DEBUG`, `DATABASE_URL`, and `DJANGO_SECRET_KEY`.
+
+1. Set debug mode to true, by adding `DEBUG=True` to your .env
+
+1. Define `DATABASE_URL` following the pattern: `postgres://[user]:[password]@localhost:5432/[dbname]`
     - For example, following the steps above, we defined:
         - user as "ember"
         - password as "test123"
@@ -64,21 +67,19 @@ This folder contains a Django backend + PostgreSQL database supporting the EMBER
     ```
     DATABASE_URL=postgres://ember:test123@localhost:5432/ember_db
     ```
-1. Note: To run the backend with Docker, you will need to modify your `DATABASE_URL` to follow the pattern:  `postgres://[user:[password]]@host.docker.internal:5432/[dbname]`
-    - The key difference is replacing `localhost` with `host.docker.internal`
-    - For example, following the steps above, we defined:
-        - user as "ember"
-        - password as "test123"
-        - and dbname as "ember_db"
-    ```
-    DATABASE_URL=postgres://ember:test123@host.docker.internal:5432/ember_db
-    ```
 1. Run the following to generate a secret key and write it to your .env file:
     ```
     uv run python - <<'EOF' >> config/.env
     from django.core.management.utils import get_random_secret_key
     print(f"DJANGO_SECRET_KEY={get_random_secret_key()}")
     EOF
+    ```
+1. A complete .env should look like
+
+    ```
+    DEBUG=True
+    DATABASE_URL=postgres://myusername:mypassword@localhost:5432/mydatabase
+    DJANGO_SECRET_KEY=key
     ```
 
 ## Development
