@@ -93,6 +93,10 @@ export const team: OrganizationTeam[] = [
         name: 'Austin Macdonald',
         image: ASSETS_BASE_URL + 'team/austin_macdonald.png',
       },
+      {
+        name: 'Isaac To',
+        image: ASSETS_BASE_URL + 'team/isaac_to.jpg',
+      },
     ],
   },
   {
