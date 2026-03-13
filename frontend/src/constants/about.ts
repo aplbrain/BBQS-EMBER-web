@@ -95,7 +95,7 @@ export const team: OrganizationTeam[] = [
       },
       {
         name: 'Isaac To',
-        image: ASSETS_BASE_URL + 'team/isaac_to.jpg'
+        image: ASSETS_BASE_URL + 'team/isaac_to.jpg',
       },
     ],
   },
