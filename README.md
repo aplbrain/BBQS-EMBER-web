@@ -1,10 +1,10 @@
-# Ember Archive web application
+# EMBER Archive Portal
 
 This repository contains the web application code for the NIH-funded Brain Behavior Quantification and Synchronization (BBQS) Ecosystem for Multi-modal Brain-behavior Experimentation and Research (EMBER) Data Archive. This web application allows users to view information about the program, search projects, and submit data.
 
 ## Development
 
-- Please refer to the [frontend](frontend/) README.md
+- Please refer to the individual [frontend](frontend/README.md) and [backend](backend/README.md) readme files.
 
 ## Contributing
 
