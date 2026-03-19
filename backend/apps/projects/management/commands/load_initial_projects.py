@@ -1,4 +1,5 @@
 import io
+import os
 import zipfile
 from pathlib import Path
 
@@ -10,7 +11,7 @@ from django.db import transaction
 from apps.projects.models import Contributor, EmberProject, Funding, Publication, Taxonomy
 
 GITHUB_REPO = "https://github.com/aplbrain/BBQS-EMBER-Data-Model"
-GITHUB_REF = "refs/heads/main"
+GITHUB_REF = "refs/tags/v1.1.0"
 GITHUB_ZIP_URL = f"{GITHUB_REPO}/archive/{GITHUB_REF}.zip"
 DATA_FILES_DIR = "EMBER_Metadata/data"
 
@@ -64,7 +65,8 @@ class Command(BaseCommand):
         if path:
             files = Path(path).glob("*.yaml")
         else:
-            zip_bytes = requests.get(GITHUB_ZIP_URL).content
+            ca_bundle = os.environ.get("REQUESTS_CA_BUNDLE", "/etc/ssl/certs/ca-certificates.crt")
+            zip_bytes = requests.get(GITHUB_ZIP_URL, verify=ca_bundle).content
             zip_file = zipfile.ZipFile(io.BytesIO(zip_bytes))
 
             files = [
