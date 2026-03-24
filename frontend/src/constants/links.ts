@@ -18,9 +18,13 @@ export const links: Record<string, Link> = {
     text: 'BBQS Program',
     uri: 'https://braininitiative.nih.gov/research/systems-neuroscience/brain-behavior-quantification-and-synchronization-program',
   },
-  ember_grant: {
+  ember_grant_old: {
     text: 'R24MH136632',
     uri: 'https://reporter.nih.gov/project-details/10888659',
+  },
+  ember_grant: {
+    text: 'R24DA064430',
+    uri: 'https://reporter.nih.gov/project-details/11193430',
   },
   jhuapl: {
     text: 'Johns Hopkins University Applied Physics Laboratory (JHU/APL)',
