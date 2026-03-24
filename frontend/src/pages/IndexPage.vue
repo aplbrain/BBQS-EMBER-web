@@ -37,7 +37,8 @@
             <LinkText :link="links.brain_initiative" />
             data archive for multi-modal neurophysiological and behavioral data, supporting the
             <LinkText :link="links.bbqs_full" />. EMBER, which was started in September 2024 and is
-            currently under development, is supported by NIH Grant
+            currently under development, is supported by NIH Grants
+            <LinkText :link="links.ember_grant_old" /> and
             <LinkText :link="links.ember_grant" />
             and the Amazon Web Services (AWS)
             <LinkText :link="links.open_data" />
