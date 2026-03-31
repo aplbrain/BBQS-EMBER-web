@@ -66,7 +66,23 @@
 
       <q-card flat class="q-my-lg">
         <q-card-section>
-          <div class="text-h2">The Team</div>
+          <div
+            class="text-h2"
+            :id="teamSectionId"
+            @mouseover="showTeamLinkIcon = true"
+            @mouseleave="showTeamLinkIcon = false"
+          >
+            The Team
+            <q-btn
+              v-show="showTeamLinkIcon"
+              clickable
+              flat
+              round
+              dense
+              icon="link"
+              @click="copyAnchorLink(`#${teamSectionId}`)"
+            />
+          </div>
         </q-card-section>
         <q-card-section v-for="org in team" :key="org.name">
           <div class="text-bold">{{ org.name }}</div>
@@ -90,7 +106,23 @@
 
       <q-card flat class="q-my-lg">
         <q-card-section>
-          <div class="text-h2">Contact Us</div>
+          <div
+            class="text-h2"
+            :id="contactUsSectionId"
+            @mouseover="showContactUsLinkIcon = true"
+            @mouseleave="showContactUsLinkIcon = false"
+          >
+            Contact Us
+            <q-btn
+              v-show="showContactUsLinkIcon"
+              clickable
+              flat
+              round
+              dense
+              icon="link"
+              @click="copyAnchorLink(`#${contactUsSectionId}`)"
+            />
+          </div>
         </q-card-section>
         <q-card-section>
           <div>
@@ -104,10 +136,30 @@
 </template>
 
 <script setup lang="ts">
+import { copyToClipboard } from 'quasar';
+import { ref } from 'vue';
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 import { team } from 'src/constants/about';
 import { links } from 'src/constants/links';
+
+// Sections
+const contactUsSectionId = 'contact-us';
+const teamSectionId = 'team';
+
+// Link Icon
+const showContactUsLinkIcon = ref(false);
+const showTeamLinkIcon = ref(false);
+
+/**
+ * Copy anchor link with the current origin and page, and given section.
+ *
+ * @param section  Section
+ */
+async function copyAnchorLink(section: string) {
+  const url = window.location.origin + '/about' + section;
+  await copyToClipboard(url);
+}
 </script>
 
 <style scoped>
