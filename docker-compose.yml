@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: frontend/Dockerfile
+      args:
+        VITE_API_BASE_URL: https://api.emberarchive.org
     container_name: ember_web_frontend
     ports:
       - 8080:8080
