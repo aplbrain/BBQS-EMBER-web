@@ -9,6 +9,8 @@ RUN apk add ca-certificates
 
 ARG APL_ROOT_CERT=dummy.cer
 ARG APL_DOM1_CERT=dummy.cer
+ARG VITE_API_BASE_URL
+ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
 
 # (Optionally) Add APL certificates
 ADD ${APL_ROOT_CERT} \
