@@ -158,7 +158,7 @@ dandi upload -i ember-dandi</code></pre>
             </li>
             <li>
               Register with
-              <LinkText text="EMBER-DANDI" uri="https://dandi.emberarchive.org/" />
+              <LinkText :link="links.ember_dandi" />
               using the "Log In With GitHub" button in the top right corner
             </li>
             <li>
@@ -278,10 +278,11 @@ dandi upload -i ember-dandi</code></pre>
 </template>
 
 <script setup lang="ts">
-import { ASSETS_BASE_URL } from 'src/assets';
 import { ref } from 'vue';
+import { ASSETS_BASE_URL } from 'src/assets';
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
+import { links } from 'src/constants/links';
 import { scrollTo } from 'src/utils/scroll';
 
 const experiencedUserSection = ref<HTMLElement | null>(null);
