@@ -55,10 +55,12 @@
           <q-card-section>
             <div class="text-h6">Citation</div>
             <div class="text-body2 q-mt-sm">
-              If you use this dataset, please cite:
+              If you wish to refer to all of the data associated with this project, please cite:
               {{ computedProjectData.authorLastName }} et al. {{ project.year }} [Dataset]. EMBER
               Archive.
               <span v-if="project.emberDoi">https://doi.org/{{ project.emberDoi }}</span>
+              <br>
+              To cite a specific dataset, refer to the "HOW TO CITE" instructions on its main <a href="https://dandi.emberarchive.org/">dandi.emberarchive.org</a> page.
             </div>
             <q-btn
               v-if="project.emberDoi"
