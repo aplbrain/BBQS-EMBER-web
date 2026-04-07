@@ -55,7 +55,7 @@
           <q-card-section>
             <div class="text-h6">Citation</div>
             <div class="text-body2 q-mt-sm">
-             To cite the full project, please use:
+              To cite the full project, please use:
               {{ computedProjectData.authorLastName }} et al. {{ project.year }} [Dataset]. EMBER
               Archive.
               <span v-if="project.emberDoi">https://doi.org/{{ project.emberDoi }}</span>
