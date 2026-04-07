@@ -59,8 +59,12 @@
               {{ computedProjectData.authorLastName }} et al. {{ project.year }} [Dataset]. EMBER
               Archive.
               <span v-if="project.emberDoi">https://doi.org/{{ project.emberDoi }}</span>
-              <br>
-              To cite a specific dataset, refer to the "HOW TO CITE" instructions on its main <a href="https://dandi.emberarchive.org/">dandi.emberarchive.org</a> page.
+              <br />
+              <div v-if="project.dataAvailabilityEmberdandi">
+                To cite a specific dandiset, refer to the "HOW TO CITE" instructions on its main
+                <LinkText uri="https://dandi.emberarchive.org/" text="dandi.emberarchive.org" />
+                page.
+              </div>
             </div>
             <q-btn
               v-if="project.emberDoi"
