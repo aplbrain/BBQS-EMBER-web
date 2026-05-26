@@ -10,7 +10,7 @@ export const defaultTabs: Tab[] = [
     external: false,
     dropdown: {
       show: false,
-      children: [{ name: 'Documentation', route: '/documentation', external: false }],
+      children: [{ name: 'Documentation', route: urls.ember_docs, external: false }],
     },
   },
   { name: 'Tools', route: '/tools', external: false },
