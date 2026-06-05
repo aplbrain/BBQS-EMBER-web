@@ -7,7 +7,7 @@
           <p>
             In September 2024, our team at the
             <LinkText :link="links.jhuapl" />
-            , University of California, Los Angeles, University of Pennsylvania, Dartmouth College,
+            , Duke University, University of Pennsylvania, Dartmouth College,
             and Massachusetts Institute of Technology were funded by the NIH Grants
             <LinkText :link="links.ember_grant_old" /> and
             <LinkText :link="links.ember_grant" />
