@@ -6,10 +6,9 @@
         <q-card-section>
           <p>
             In September 2024, our team at the
-            <LinkText :link="links.jhuapl" />
-            , Duke University, University of Pennsylvania, Dartmouth College,
-            and Massachusetts Institute of Technology were funded by the NIH Grants
-            <LinkText :link="links.ember_grant_old" /> and
+            <LinkText :link="links.jhuapl" />, Duke University, University of Pennsylvania,
+            Dartmouth College, and Massachusetts Institute of Technology were funded by the NIH
+            Grants <LinkText :link="links.ember_grant_old" /> and
             <LinkText :link="links.ember_grant" />
             to build the data archive for hosting the data generated through the NIH
             <LinkText :link="links.brain_initiative" />'s <LinkText :link="links.bbqs_full" />.
