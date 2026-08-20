@@ -1,4 +1,4 @@
-FROM node:20-alpine AS frontend
+FROM node:22-alpine AS frontend
 
 LABEL maintainer="Nicole Tregoning <nicole.tregoning@jhuapl.edu>"
 LABEL description="A Docker image for the BBQS EMBER Archive web frontend"
