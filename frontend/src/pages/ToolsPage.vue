@@ -68,8 +68,8 @@ import { links } from 'src/constants/links';
 }
 
 .hearth-logo {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 9rem;
+  height: 9rem;
   flex-shrink: 0;
 }
 
