@@ -3,7 +3,7 @@
     <PageTitle title="Tools" />
     <div class="q-mx-xl">
       <q-card flat class="q-mt-lg">
-        <q-card-section>
+        <q-card-section class="text-center">
           <p>
             Uploading to EMBER unlocks more than just long-term storage of scientific data. It
             connects your data to HEARTH, our growing suite of tools for managing and processing
@@ -11,10 +11,10 @@
           </p>
           <p>
             Below is a growing list of enabling tools for the BBQS consortium, showcasing what
-            becomes possible once EMBER is your data source. We're actively expanding this
-            toolkit with the BBQS Data Coordination and Artificial Intelligence Center (DCAIC) and
-            the broader neurophysiology community; please contact the EMBER team if you'd like to
-            get involved.
+            becomes possible once EMBER is your data source. We're actively expanding this toolkit
+            with the BBQS Data Coordination and Artificial Intelligence Center (DCAIC) and the
+            broader neurophysiology community; please contact the EMBER team if you'd like to get
+            involved.
           </p>
         </q-card-section>
       </q-card>
@@ -22,16 +22,14 @@
       <q-card flat class="q-mb-lg">
         <q-card-section class="hearth-intro">
           <img class="hearth-logo" src="/hearth/hearth-logo.svg" alt="HEARTH" />
-          <div>
-            <div class="text-h4">
-              <LinkText :link="links.hearth" />
-            </div>
-            <p>
-              HEARTH (Hub for Exploratory Analysis, Resource-sharing, Testing, and
-              Hypothesis-generation) is EMBER's portal of apps for managing and processing data
-              hosted on EMBER — several tools can also run standalone outside the archive.
-            </p>
+          <div class="text-h4">
+            <LinkText :link="links.hearth" />
           </div>
+          <p>
+            HEARTH (Hub for Exploratory Analysis, Resource-sharing, Testing, and
+            Hypothesis-generation) is EMBER's portal of apps for managing and processing data hosted
+            on EMBER — several tools can also run standalone outside the archive.
+          </p>
         </q-card-section>
 
         <q-card-section class="row justify-center q-col-gutter-md">
@@ -45,7 +43,7 @@
         </q-card-section>
       </q-card>
 
-      <p class="text-caption text-grey q-mb-lg">
+      <p class="text-caption text-grey text-center q-mb-lg">
         Looking for more general, non-EMBER-based resources? Visit the BBQS
         <LinkText :link="links.bbqs_resources" />.
       </p>
@@ -63,8 +61,10 @@ import { links } from 'src/constants/links';
 <style scoped>
 .hearth-intro {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  text-align: center;
+  gap: 0.5rem;
 }
 
 .hearth-logo {
@@ -107,12 +107,5 @@ import { links } from 'src/constants/links';
 .hearth-app-card__description {
   color: rgba(0, 0, 0, 0.6);
   font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-  .hearth-intro {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 </style>
