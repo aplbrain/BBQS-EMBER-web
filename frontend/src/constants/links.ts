@@ -9,6 +9,7 @@ export const urls = {
   ember_dandi: 'https://dandi.emberarchive.org',
   ember_dandiset: 'https://dandi.emberarchive.org/dandiset',
   ember_docs: 'https://docs.emberarchive.org',
+  bbqs_resources: 'https://brain-bbqs.org/resources',
 };
 
 export const links: Record<string, Link> = {
@@ -54,6 +55,6 @@ export const links: Record<string, Link> = {
   },
   bbqs_resources: {
     text: 'resources page',
-    uri: 'https://brain-bbqs.org/resources',
+    uri: urls.bbqs_resources,
   },
 };

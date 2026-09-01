@@ -40,13 +40,22 @@
               <div class="hearth-app-card__description">{{ app.description }}</div>
             </a>
           </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <a
+              :href="urls.bbqs_resources"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hearth-app-card"
+            >
+              <img class="hearth-app-card__logo" src="/hearth/bbqs-logo.png" alt="" />
+              <div class="hearth-app-card__name">BBQS Resources</div>
+              <div class="hearth-app-card__description">
+                General, non-EMBER-based resources for the BBQS consortium.
+              </div>
+            </a>
+          </div>
         </q-card-section>
       </q-card>
-
-      <p class="text-caption text-grey text-center q-mb-lg">
-        Looking for more general, non-EMBER-based resources? Visit the BBQS
-        <LinkText :link="links.bbqs_resources" />.
-      </p>
     </div>
   </q-page>
 </template>
@@ -55,7 +64,7 @@
 import LinkText from 'src/components/LinkText.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 import { hearthApps } from 'src/constants/hearth';
-import { links } from 'src/constants/links';
+import { links, urls } from 'src/constants/links';
 </script>
 
 <style scoped>
