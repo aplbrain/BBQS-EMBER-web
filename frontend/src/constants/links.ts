@@ -51,7 +51,7 @@ export const links: Record<string, Link> = {
   },
   hearth: {
     text: 'HEARTH',
-    uri: 'https://www.hearth.emberarchive.org',
+    uri: 'https://hearth.emberarchive.org',
   },
   bbqs_resources: {
     text: 'resources page',
