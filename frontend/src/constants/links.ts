@@ -9,6 +9,7 @@ export const urls = {
   ember_dandi: 'https://dandi.emberarchive.org',
   ember_dandiset: 'https://dandi.emberarchive.org/dandiset',
   ember_docs: 'https://docs.emberarchive.org',
+  bbqs_resources: 'https://brain-bbqs.org/resources',
 };
 
 export const links: Record<string, Link> = {
@@ -47,5 +48,13 @@ export const links: Record<string, Link> = {
   open_data: {
     text: 'Open Data',
     uri: 'https://registry.opendata.aws/ember',
+  },
+  hearth: {
+    text: 'HEARTH',
+    uri: 'https://hearth.emberarchive.org',
+  },
+  bbqs_resources: {
+    text: 'resources page',
+    uri: urls.bbqs_resources,
   },
 };
