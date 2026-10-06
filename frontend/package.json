@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
-    "dompurify": "^3.4.14",
+    "dompurify": "^3.4.16",
     "markdown-it": "^14.3.1",
     "quasar": "^2.25.1",
     "vue": "^3.4.18",
